@@ -171,7 +171,12 @@ function checkPwd1 () {
 function checkPwd2 () {
     let pwd1 = registerInputDom.pwd1Dom.value.replace("/(^\s*)|(\s*$)/g", "");
     let pwd2 = registerInputDom.pwd2Dom.value.replace("/(^\s*)|(\s*$)/g", "");
-    if (pwd1 !== pwd2) {
+
+    if (pwd2.length == 0) {
+        registerMsg.pwd2.innerHTML = '确认密码不能为空';
+        registerMsg.pwd2.style.display = 'block';
+        document.getElementById("registerPwd2").classList.add('error');
+    } else if (pwd1 !== pwd2) {
         registerMsg.pwd2.innerHTML = '两次输入的密码不一致';
         registerMsg.pwd2.style.display = 'block';
         document.getElementById("registerPwd2").classList.add('error');
@@ -186,8 +191,52 @@ function checkPwd2 () {
 
 function register () {
     if (checkUsername() || checkUserEmail() || checkPwd1() || checkPwd2()) {
-        alert("注册失败，请检查表单信息");
+        user.username = registerForm.username.value;
+        user.password = registerForm.password.value;
+        user.email = registerForm.email.value;
+        successMessageBox();
     } else {
-        alert('注册成功');
+        errorMessageBox();
     }
+}
+
+
+// 模拟表单提示
+
+// 错误信息提示
+function errorMessageBox () {
+    let str = `<div class="my-message my-message--error">
+                    <i class="iconfont icon-fail my-icon-error my-message__icon"></i>
+                    <p class="my-message__content">注册失败，请检查表单信息</p>
+                </div>`;
+
+    let node = document.getElementById('myMessageBox');
+    // node.insertAdjacentHTML('beforeend', str);
+    node.innerHTML = str;
+
+    setTimeout(() => {
+        node.innerHTML = ''
+    }, 3000);
+}
+
+// 成功消息提示
+function successMessageBox () {
+    let str = `<div class="my-message my-message--success">
+                    <i class="iconfont icon-success my-icon-success my-message__icon"></i>
+                    <p class="my-message__content">`+ `欢迎 ` + user.username + `, 您的邮箱为 ` + user.email + `</p>
+                </div>`;
+
+    let node = document.getElementById('myMessageBox');
+    // node.insertAdjacentHTML('beforeend', str);
+    node.innerHTML = str;
+
+    setTimeout(() => {
+        node.innerHTML = ''
+    }, 3000);
+}
+
+
+// 前往首页
+function goToHome () {
+    window.location.href = 'index.html';
 }

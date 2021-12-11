@@ -8,10 +8,90 @@
     <!-- <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="./css/register-login.css" />
     <title>注册&登录</title>
+    <style>
+        .my-message {
+            top: 20px;
+            z-index: 2000;
+            min-width: 380px;
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #EBEEF5;
+            position: fixed;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            background-color: #edf2fc;
+            transition: opacity .3s, transform .4s, top .4s;
+            padding: 15px 15px 15px 20px;
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .my-message--error {
+            background-color: #fef0f0;
+            border-color: #fde2e2;
+        }
+
+        .my-message--error .my-message__content {
+            color: #F56C6C;
+        }
+
+        .my-message--success {
+            background-color: #f0f9eb;
+            border-color: #e1f3d8;
+        }
+
+        .my-message .my-icon-success {
+            color: #67C23A;
+        }
+
+        .my-message--success .my-message__content {
+            color: #67C23A;
+        }
+
+        .my-message__icon {
+            margin-right: 10px;
+        }
+
+        .my-message .my-icon-error {
+            color: #F56C6C;
+        }
+
+        .my-message p {
+            margin: 0;
+        }
+
+        .my-message__content {
+            padding: 0;
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        [class*=" my-icon-"],
+        [class^=my-icon-] {
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            vertical-align: baseline;
+            display: inline-block;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- <div class="my-message my-message--error">
+        <i class="iconfont icon-fail my-icon-error my-message__icon"></i>
+        <p class="my-message__content">注册失败，请检查表单信息</p>
+    </div> -->
+    <div id="myMessageBox"></div>
     <div class="container">
+
         <div class="forms-container">
             <div class="signin-signup">
                 <form action="#" class="sign-in-form" name="loginForm" method="POST">
@@ -77,6 +157,10 @@
                     <p>
                         富强、民主、文明、和谐；自由、平等、公正、法治；爱国、敬业、诚信、友善
                     </p>
+                    <button onclick="goToHome()" class="btn transparent"
+                        style="border-radius: 50%; width: 41px; height: 41px;">
+                        <i class="iconfont icon-home"></i>
+                    </button>
                     <button class="btn transparent" id="sign-up-btn">
                         点击注册
                     </button>
@@ -89,6 +173,10 @@
                     <p>
                         “实现中华民族伟大复兴，就是中华民族近代以来最伟大梦想”
                     </p>
+                    <button onclick="goToHome()" class="btn transparent"
+                        style="border-radius: 50%; width: 41px; height: 41px;">
+                        <i class="iconfont icon-home"></i>
+                    </button>
                     <button class="btn transparent" id="sign-in-btn">
                         点击登录
                     </button>

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1638873446307') format('truetype');
+  src: url('iconfont.ttf?t=1639203862581') format('truetype');
 }
 
 .iconfont {
@@ -21,5 +21,17 @@
 
 .icon-lock:before {
   content: "\e66b";
+}
+
+.icon-home:before {
+  content: "\e604";
+}
+
+.icon-success:before {
+  content: "\e603";
+}
+
+.icon-fail:before {
+  content: "\e605";
 }
 
