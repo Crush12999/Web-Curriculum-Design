@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./images/icon/iconfont.css">
+    <!-- <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="./css/register-login.css" />
+    <title>注册&登录</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="#" class="sign-in-form" name="loginForm" method="POST">
+                    <h2 class="title">登 录</h2>
+                    <div class="input-field">
+                        <i class="iconfont icon-user"></i>
+                        <input name="username" type="text" placeholder="请输入用户名" />
+                    </div>
+                    <div class="input-field">
+                        <i class="iconfont icon-lock"></i>
+                        <input name="password" type="password" placeholder="请输入密码" />
+                    </div>
+                    <input onclick="login()" type="button" value="登 录" class="btn solid" />
+                </form>
+
+                <!-- 注册表单 -->
+                <form action="#" class="sign-up-form" name="registerForm" method="POST">
+                    <h2 class="title">注 册</h2>
+                    <div class="input-field" id="registerUserName">
+                        <i class="iconfont icon-user"></i>
+                        <input name="username" type="text" placeholder="请输入用户名" />
+                    </div>
+                    <p id="registerNameMsg" style="font-size: 14px; color: red; display: none;"></p>
+                    <div class="input-field" id="registerEmail">
+                        <i class="iconfont icon-email"></i>
+                        <input name="email" type="email" placeholder="请输入邮箱" />
+                    </div>
+                    <p id="registerEmailMsg" style="font-size: 14px; color: red; display: none;"></p>
+                    <div class="input-field" id="registerPwd1">
+                        <i class="iconfont icon-lock"></i>
+                        <input name="password" type="password" placeholder="请输入密码" />
+                    </div>
+                    <p id="registerPwd1Msg" style="font-size: 14px; color: red; display: none;"></p>
+                    <div class="input-field" id="registerPwd2">
+                        <i class="iconfont icon-lock"></i>
+                        <input type="rePassword" placeholder="请输入重复密码" />
+                    </div>
+                    <p id="registerPwd2Msg" style="font-size: 14px; color: red; display: none;"></p>
+                    <input id="registerBtn" onclick="register()" type="button" class="btn" value="注 册" />
+                    <!-- <p class="social-text">Or Sign up with social platforms</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div> -->
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>社会主义核心价值观</h3>
+                    <p>
+                        富强、民主、文明、和谐；自由、平等、公正、法治；爱国、敬业、诚信、友善
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        点击注册
+                    </button>
+                </div>
+                <img src="./images/log.png" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>中国梦</h3>
+                    <p>
+                        “实现中华民族伟大复兴，就是中华民族近代以来最伟大梦想”
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        点击登录
+                    </button>
+                </div>
+                <img src="./images/register.png" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/register-login.js"></script>
+</body>
+
+</html>
