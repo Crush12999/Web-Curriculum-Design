@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        main {
+            padding-top: 60px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right top, #FFD3A5, #FD6585);
+        }
+
+        .container {
+            /* width: ; */
+            width: 70%;
+            height: 100%;
+            /* background-color: pink; */
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        textarea {
+            height: 64px;
+            min-height: 52px;
+            max-height: 136px;
+            overflow-y: hidden;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            overflow: auto;
+            /* resize: vertical; */
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            /* -webkit-writing-mode: horizontal-tb !important; */
+            text-rendering: auto;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-align: start;
+            cursor: text;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            column-count: initial !important;
+            resize: none;
+        }
+
+        textarea.my-input {
+            max-width: 100%;
+            height: auto;
+            /* height: 200px; */
+            min-height: 32px;
+            line-height: 1.5;
+            vertical-align: bottom;
+            /* transition: all .3s, height 0s; */
+        }
+
+        .my-input {
+            box-sizing: border-box;
+            margin: 0;
+            font-variant: tabular-nums;
+            list-style: none;
+            font-feature-settings: "tnum";
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 32px;
+            padding: 4px 11px;
+            color: rgba(0, 0, 0, .65);
+            font-size: 14px;
+            line-height: 1.5;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            /* transition: all .3s; */
+        }
+
+        .my-input:focus {
+            outline: 0;
+            box-shadow: 0 0 0 2px rgb(24 144 255 / 20%);
+        }
+
+        .my-input:focus,
+        .my-input:hover {
+            border-color: #40a9ff;
+            border-right-width: 1px !important;
+        }
+
+        /* 提交按钮 */
+        .submit-btn {
+            margin-top: 15px;
+            position: relative;
+            left: 100%;
+            bottom: 0;
+            transform: translateX(-100%);
+        }
+
+        /* 评论信息主体部分 */
+        .feedback-list {
+            height: 100%;
+            /* border: red 1px solid; */
+            border-radius: 5px;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+        }
+
+        /* 评论信息盒子 */
+        .feedback-inner {
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, .6);
+            display: flex;
+            padding: 16px 0;
+            margin-bottom: 10px;
+        }
+
+        /* 评论信息头像部分 */
+        .feedback-avatar {
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        .feedback-avatar img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        /* 评论信息内容 */
+        .feedback-content {
+            position: relative;
+            flex: 1 1 auto;
+            min-width: 1px;
+            font-size: 14px;
+            word-wrap: break-word;
+            color: #595959;
+        }
+
+        /* 作者信息 */
+        .feedback-content-author {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        .feedback-content-author>span {
+            padding-right: 8px;
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+        .feedback-content-author-name {
+            font-size: 14px !important;
+            color: rgba(0, 0, 0, .45);
+            font-weight: bold;
+            transition: color .3s;
+        }
+
+        .feedback-content-author-time {
+            color: rgba(0, 0, 0, .55);
+            white-space: nowrap;
+            cursor: auto;
+        }
+
+        /* 下拉选择列表 */
+        .author-sex {
+            border: 0;
+            border-radius: 5px;
+            width: 100px;
+            height: 32px;
+        }
+    </style>
+
+    <script>
+        // 评论信息
+        const feedback = {
+            username: '',
+            sex: '',
+            content: ''
+        }
+
+        // 反馈信息字数统计
+        function limitWords() {
+            let myFeedback = document.getElementById('myFeedback')
+            let fontLimit = document.getElementById('fontLimit')
+            fontLimit.innerHTML = myFeedback.value.length + '/200';
+        }
+
+        //
+    </script>
+</head>
+
+<body>
+    <!-- 导航栏开始 -->
+    <header>
+        <span class="logo-box">
+            <img class="logo" src="images/nav_党群档案.svg" alt="">
+            <p class="logo-title">建党百年主题网</p>
+        </span>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">主页</a></li>
+                <li><a href="#">党史介绍</a></li>
+                <li><a href="#">英雄人物</a></li>
+                <li><a href="#">经典回忆</a></li>
+                <li class="found">
+                    <a href="#">发现更多</a>
+                    <ul class="dropdown">
+                        <li><a href="#">主题相册</a></li>
+                        <li><a href="#">怀旧音乐</a></li>
+                        <li><a href="#">关于我</a></li>
+                    </ul>
+                </li>
+                <li><a href="feedback.html" class="active-link">反馈</a></li>
+            </ul>
+        </nav>
+        <span class="cta">
+            <a class="" href="register-login.html"><button>登录 / 注册</button></a>
+        </span>
+
+    </header>
+    <!-- 导航栏结束 -->
+
+    <!-- 网页主体部分开始 -->
+    <main>
+        <div class="container">
+            <!-- 评论列表 -->
+            <div class="feedback-list">
+                <!-- 评论信息盒子 -->
+                <div class="feedback-inner">
+                    <!-- 头像部分 -->
+                    <div class="feedback-avatar">
+                        <span>
+                            <img src="./images/avatar-boy.svg" alt="">
+                        </span>
+                    </div>
+                    <!-- 评论信息 -->
+                    <div class="feedback-content">
+                        <!-- 作者信息 -->
+                        <div class="feedback-content-author">
+                            <span class="feedback-content-author-name">Aqua99</span>
+                            <span class="feedback-content-author-time">2021-07-08 12:30</span>
+                        </div>
+                        <!-- 评论内容 -->
+                        <div class="feedback-content-detail">
+                            <p>We supply a series of design principles, practical
+                                patterns and high quality design
+                                resources (Sketch and Axure), to help people create their product prototypes beautifully
+                                and
+                                efficiently.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-inner">
+                    <!-- 头像部分 -->
+                    <div class="feedback-avatar">
+                        <span>
+                            <img src="./images/avatar-girl.svg" alt="">
+                        </span>
+                    </div>
+                    <!-- 评论信息 -->
+                    <div class="feedback-content">
+                        <!-- 作者信息 -->
+                        <div class="feedback-content-author">
+                            <span class="feedback-content-author-name">Jenny</span>
+                            <span class="feedback-content-author-time">2021-07-08 12:30</span>
+                        </div>
+                        <!-- 评论内容 -->
+                        <div class="feedback-content-detail">
+                            <p>We supply a series of design principles.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-inner">
+                    <!-- 头像部分 -->
+                    <div class="feedback-avatar">
+                        <span>
+                            <img src="./images/avatar-girl.svg" alt="">
+                        </span>
+                    </div>
+                    <!-- 评论信息 -->
+                    <div class="feedback-content">
+                        <!-- 作者信息 -->
+                        <div class="feedback-content-author">
+                            <span class="feedback-content-author-name">Aqua99</span>
+                            <span class="feedback-content-author-time">2021-07-08 12:30</span>
+                        </div>
+                        <!-- 评论内容 -->
+                        <div class="feedback-content-detail">
+                            <p>We supply a series of design principles, practical
+                                patterns and high quality design
+                                resources (Sketch and Axure), to help people create their product prototypes beautifully
+                                and
+                                efficiently.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-inner">
+                    <!-- 头像部分 -->
+                    <div class="feedback-avatar">
+                        <span>
+                            <img src="./images/avatar-boy.svg" alt="">
+                        </span>
+                    </div>
+                    <!-- 评论信息 -->
+                    <div class="feedback-content">
+                        <!-- 作者信息 -->
+                        <div class="feedback-content-author">
+                            <span class="feedback-content-author-name">Aqua99</span>
+                            <span class="feedback-content-author-time">2021-07-08 12:30</span>
+                        </div>
+                        <!-- 评论内容 -->
+                        <div class="feedback-content-detail">
+                            <p>We supply a series of design principles, practical
+                                patterns and high quality design
+                                resources (Sketch and Axure), to help people create their product prototypes beautifully
+                                and
+                                efficiently.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-inner">
+                    <!-- 头像部分 -->
+                    <div class="feedback-avatar">
+                        <span>
+                            <img src="./images/avatar-boy.svg" alt="">
+                        </span>
+                    </div>
+                    <!-- 评论信息 -->
+                    <div class="feedback-content">
+                        <!-- 作者信息 -->
+                        <div class="feedback-content-author">
+                            <span class="feedback-content-author-name">Aqua99</span>
+                            <span class="feedback-content-author-time">2021-07-08 12:30</span>
+                        </div>
+                        <!-- 评论内容 -->
+                        <div class="feedback-content-detail">
+                            <p>We supply a series of design principles, practical
+                                patterns and high quality design
+                                resources (Sketch and Axure), to help people create their product prototypes beautifully
+                                and
+                                efficiently.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 评论提交表单 -->
+            <div class="feedback-submit-box" style="width: 100%; padding: 15px 0;">
+                <hr style="border:1px solid red;" />
+                <p style="font-weight: bold; font-size: 26px;margin-top: 15px;">留言板</p>
+                <input class="my-input" style="width: 200px;margin-top: 15px;" type="text" placeholder="请输入您的名字" />
+                <select class="author-sex">
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                </select>
+                <div class="textarea-limit" style="position: relative; width: 100%;margin-top: 15px;">
+                    <textarea maxlength="200" oninput="limitWords()" id="myFeedback" class="my-input" rows="5" cols="3"
+                        placeholder="不要默默地看啦，快点反馈一下吧~"></textarea>
+                    <span id="fontLimit"
+                        style="position: absolute; bottom: 2px;right: 4px; font-size: 12px;color: #6D6E6A;">
+                        0/200
+                    </span>
+                </div>
+
+                <button class="submit-btn">提 交</button>
+
+            </div>
+
+
+
+        </div>
+    </main>
+    <!-- 网页主体部分结束 -->
+
+
+    <!-- 页脚信息开始 -->
+    <footer>
+
+    </footer>
+    <!-- 页脚信息结束 -->
+
+    <script>
+        // function login() {
+        //     sessionStorage.setItem('user', 'haha');
+        // }
+    </script>
+</body>
+
+</html>

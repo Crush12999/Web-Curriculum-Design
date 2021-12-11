@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* color: #fff; */
+    /* background-color: #24252A; */
+    /* background-color: pink; */
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+
+li,
+a,
+button {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+}
+
+header {
+    /* background-color: #F4A32E; */
+    color: #fff;
+    display: flex;
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    /* background: linear-gradient(90deg, rgba(255, 0, 0, .8), rgba(250, 240, 8, .8)); */
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, rgba(243, 111, 37, 1), rgba(246, 206, 55, 1));
+}
+
+.logo-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.logo-title {
+    margin: 0 10px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.nav-links li a {
+    transition: all .3s ease 0s;
+}
+
+.nav-links li a:hover {
+    /* color: #0088a9; */
+    color: red;
+}
+
+button {
+    padding: 9px 25px;
+    /* background-color: rgba(0, 136, 169, 1); */
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(234, 84, 52, 1);
+    cursor: pointer;
+    transition: all .3s ease 0s;
+    box-shadow: 0 1px 2px 2px rgba(255, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: rgba(234, 84, 52, .8);
+}
+
+
+.active-link {
+    color: red;
+}
+
+
+/* 首部下拉框 */
+.found {
+    display: inline-block;
+    position: relative;
+}
+
+.found:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    left: 0;
+    right: 0;
+    background-color: #F2C74A;
+    border-radius: 5px;
+    /* border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; */
+}
+
+.dropdown li {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.dropdown li a {
+    display: inline-block;
+    line-height: 100%;
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.dropdown li:nth-child(-n + 2) {
+    border-bottom: 1px solid #E0533C;
+}
+
+/* 小三角 */
+.dropdown::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: #F2C74A transparent;
+}
