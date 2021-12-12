@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./images/icon/iconfont.css">
     <link rel="stylesheet" href="css/global.css">
     <style>
         main {
@@ -79,6 +80,11 @@
             border: 1px solid #d9d9d9;
             border-radius: 4px;
             /* transition: all .3s; */
+        }
+
+        .my-input-error {
+            border: 0;
+            box-shadow: 0 0 0 2px rgb(255 0 0 / 30%);
         }
 
         .my-input:focus {
@@ -178,28 +184,73 @@
             width: 100px;
             height: 32px;
         }
+
+        /* 提示信息样式 */
+        .my-message {
+            top: 20px;
+            z-index: 2000;
+            min-width: 380px;
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #EBEEF5;
+            position: fixed;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            background-color: #edf2fc;
+            transition: opacity .3s, transform .4s, top .4s;
+            padding: 15px 15px 15px 20px;
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .my-message--error {
+            background-color: #fef0f0;
+            border-color: #fde2e2;
+        }
+
+        .my-message--error .my-message__content {
+            color: #F56C6C;
+        }
+
+        .my-message__icon {
+            margin-right: 10px;
+        }
+
+        .my-message .my-icon-error {
+            color: #F56C6C;
+        }
+
+        .my-message p {
+            margin: 0;
+        }
+
+        .my-message__content {
+            padding: 0;
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        [class*=" my-icon-"],
+        [class^=my-icon-] {
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            vertical-align: baseline;
+            display: inline-block;
+            -webkit-font-smoothing: antialiased;
+        }
     </style>
 
-    <script>
-        // 评论信息
-        const feedback = {
-            username: '',
-            sex: '',
-            content: ''
-        }
-
-        // 反馈信息字数统计
-        function limitWords() {
-            let myFeedback = document.getElementById('myFeedback')
-            let fontLimit = document.getElementById('fontLimit')
-            fontLimit.innerHTML = myFeedback.value.length + '/200';
-        }
-
-        //
-    </script>
 </head>
 
 <body>
+    <div id="myMessageBox"></div>
     <!-- 导航栏开始 -->
     <header>
         <span class="logo-box">
@@ -234,7 +285,7 @@
     <main>
         <div class="container">
             <!-- 评论列表 -->
-            <div class="feedback-list">
+            <div id="feedbackList" class="feedback-list">
                 <!-- 评论信息盒子 -->
                 <div class="feedback-inner">
                     <!-- 头像部分 -->
@@ -252,12 +303,7 @@
                         </div>
                         <!-- 评论内容 -->
                         <div class="feedback-content-detail">
-                            <p>We supply a series of design principles, practical
-                                patterns and high quality design
-                                resources (Sketch and Axure), to help people create their product prototypes beautifully
-                                and
-                                efficiently.
-                            </p>
+                            <p>啊啊啊啊啊啊啊啊啊啊啊啊啊额</p>
                         </div>
                     </div>
                 </div>
@@ -277,7 +323,7 @@
                         </div>
                         <!-- 评论内容 -->
                         <div class="feedback-content-detail">
-                            <p>We supply a series of design principles.</p>
+                            <p>加油.</p>
                         </div>
                     </div>
                 </div>
@@ -297,12 +343,7 @@
                         </div>
                         <!-- 评论内容 -->
                         <div class="feedback-content-detail">
-                            <p>We supply a series of design principles, practical
-                                patterns and high quality design
-                                resources (Sketch and Axure), to help people create their product prototypes beautifully
-                                and
-                                efficiently.
-                            </p>
+                            <p>Come on</p>
                         </div>
                     </div>
                 </div>
@@ -322,12 +363,7 @@
                         </div>
                         <!-- 评论内容 -->
                         <div class="feedback-content-detail">
-                            <p>We supply a series of design principles, practical
-                                patterns and high quality design
-                                resources (Sketch and Axure), to help people create their product prototypes beautifully
-                                and
-                                efficiently.
-                            </p>
+                            <p>写好了吗</p>
                         </div>
                     </div>
                 </div>
@@ -347,12 +383,7 @@
                         </div>
                         <!-- 评论内容 -->
                         <div class="feedback-content-detail">
-                            <p>We supply a series of design principles, practical
-                                patterns and high quality design
-                                resources (Sketch and Axure), to help people create their product prototypes beautifully
-                                and
-                                efficiently.
-                            </p>
+                            <p>有什么问题呢</p>
                         </div>
                     </div>
                 </div>
@@ -363,21 +394,22 @@
             <div class="feedback-submit-box" style="width: 100%; padding: 15px 0;">
                 <hr style="border:1px solid red;" />
                 <p style="font-weight: bold; font-size: 26px;margin-top: 15px;">留言板</p>
-                <input class="my-input" style="width: 200px;margin-top: 15px;" type="text" placeholder="请输入您的名字" />
-                <select class="author-sex">
+                <input id="feedbackName" class="my-input" style="width: 200px;margin-top: 15px;" type="text"
+                    placeholder="请输入您的名字" />
+                <select id="feedbackSex" class="author-sex">
                     <option value="男">男</option>
                     <option value="女">女</option>
                 </select>
                 <div class="textarea-limit" style="position: relative; width: 100%;margin-top: 15px;">
-                    <textarea maxlength="200" oninput="limitWords()" id="myFeedback" class="my-input" rows="5" cols="3"
-                        placeholder="不要默默地看啦，快点反馈一下吧~"></textarea>
+                    <textarea maxlength="200" oninput="limitWords()" id="feedbackContent" class="my-input" rows="5"
+                        cols="3" placeholder="不要默默地看啦，快点反馈一下吧~"></textarea>
                     <span id="fontLimit"
                         style="position: absolute; bottom: 2px;right: 4px; font-size: 12px;color: #6D6E6A;">
                         0/200
                     </span>
                 </div>
 
-                <button class="submit-btn">提 交</button>
+                <button onclick="submitFeedback()" class="submit-btn">提 交</button>
 
             </div>
 
@@ -395,9 +427,123 @@
     <!-- 页脚信息结束 -->
 
     <script>
-        // function login() {
-        //     sessionStorage.setItem('user', 'haha');
-        // }
+        // 日期格式化，挂载到Date原型链
+        Date.prototype.format = function (fmt) {
+            var o = {
+                "M+": this.getMonth() + 1,                 //月份
+                "d+": this.getDate(),                    //日
+                "h+": this.getHours(),                   //小时
+                "m+": this.getMinutes(),                 //分
+                "s+": this.getSeconds(),                 //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds()             //毫秒
+            };
+            if (/(y+)/.test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            }
+            for (var k in o) {
+                if (new RegExp("(" + k + ")").test(fmt)) {
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                }
+            }
+            return fmt;
+        }
+
+        // 评论信息
+        const feedbackUser = {
+            name: '',
+            sex: '',
+            dataTime: null,
+            content: ''
+        }
+
+        // 反馈信息字数统计
+        function limitWords() {
+            let myFeedback = document.getElementById('feedbackContent')
+            let fontLimit = document.getElementById('fontLimit')
+            fontLimit.innerHTML = myFeedback.value.length + '/200';
+        }
+
+        //
+        function submitFeedback() {
+            if (checkFeedbackName() && checkFeedbackContent()) {
+                feedbackUser.name = document.getElementById('feedbackName').value;
+                feedbackUser.sex = document.getElementById('feedbackSex').value;
+                feedbackUser.content = document.getElementById('feedbackContent').value;
+                feedbackUser.dataTime = new Date().format("yyyy-MM-dd hh:mm:ss");
+                let sexImg = (feedbackUser.sex === '男') ? './images/avatar-boy.svg' : './images/avatar-girl.svg';
+                let node = document.getElementById('feedbackList');
+                str = `<div class="feedback-inner">
+                        <div class="feedback-avatar">
+                            <span><img src="` + sexImg + `" alt=""></span>
+                        </div>
+                        <div class="feedback-content">
+                            <div class="feedback-content-author">
+                                <span class="feedback-content-author-name">` + feedbackUser.name + `</span>
+                                <span class="feedback-content-author-time">` + feedbackUser.dataTime + `</span>
+                            </div>
+                            <div class="feedback-content-detail">
+                                <p>` + feedbackUser.content + `</p>
+                            </div>
+                        </div>
+                    </div>`;
+                // 插入到最后一个节点
+                node.insertAdjacentHTML('beforeend', str);
+                // 解构赋值,选中最后一个结点
+                let [parentDoc, childDoc] = [document.querySelector('#feedbackList'), document.querySelector('#feedbackList').lastChild];
+                //如果大于div高度使其居中
+                parentDoc.scrollTop = childDoc.offsetTop - parentDoc.offsetHeight / 2;
+                childDoc.style.background = 'rgba(255, 255, 255, 0.8)';
+                setTimeout(() => {
+                    childDoc.style.background = '';
+                }, 1000)
+            } else {
+                errorMessageBox('名字和信息不能为空噢~');
+            }
+        }
+
+        document.getElementById('feedbackName').addEventListener('blur', checkFeedbackName);
+        // 校验留言板用户名
+        function checkFeedbackName() {
+            let name = document.getElementById('feedbackName').value.replace("/(^\s*)|(\s*$)/g", "");
+            if (name.length == 0) {
+                document.getElementById('feedbackName').classList.add('my-input-error');
+                return false;
+            } else {
+                document.getElementById('feedbackName').classList.remove('my-input-error');
+            }
+            return true;
+        }
+
+        // 校验留言板反馈信息
+        document.getElementById('feedbackContent').addEventListener('blur', checkFeedbackContent)
+        function checkFeedbackContent() {
+            let content = document.getElementById('feedbackContent').value.replace("/(^\s*)|(\s*$)/g", "");
+            if (content.length == 0) {
+                document.getElementById('feedbackContent').classList.add('my-input-error');
+                return false;
+            } else {
+                document.getElementById('feedbackContent').classList.remove('my-input-error');
+            }
+            return true;
+        }
+
+
+        // 错误信息提示
+        function errorMessageBox(errorMsg) {
+            let str = `<div class="my-message my-message--error">
+                    <i class="iconfont icon-fail my-icon-error my-message__icon"></i>
+                    <p class="my-message__content">` + errorMsg + `</p>
+                </div>`;
+
+            let node = document.getElementById('myMessageBox');
+            // node.insertAdjacentHTML('beforeend', str);
+            node.innerHTML = str;
+
+            setTimeout(() => {
+                node.innerHTML = ''
+            }, 3000);
+        }
     </script>
 </body>
 

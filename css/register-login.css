@@ -230,14 +230,14 @@ form.sign-in-form {
 
 .btn.transparent {
     margin: 0;
-    border: 2px solid #f4652b;
+    border: 2px solid rgba(251, 109, 47, 0.8);
     width: 130px;
     height: 41px;
     background-color: rgba(244, 101, 43, .3);
-    box-shadow: 0 0 10px rgba(244, 101, 43, .8);
+    box-shadow: 0 0 6px rgba(244, 101, 43, .7);
     font-weight: 600;
     font-size: .85rem;
-    color: #f15353;
+    color: rgba(249, 92, 85, 1);
 }
 
 .btn.transparent:hover {

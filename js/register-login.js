@@ -1,5 +1,4 @@
-const sign_in_btn = document.querySelector("#sign-in-btn");
-const sign_up_btn = document.querySelector("#sign-up-btn");
+
 const container = document.querySelector(".container");
 const user = {
     username: '',
@@ -9,8 +8,9 @@ const user = {
 
 
 
-
-
+// 注册、登录界面翻转
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
 sign_up_btn.addEventListener("click", () => {
     container.classList.add("sign-up-mode");
 });
@@ -18,30 +18,6 @@ sign_up_btn.addEventListener("click", () => {
 sign_in_btn.addEventListener("click", () => {
     container.classList.remove("sign-up-mode");
 });
-
-
-// function register () {
-//     user.username = registerForm.username.value;
-//     user.password = registerForm.password.value;
-//     user.email = registerForm.email.value;
-//     sessionStorage.setItem("user", JSON.stringify(user))
-//     console.log(user);
-// }
-
-function login () {
-    let username = loginForm.username.value;
-    let password = loginForm.username.value;
-
-    // user = JSON.parse(sessionStorage.getItem("user"))
-
-    if (username !== user.username) {
-        alert("用户未注册！");
-    } else if (password !== user.password) {
-        alert("密码错误！");
-    }
-
-}
-
 
 
 
@@ -117,6 +93,7 @@ numStrInit()
 // 校验输入的字符串函数
 function checkNumStr (str) {
     for (let i = 0; i < str.length; i++) {
+        // 通过字符哈希可以以O(1)的时间复杂度匹配
         if (!numStr[str.charCodeAt(i)]) {
             return false;
         }
@@ -190,13 +167,16 @@ function checkPwd2 () {
 }
 
 function register () {
-    if (checkUsername() || checkUserEmail() || checkPwd1() || checkPwd2()) {
+    if (!checkUsername() || !checkUserEmail() || !checkPwd1() || !checkPwd2()) {
+        errorMessageBox();
+    } else {
         user.username = registerForm.username.value;
         user.password = registerForm.password.value;
         user.email = registerForm.email.value;
         successMessageBox();
-    } else {
-        errorMessageBox();
+        setTimeout(() => {
+            goToHome();
+        }, 2000);
     }
 }
 
@@ -238,5 +218,30 @@ function successMessageBox () {
 
 // 前往首页
 function goToHome () {
+    user.password = null;
+    localStorage.setItem('user', JSON.stringify(user))
     window.location.href = 'index.html';
+}
+
+
+// function register () {
+//     user.username = registerForm.username.value;
+//     user.password = registerForm.password.value;
+//     user.email = registerForm.email.value;
+//     sessionStorage.setItem("user", JSON.stringify(user))
+//     console.log(user);
+// }
+
+function login () {
+    let username = loginForm.username.value;
+    let password = loginForm.username.value;
+
+    // user = JSON.parse(sessionStorage.getItem("user"))
+
+    if (username !== user.username) {
+        alert("用户未注册！");
+    } else if (password !== user.password) {
+        alert("密码错误！");
+    }
+
 }
