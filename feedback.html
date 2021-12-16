@@ -13,7 +13,8 @@
             padding-top: 60px;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to right top, #FFD3A5, #FD6585);
+            background-color: #F2F2F2;
+            /* background: linear-gradient(to right top, rgba(255, 211, 165, .8), rgba(253, 101, 133, .8)); */
         }
 
         .container {
@@ -120,8 +121,10 @@
 
         /* 评论信息盒子 */
         .feedback-inner {
+            margin: 0 4px;
             border-radius: 5px;
-            background-color: rgba(255, 255, 255, .6);
+            background-color: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
             display: flex;
             padding: 16px 0;
             margin-bottom: 10px;
@@ -234,8 +237,8 @@
             line-height: 1;
         }
 
-        [class*=" my-icon-"],
-        [class^=my-icon-] {
+        [class*="my-icon-"],
+        [class^="my-icon-"] {
             font-style: normal;
             font-weight: 400;
             font-variant: normal;
@@ -266,7 +269,7 @@
                 <li class="found">
                     <a href="#">发现更多</a>
                     <ul class="dropdown">
-                        <li><a href="photo-album.html">主题相册</a></li>
+                        <li><a href="photo-album.html"></a>主题相册</a></li>
                         <li><a href="#">怀旧音乐</a></li>
                         <li><a href="#">关于我</a></li>
                     </ul>
@@ -279,6 +282,7 @@
         </span>
 
     </header>
+
     <!-- 导航栏结束 -->
 
     <!-- 网页主体部分开始 -->
@@ -493,7 +497,7 @@
                 let [parentDoc, childDoc] = [document.querySelector('#feedbackList'), document.querySelector('#feedbackList').lastChild];
                 //如果大于div高度使其居中
                 parentDoc.scrollTop = childDoc.offsetTop - parentDoc.offsetHeight / 2;
-                childDoc.style.background = 'rgba(255, 255, 255, 0.8)';
+                childDoc.style.background = 'rgba(255, 255, 255, 1)';
                 setTimeout(() => {
                     childDoc.style.background = '';
                 }, 1000)
