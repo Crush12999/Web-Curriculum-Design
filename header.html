@@ -226,6 +226,27 @@
             background: linear-gradient(to top, #F4F5F5, transparent);
             z-index: 7;
         }
+
+        .cta>a {
+            display: inline-block;
+            width: 100px;
+            height: 32px;
+        }
+        .cta>a>button {
+            /* 默认配色EFEFEF */
+            width: 100px;
+            border-radius: 50px;
+            height: 32px;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+            background-color: #FB5431;
+            color: #fff;
+            transition: all .2s ease-in;
+        }
+        .cta>a>button:hover {
+            background-color: #FC1944;
+        }
     </style>
 </head>
 
@@ -331,7 +352,7 @@
         const font1 = document.querySelector('.banner-font1')
         const font2 = document.querySelector('.banner-font2')
         const b100 = document.querySelector('.banner-100')
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function (evt) {
             // 获取可视窗口高度
             let navHeight = document.body.clientHeight - 200;
             // console.log(navHeight);
@@ -347,12 +368,12 @@
             }
             let value = window.scrollY;
             moon.style.right = value * 0.7 + 'px'
-            moon.style.top = value * 0.4 + 'px'
+            // moon.style.top = value * 0.4 + 'px'
             font1.style.top = value * 0.4 + 'px'
             b100.style.top = value * 0.4 + 'px'
             // b100.style.right = value * 0.4 + 'px'
             font2.style.top = value * 0.7 + 'px'
-            font2.style.left = value * 0.3 + 'px'
+            // font2.style.left = value * 0.3 + 'px'
         })
 
     </script>
