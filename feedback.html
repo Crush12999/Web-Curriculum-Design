@@ -84,20 +84,22 @@
         }
 
         .my-input-error {
-            border: 0;
+            border: 1px solid rgba(0, 0, 0, 0);
             box-shadow: 0 0 0 2px rgb(255 0 0 / 30%);
         }
 
         .my-input:focus {
             outline: 0;
+            border-color: #40a9ff;
+            border-right-width: 1px !important;
             box-shadow: 0 0 0 2px rgb(24 144 255 / 20%);
         }
 
-        .my-input:focus,
+        /* .my-input:focus,
         .my-input:hover {
             border-color: #40a9ff;
             border-right-width: 1px !important;
-        }
+        } */
 
         /* 提交按钮 */
         .submit-btn {
@@ -190,8 +192,7 @@
 
         /* 提示信息样式 */
         .my-message {
-            top: 20px;
-            z-index: 2000;
+            z-index: 6666;
             min-width: 380px;
             box-sizing: border-box;
             border-width: 1px;
@@ -199,7 +200,7 @@
             border-color: #EBEEF5;
             position: fixed;
             left: 50%;
-            top: 20px;
+            top: 62px;
             transform: translateX(-50%);
             background-color: #edf2fc;
             transition: opacity .3s, transform .4s, top .4s;
@@ -248,6 +249,24 @@
             display: inline-block;
             -webkit-font-smoothing: antialiased;
         }
+
+        /* 提交按钮 */
+        .submit-btn {
+            border: none;
+            border-radius: 50px;
+            /* 默认配色EFEFEF */
+            width: 80px;
+            height: 32px;
+            background-color: #fb5431;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+            cursor: pointer;
+            color: #fff;
+            transition: all .2s ease-in;
+        }
+
+        .submit-btn:hover {
+            background-color: #fc1944;
+        }
     </style>
 
 </head>
@@ -255,32 +274,39 @@
 <body>
     <div id="myMessageBox"></div>
     <!-- 导航栏开始 -->
-    <header>
+    <header class="navbar tabsOn">
         <span class="logo-box">
             <img class="logo" src="images/nav_党群档案.svg" alt="">
             <p class="logo-title">建党百年主题网</p>
         </span>
-        <nav>
+        <nav class="nav">
             <ul class="nav-links">
-                <li><a href="#">主页</a></li>
-                <li><a href="#">党史介绍</a></li>
-                <li><a href="#">英雄人物</a></li>
-                <li><a href="#">经典回忆</a></li>
-                <li class="found">
-                    <a href="#">发现更多</a>
-                    <ul class="dropdown">
-                        <li><a href="photo-album.html"></a>主题相册</a></li>
-                        <li><a href="#">怀旧音乐</a></li>
-                        <li><a href="#">关于我</a></li>
-                    </ul>
+                <li>
+                    <a href="index.html">首页</a>
                 </li>
-                <li><a href="feedback.html" class="active-link">反馈</a></li>
+                <li>
+                    <a href="javascript:;">党史</a>
+                </li>
+                <li>
+                    <a href="javascript:;">英雄人物</a>
+                </li>
+                <li>
+                    <a href="javascript:;">经典回忆</a>
+                </li>
+                <li class="found">
+                    <a href="javascript:;">发现更多</a>
+                    <ol class="dropdown">
+                        <li><a href="photo-album.html">主题相册</a></li>
+                        <li><a href="feedback.html">反馈</a></li>
+                    </ol>
+                </li>
+                <!-- 这个元素来定义滑动的线条 -->
+                <!-- <li class="underline"></li> -->
             </ul>
         </nav>
         <span class="cta">
             <a class="" href="register-login.html"><button>登录 / 注册</button></a>
         </span>
-
     </header>
 
     <!-- 导航栏结束 -->

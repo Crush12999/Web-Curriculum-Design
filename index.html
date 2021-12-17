@@ -5,50 +5,170 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <title>导航栏</title>
     <style>
+        /* Home page start */
+        #tf-home {
+            /* height: 100%; */
+            /* background-image: url(./images/15的副本.png); */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            color: #cfcfcf;
+            height: 100%;
+            position: relative;
+        }
+
+        .content>img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 给视差滚动元素底部加上一层模糊 */
+        #tf-home::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to top, #F4F5F5, transparent);
+            z-index: 7;
+        }
     </style>
 </head>
 
 <body>
-    <header>
+    <header class="navbar">
         <span class="logo-box">
             <img class="logo" src="images/nav_党群档案.svg" alt="">
             <p class="logo-title">建党百年主题网</p>
         </span>
-        <nav>
+        <nav class="nav">
             <ul class="nav-links">
-                <li><a href="#">主页</a></li>
-                <li><a href="#">党史介绍</a></li>
-                <li><a href="#">英雄人物</a></li>
-                <li><a href="#">经典回忆</a></li>
-                <li class="found">
-                    <a href="#">发现更多</a>
-                    <ul class="dropdown">
-                        <li><a href="#">主题相册</a></li>
-                        <li><a href="#">怀旧音乐</a></li>
-                        <li><a href="#">关于我</a></li>
-                    </ul>
+                <li class="active">
+                    <a href="javascript:;">首页</a>
                 </li>
-                <li><a href="feedback.html">反馈</a></li>
+                <li>
+                    <a href="javascript:;">党史</a>
+                </li>
+                <li>
+                    <a href="javascript:;">英雄人物</a>
+                </li>
+                <li>
+                    <a href="javascript:;">经典回忆</a>
+                </li>
+                <li class="found">
+                    <a href="javascript:;">发现更多</a>
+                    <ol class="dropdown">
+                        <li><a href="photo-album.html">主题相册</a></li>
+                        <li><a href="feedback.html">反馈</a></li>
+                    </ol>
+                </li>
+                <!-- 这个元素来定义滑动的线条 -->
+                <!-- <li class="underline"></li> -->
             </ul>
         </nav>
         <span class="cta">
-            <a class="" href="#"><button onclick="login()">登录 / 注册</button></a>
+            <a class="" href="register-login.html"><button>登录 / 注册</button></a>
         </span>
-
     </header>
-    <main>
 
-    </main>
-    <footer>
+    <!--Home page start-->
+    <div id="tf-home" class="text-center">
+        <div class="overlay">
+            <div class="content">
+                <img class="banner-moon" src="./images/index/banner-moon.png" alt="" style="z-index: 2;">
+                <img class="banner-100" src="./images/index/banner-100.png" alt="" style="z-index: 2;">
+                <img class="banner-font2" src="./images/index/banner-font2.png" alt="" style="z-index: 4;">
+                <img class="banner-people" src="./images/index/banner-people.png" alt="" style="z-index: 5;">
+                <img class="banner-font1" src="./images/index/banner-font1.png" alt="" style="z-index: 2;">
+                <img class="banner-background" src="./images/index/banner-background.png" alt="" style="z-index: 0;">
+                <img class="banner-building" src="./images/index/banner-building.png" alt="" style="z-index: 3;">
+                <img class="banner-water" src="./images/index/banner-water.png" alt="" style="z-index: 1;">
+            </div>
+        </div>
+    </div>
+    <!--end Home page-->
 
-    </footer>
+    <div style="height: 1100px; padding: 30px 15%; position: relative; z-index: 10; background-color: #F4F5F5;">
+        <div class="text" id="title">
+            <h2>《You Have Only One Life》</h2>
+            <p>There are moments in life when you miss someone so much that you just want to pick them from your dreams
+                and hug them for real! Dream what you want to dream;go where you want to go;be what you want to
+                be,because you have only one life and one
+                chance to do all the things you want to do.<br /><br /> May you have enough happiness to make you
+                sweet,enough trials to make you strong,enough sorrow to keep you human,enough hope to make you happy?
+                Always put yourself in others’shoes.If you
+                feel that it hurts you,it probably hurts the other person, too.<br /><br /> The happiest of people don’t
+                necessarily have the best of everything;they just make the most of everything that comes along their
+                way.Happiness lies for those who cry,those
+                who hurt, those who have searched,and those who have tried,for only they can appreciate the importance
+                of people.<br /><br />who have touched their lives.Love begins with a smile,grows with a kiss and ends
+                with a tear.The brightest future will
+                always be based on a forgotten past, you can’t go on well in lifeuntil you let go of your past failures
+                and heartaches.When you were born,you were crying and everyone around you was smiling.Live your life so
+                that when you die,you're the one
+                who is smiling and everyone around you is crying.<br /><br />Please send this message to those people
+                who mean something to you,to those who have touched your life in one way or another,to those who make
+                you smile when you really need it,to
+                those that make you see the brighter side of things when you are really down,to those who you want to
+                let them know that you appreciate their friendship.And if you don’t, don’t worry,nothing bad will happen
+                to you,you will just miss out on
+                the opportunity to brighten someone’s day with this message.<br><br>There are moments in life when you
+                miss someone so much that you just want to pick them from your dreams and hug them for real! Dream what
+                you want to dream;go where you want
+                to go;be what you want to be,because you have only one life and one chance to do all the things you want
+                to do.<br /><br /> May you have enough happiness to make you sweet,enough trials to make you
+                strong,enough sorrow to keep you human,enough
+                hope to make you happy? Always put yourself in others’shoes.If you feel that it hurts you,it probably
+                hurts the other person, too.<br /><br />May you have enough happiness to make you sweet,enough trials to
+                make you strong,enough sorrow to keep
+                you human,enough hope to make you happy? Always put yourself in others’shoes.If you feel that it hurts
+                you,it probably hurts the other person, too.<br /><br />
+
+
+
+            </p>
+        </div>
+    </div>
+
+
+
     <script>
-        // function login() {
-        //     sessionStorage.setItem('user', 'haha');
-        // }
+
+        const moon = document.querySelector('.banner-moon')
+        const font1 = document.querySelector('.banner-font1')
+        const font2 = document.querySelector('.banner-font2')
+        const b100 = document.querySelector('.banner-100')
+        window.addEventListener('scroll', function (evt) {
+            // 获取可视窗口高度
+            let navHeight = document.body.clientHeight - 200;
+            // console.log(navHeight);
+            // 获取向上滚动（卷曲）的距离，在不同浏览器下，document.documentElement.scrollTop
+            // 和 document.body.scrollTop这两种方式返回的值不一样
+            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            // console.log(scrollTop);
+            // 给导航栏换样式
+            if (scrollTop > navHeight) {
+                document.querySelector('.navbar').classList.add('tabsOn')
+            } else {
+                document.querySelector('.navbar').classList.remove('tabsOn')
+            }
+            let value = window.scrollY;
+            moon.style.right = value * 0.7 + 'px'
+            // moon.style.top = value * 0.4 + 'px'
+            font1.style.top = value * 0.4 + 'px'
+            b100.style.top = value * 0.4 + 'px'
+            // b100.style.right = value * 0.4 + 'px'
+            font2.style.top = value * 0.7 + 'px'
+            // font2.style.left = value * 0.3 + 'px'
+        })
+
     </script>
 </body>
 
