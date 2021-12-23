@@ -21,7 +21,7 @@ body,
 li,
 a {
     /* 清除li元素前面的项目符号 */
-    /* list-style: none; */
+    list-style: none;
     text-decoration: none;
     color: unset;
 }
@@ -89,7 +89,7 @@ nav {
     display: flex;
 }
 
-.nav-links li {
+.nav-links li, .user-box li {
     display: inline-block;
     position: relative;
     /* width: 100%; */
@@ -184,7 +184,11 @@ nav {
     transform: scaleY(1);
 }
 
-.dropdown::before {
+.user-box li:hover ol {
+    transform: scaleY(1);
+}
+
+.dropdown .triangle::before {
     /* 利用::before伪元素设置三角 */
     position: absolute;
     /* calc方法自动计算数值 让盒子居中 */

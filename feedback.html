@@ -12,7 +12,7 @@
         main {
             padding-top: 60px;
             width: 100%;
-            height: 100%;
+            /* height: 100%; */
             background-color: #F2F2F2;
             /* background: linear-gradient(to right top, rgba(255, 211, 165, .8), rgba(253, 101, 133, .8)); */
         }
@@ -112,13 +112,13 @@
 
         /* 评论信息主体部分 */
         .feedback-list {
-            height: 100%;
+            /* height: 100%; */
             /* border: red 1px solid; */
             border-radius: 5px;
             margin-top: 15px;
             display: flex;
             flex-direction: column;
-            overflow-y: scroll;
+            /* overflow-y: scroll; */
         }
 
         /* 评论信息盒子 */
@@ -452,6 +452,11 @@
 
     <!-- 页脚信息开始 -->
     <footer>
+        <div
+            style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
+            <span>Copyright © 2013-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>备案号：桂ICP备20xxxx1234号-1</span>
+        </div>
 
     </footer>
     <!-- 页脚信息结束 -->
@@ -522,7 +527,9 @@
                 // 解构赋值,选中最后一个结点
                 let [parentDoc, childDoc] = [document.querySelector('#feedbackList'), document.querySelector('#feedbackList').lastChild];
                 //如果大于div高度使其居中
-                parentDoc.scrollTop = childDoc.offsetTop - parentDoc.offsetHeight / 2;
+                // parentDoc.scrollTop = childDoc.offsetTop - parentDoc.offsetHeight / 2;
+                // 定位到评论位置
+                document.querySelector('.feedback-submit-box').scrollIntoView()
                 childDoc.style.background = 'rgba(255, 255, 255, 1)';
                 setTimeout(() => {
                     childDoc.style.background = '';
