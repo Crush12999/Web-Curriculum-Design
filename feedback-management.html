@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./images/icon/iconfont.css">
     <title>Document</title>
     <style>
         main {
@@ -24,11 +25,11 @@
         /* @charset "utf-8"; */
 
         /* CSS Document */
-        .tabtop13 {
-            margin-top: 13px;
+        .tabtop15 {
+            margin-top: 15px;
         }
 
-        .tabtop13 td {
+        .tabtop15 td {
             background-color: #ffffff;
             height: 25px;
             line-height: 150%;
@@ -59,12 +60,10 @@
         }
 
         .titfont {
-
             font-family: 微软雅黑;
             font-size: 16px;
             font-weight: bold;
             color: #255e95;
-            background: url(../images/ico3.gif) no-repeat 15px center;
             background-color: #e9faff;
         }
 
@@ -85,6 +84,37 @@
             margin-top: 10px;
             margin-bottom: 10px;
             line-height: 20px;
+        }
+
+        /* 文字链接 */
+        .my-link {
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            position: relative;
+            text-decoration: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .my-link.my-link--danger {
+            color: #f56c6c;
+        }
+
+        .my-link.my-link--danger:hover {
+            color: rgba(252, 115, 109, 0.8);
+        }
+
+        .footer-fixed {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            z-index: 2021;
         }
     </style>
 </head>
@@ -111,10 +141,10 @@
                     <li>
                         <a href="javascript:;">经典回忆</a>
                     </li>
-                    <li class="found active">
+                    <li class="found">
                         <a href="javascript:;">发现更多</a>
                         <ol class="dropdown triangle">
-                            <li class="active"><a href="photo-album.html">主题相册</a></li>
+                            <li><a href="photo-album.html">主题相册</a></li>
                             <li><a href="feedback.html">反馈</a></li>
                         </ol>
                     </li>
@@ -146,89 +176,75 @@
                     <tr>
                         <td align="center" class="biaoti" height="60">反馈信息管理</td>
                     </tr>
-                    <tr>
-                        <td align="right" height="25">2021-12-23---2021-12-31</td>
-                    </tr>
                 </table>
 
-                <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#cccccc" class="tabtop13"
+                <p id="nowTimeText" style="margin-top: 15px; text-align: right;">2021-12-25 17:41:20</p>
+
+                <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#cccccc" class="tabtop15"
                     align="center">
-                    <tr>
-                        <td colspan="2" class="btbg font-center titfont" rowspan="2">受理员</td>
-                        <td width="10%" class="btbg font-center titfont" rowspan="2">直接解答</td>
-                        <td colspan="2" class="btbg font-center titfont">拟办意见</td>
-                    </tr>
-                    <tr>
-                        <td width="8%" class="btbg font-center">同意</td>
-                        <td width="8%" class="btbg font-center">比例</td>
-                    </tr>
-                    <tr>
-                        <td width="7%" rowspan="7" class="btbg1 font-center">受理处</td>
-                        <td width="7%" class="btbg2">王艳</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="btbg2">&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="btbg2">&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="btbg2">&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="btbg2">&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="btbg2">&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="btbg2">&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td width="7%" rowspan="7" class="btbg1 font-center">话务组</td>
-                        <td width="7%" class="btbg2">王艳</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="btbg2">王艳</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="btbg2">王艳</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="btbg2">王艳</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="btbg2">&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="btbg2">&nbsp;</td>
-                        <td>&nbsp;</td>
+                    <thead>
+                        <tr>
+                            <td width="30%" colspan="2" class="btbg font-center titfont">反馈来源</td>
+                            <td width="50%" class="btbg font-center titfont" rowspan="2">反馈内容</td>
+                            <td width="10%" class="btbg font-center titfont" rowspan="2">操作</td>
+                        </tr>
+                        <tr>
+                            <td width="10%" class="btbg font-center titfont">发布者</td>
+                            <td width="20%" class="btbg font-center titfont">时间</td>
+                        </tr>
+                    </thead>
 
-                    </tr>
-                    <tr>
-                        <td class="btbg2">&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
+
+                    <tbody id="feedbackBox">
+                        <tr>
+                            <td rowspan="3" class="btbg1 font-center">Aqua99</td>
+                            <td class="btbg2 font-center">2021-12-24 22:20:01</td>
+                            <td>&nbsp;</td>
+                            <td class="font-center">
+                                <span class="my-link my-link--danger">删除</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="btbg2 font-center">2021-12-24 22:20:01</td>
+                            <td>&nbsp;</td>
+                            <td class="font-center">
+                                <span class="my-link my-link--danger">删除</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="btbg2 font-center">2021-12-24 22:20:01</td>
+                            <td>&nbsp;</td>
+                            <td class="font-center">
+                                <span class="my-link my-link--danger">删除</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="btbg1 font-center">admin</td>
+                            <td class="btbg2 font-center">2021-12-24 22:20:01</td>
+                            <td>&nbsp;</td>
+                            <td class="font-center">
+                                <span class="my-link my-link--danger">删除</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="btbg2 font-center">2021-12-24 22:20:01</td>
+                            <td>&nbsp;</td>
+                            <td class="font-center">
+                                <span class="my-link my-link--danger">删除</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
                 </table>
+
+                <div id="calendar" style="position: fixed;bottom: 200px; right: 30px;"></div>
             </div>
         </main>
 
         <!-- 网页主体结束 -->
 
         <!-- 页脚信息开始 -->
-        <footer style="padding-top: 15px;">
+        <footer id="footer" class="" style="padding-top: 15px;">
             <div
                 style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
                 <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -239,12 +255,175 @@
         <!-- 页脚信息结束 -->
     </div>
 
+    <script src="./js/lib/vue2.js"></script>
+
     <script>
+        // 日期格式化，挂载到Date原型链
+        Date.prototype.format = function (fmt) {
+            var o = {
+                "M+": this.getMonth() + 1,                 //月份
+                "d+": this.getDate(),                    //日
+                "h+": this.getHours(),                   //小时
+                "m+": this.getMinutes(),                 //分
+                "s+": this.getSeconds(),                 //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds()             //毫秒
+            };
+            if (/(y+)/.test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            }
+            for (var k in o) {
+                if (new RegExp("(" + k + ")").test(fmt)) {
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                }
+            }
+            return fmt;
+        }
+
+        function nowTime() {
+            document.getElementById('nowTimeText').innerHTML = new Date().format("yyyy-MM-dd hh:mm:ss");
+        }
+
+        setInterval("nowTime()", 1000)
+
         const logout = () => {
             localStorage.clear();
             window.location.href = "index.html"
         }
+
+        // 调整网页底部信息栏位置。
+        let footerDom = document.querySelector('#footer');
+        function footerInit() {
+            let viewPort = document.documentElement.clientHeight;
+            let footerOffsetTop = footerDom.offsetTop;
+            // 如果元素距离顶部高度加上它自身的高度小于网页可视高度，则将其固定在网页底部
+            if (footerOffsetTop + footerDom.style.height < viewPort) {
+                footerDom.classList.add('footer-fixed');
+            } else {
+                footerDom.classList.remove('footer-fixed');
+            }
+        }
+
+        window.onload = footerInit()
+
+        // 删除留言
+        function deleteFeedback(id) {
+
+            let feedbackList = localStorage.getItem('feedback')
+                ? JSON.parse(localStorage.getItem('feedback'))
+                : '';
+
+            for (let i = 0; i < feedbackList.length; i++) {
+                if (feedbackList[i].id === id) {
+                    feedbackList.splice(i, 1);
+                    break;
+                }
+            }
+
+            localStorage.setItem('feedback', JSON.stringify(feedbackList));
+
+            initTableData()
+        }
+
+        function test() {
+            let feedbackObj = [
+                {
+                    'id': 1,
+                    'username': 'Aqua99',
+                    'time': '2022-10-11 23:11:01',
+                    'msg': '哈哈'
+                },
+                {
+                    'id': 2,
+                    'username': 'Aqua99',
+                    'time': '2022-10-11 23:11:01',
+                    'msg': '嗯嗯'
+                },
+                {
+                    'id': 3,
+                    'username': 'admin',
+                    'time': '2022-10-11 23:11:01',
+                    'msg': '嗯嗯'
+                },
+                {
+                    'id': 4,
+                    'username': 'yzm',
+                    'time': '2022-10-11 23:11:01',
+                    'msg': '你懂啥'
+                },
+                {
+                    'id': 5,
+                    'username': 'yzm',
+                    'time': '2022-10-11 23:11:01',
+                    'msg': '再看看你懂啥'
+                }
+            ]
+
+            localStorage.setItem('feedback', JSON.stringify(feedbackObj))
+        }
+
+        test();
+
+        function initTableData() {
+
+            let data = initLocalData();
+            let feedbackDom = document.getElementById('feedbackBox');
+            let feedbackHtml = ''
+            // 遍历map容器
+            data.forEach((value, key, map) => {
+                for (let i = 0, flag = true; i < value.length; i++) {
+                    feedbackHtml += '<tr>';
+                    if (flag) {
+                        feedbackHtml += `<td class="btbg1 font-center" rowspan="${value.length}">${key}</td>`;
+                        flag = false;
+                    }
+                    feedbackHtml += `<td class="btbg2 font-center">${value[i].time}</td>`;
+                    feedbackHtml += `<td class="font-center">${value[i].msg}</td>`;
+                    feedbackHtml += `<td class="font-center"><span class="my-link my-link--danger" onclick="deleteFeedback(${value[i].id} )"><i class="iconfont icon-delete"></i>&nbsp;删除</span></td>`;
+                    feedbackHtml += '</tr>';
+                }
+            })
+
+            feedbackDom.innerHTML = feedbackHtml
+
+        }
+        initTableData()
+
+
+        // 处理localStorage存储的数据，整理成map结构，用户名映射反馈的信息列表
+        function initLocalData() {
+
+            let feedbackList = localStorage.getItem('feedback')
+                ? JSON.parse(localStorage.getItem('feedback'))
+                : '';
+
+            let userMap = new Map();
+
+            for (let i = 0; i < feedbackList.length; i++) {
+                if (userMap.get(feedbackList[i].username)) {
+                    userMap.get(feedbackList[i].username).push(feedbackList[i]);
+                } else {
+                    userMap.set(feedbackList[i].username, [])
+                    userMap.get(feedbackList[i].username).push(feedbackList[i]);
+                }
+            }
+
+            console.log(userMap);
+            return userMap;
+        }
+
     </script>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                activeIndex: '1',
+                username: 'Aqua99'
+            }
+        })
+    </script>
+
 
 </body>
 

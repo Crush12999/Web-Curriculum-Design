@@ -1,37 +1,41 @@
 @font-face {
-  font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1639203862581') format('truetype');
+    font-family: "iconfont";
+    /* Project id  */
+    src: url('iconfont.ttf?t=1640407462222') format('truetype');
 }
 
 .iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-email:before {
-  content: "\e653";
-}
-
-.icon-user:before {
-  content: "\e669";
-}
-
-.icon-lock:before {
-  content: "\e66b";
+    content: "\e653";
 }
 
 .icon-home:before {
-  content: "\e604";
+    content: "\e67f";
+}
+
+.icon-user:before {
+    content: "\e669";
+}
+
+.icon-lock:before {
+    content: "\e66b";
 }
 
 .icon-success:before {
-  content: "\e603";
+    content: "\e603";
 }
 
 .icon-fail:before {
-  content: "\e605";
+    content: "\e605";
 }
 
+.icon-delete:before {
+    content: "\e542";
+}

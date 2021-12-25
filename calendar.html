@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
+    <script src="./js/lib/vue2.js"></script>
+    <title>日历</title>
+    <style>
+        .el-calendar__title {
+            color: #000;
+            -ms-flex-item-align: center;
+            align-self: center
+        }
+
+        .el-calendar__body {
+            padding: 12px 20px 35px
+        }
+
+        .el-calendar-table {
+            table-layout: fixed;
+            width: 100%
+        }
+
+        .el-calendar-table thead th {
+            padding: 12px 0;
+            color: #606266;
+            font-weight: 400
+        }
+
+        .el-calendar-table:not(.is-range) td.next,
+        .el-calendar-table:not(.is-range) td.prev {
+            color: #C0C4CC
+        }
+
+        .el-backtop,
+        .el-calendar-table td.is-today {
+            color: #409EFF
+        }
+
+        .el-calendar-table td {
+            border-bottom: 1px solid #EBEEF5;
+            border-right: 1px solid #EBEEF5;
+            vertical-align: top;
+            -webkit-transition: background-color .2s ease;
+            transition: background-color .2s ease
+        }
+
+        .el-calendar-table td.is-selected {
+            background-color: #F2F8FE
+        }
+
+        .el-calendar-table tr:first-child td {
+            border-top: 1px solid #EBEEF5
+        }
+
+        .el-calendar-table tr td:first-child {
+            border-left: 1px solid #EBEEF5
+        }
+
+        .el-calendar-table tr.el-calendar-table__row--hide-border td {
+            border-top: none
+        }
+
+        .el-calendar-table .el-calendar-day {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 8px;
+            height: 85px
+        }
+
+        .el-calendar-table .el-calendar-day:hover {
+            cursor: pointer;
+            background-color: #F2F8FE
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="el-calender">
+            <div class="el-calendar__header">
+                <div class="el-calendar__title">
+                    2021 年 12 月
+                </div>
+                <div class="el-calendar__button-group">
+                    <div class="el-button-group"><button type="button"
+                            class="el-button el-button--plain el-button--mini">
+                            <!---->
+                            <!----><span>
+                                上个月
+                            </span>
+                        </button><button type="button" class="el-button el-button--plain el-button--mini">
+                            <!---->
+                            <!----><span>
+                                今天
+                            </span>
+                        </button><button type="button" class="el-button el-button--plain el-button--mini">
+                            <!---->
+                            <!----><span>
+                                下个月
+                            </span>
+                        </button></div>
+                </div>
+            </div>
+            <div class="el-calendar__body">
+                <table cellspacing="0" cellpadding="0" class="el-calendar-table">
+                    <thead>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>
+                        <th>日</th>
+                    </thead>
+                    <tbody>
+                        <tr class="el-calendar-table__row">
+                            <td class="prev">
+                                <div class="el-calendar-day"><span>29</span></div>
+                            </td>
+                            <td class="prev">
+                                <div class="el-calendar-day"><span>30</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>1</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>2</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>3</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>4</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>5</span></div>
+                            </td>
+                        </tr>
+                        <tr class="el-calendar-table__row">
+                            <td class="current">
+                                <div class="el-calendar-day"><span>6</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>7</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>8</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>9</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>10</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>11</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>12</span></div>
+                            </td>
+                        </tr>
+                        <tr class="el-calendar-table__row">
+                            <td class="current">
+                                <div class="el-calendar-day"><span>13</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>14</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>15</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>16</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>17</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>18</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>19</span></div>
+                            </td>
+                        </tr>
+                        <tr class="el-calendar-table__row">
+                            <td class="current">
+                                <div class="el-calendar-day"><span>20</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>21</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>22</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>23</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>24</span></div>
+                            </td>
+                            <td class="current is-selected is-today">
+                                <div class="el-calendar-day"><span>25</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>26</span></div>
+                            </td>
+                        </tr>
+                        <tr class="el-calendar-table__row">
+                            <td class="current">
+                                <div class="el-calendar-day"><span>27</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>28</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>29</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>30</span></div>
+                            </td>
+                            <td class="current">
+                                <div class="el-calendar-day"><span>31</span></div>
+                            </td>
+                            <td class="next">
+                                <div class="el-calendar-day"><span>1</span></div>
+                            </td>
+                            <td class="next">
+                                <div class="el-calendar-day"><span>2</span></div>
+                            </td>
+                        </tr>
+                        <tr class="el-calendar-table__row">
+                            <td class="next">
+                                <div class="el-calendar-day"><span>3</span></div>
+                            </td>
+                            <td class="next">
+                                <div class="el-calendar-day"><span>4</span></div>
+                            </td>
+                            <td class="next">
+                                <div class="el-calendar-day"><span>5</span></div>
+                            </td>
+                            <td class="next">
+                                <div class="el-calendar-day"><span>6</span></div>
+                            </td>
+                            <td class="next">
+                                <div class="el-calendar-day"><span>7</span></div>
+                            </td>
+                            <td class="next">
+                                <div class="el-calendar-day"><span>8</span></div>
+                            </td>
+                            <td class="next">
+                                <div class="el-calendar-day"><span>9</span></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                activeIndex: '1',
+                username: 'Aqua99',
+                year: null,
+                month: null,
+                day: null,
+                currentDay: null,
+                currentYearMonthTimes: null,//当前年的月的天数
+                monthOneDay: null,//一个月中的某一天
+                curDate: null,
+                prevDays: null,//上一月天数
+            },
+            computed: {
+                curDays() {
+                    return new Date(this.year, this.month, 0).getDate();
+                },
+                // 设置该月日期起始值（找到一号是在哪里）
+                beginDay() {
+                    return new Date(this.year, this.month - 1, 1).getDay();
+                }
+            },
+            created() {
+                this.getInitDate();
+                this.currentYearMonthTimes = this.mGetDate(this.year, this.month); //本月天数
+                this.prevDays = this.mGetDate(this.year, this.month - 1);
+                this.curDate = `${this.year}-${this.month}-${this.day}`
+                console.log(this.curDate)
+            },
+            methods: {
+                refresh() { //强制刷新页面
+                    location.reload()
+                },
+                handleClickDay(day) {  //点击这一天，绑定点击事件
+                    console.log('形参传进来的', day)
+                    console.log('data里面的this.day', this.day)
+                    console.log('data里面的currentYearMonthTimes', this.currentYearMonthTimes)
+                    this.day = day
+                    if (this.day > this.currentYearMonthTimes) {
+                        this.$message.warning('不能选择超出本月的日期');
+                    }
+                    console.log(day)
+                },
+                computedDay() {
+                    const allDay = new Date(this.year, this.month, 0).getDate();
+                    if (this.day > allDay) {
+                        this.day = allDay;
+                    }
+                },
+                //设置页头显示的年月日
+                getInitDate() {
+                    const date = new Date();
+                    this.year = date.getFullYear();
+                    this.month = date.getUTCMonth() + 1;
+                    this.day = date.getDate();
+                },
+                // 如果要获取当前月份天数:
+                mGetDate() {
+                    var date = new Date();
+                    var year = date.getFullYear();
+                    var month = date.getMonth() + 1;
+                    var d = new Date(year, month, 0);
+                    return d.getDate();
+                },
+                handlePrev() {
+                    if (this.month == 1) {
+                        this.month = 12
+                        this.year--
+                    } else {
+                        this.month--
+                    }
+                    this.computedDay()
+                },
+                handleNext() {
+                    if (this.month == 12) {
+                        this.month = 1
+                        this.year++
+                    } else {
+                        this.month++
+                    }
+                    this.computedDay()
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
