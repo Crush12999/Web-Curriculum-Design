@@ -76,16 +76,6 @@
             color: #327cd1;
         }
 
-        .tabtxt3 {
-            font-family: 微软雅黑;
-            font-size: 14px;
-            padding-left: 15px;
-            color: #000;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            line-height: 20px;
-        }
-
         /* 文字链接 */
         .my-link {
             display: inline-flex;
@@ -146,6 +136,7 @@
                         <ol class="dropdown triangle">
                             <li><a href="photo-album.html">主题相册</a></li>
                             <li><a href="feedback.html">反馈</a></li>
+                            <li><a href="about.html">关于我</a></li>
                         </ol>
                     </li>
                     <!-- 这个元素来定义滑动的线条 -->
@@ -170,7 +161,7 @@
         <!-- 导航栏结束 -->
 
         <!-- 网页主体开始 -->
-        <main style="padding-top: 52px;">
+        <main>
             <div class="container">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
                     <tr>
@@ -308,7 +299,6 @@
 
         // 删除留言
         function deleteFeedback(id) {
-
             let feedbackList = localStorage.getItem('feedback')
                 ? JSON.parse(localStorage.getItem('feedback'))
                 : '';
@@ -319,9 +309,8 @@
                     break;
                 }
             }
-
             localStorage.setItem('feedback', JSON.stringify(feedbackList));
-
+            // 初始化表格数据
             initTableData()
         }
 
@@ -364,8 +353,8 @@
 
         test();
 
+        // 初始化表格数据方法
         function initTableData() {
-
             let data = initLocalData();
             let feedbackDom = document.getElementById('feedbackBox');
             let feedbackHtml = ''
@@ -385,20 +374,16 @@
             })
 
             feedbackDom.innerHTML = feedbackHtml
-
         }
         initTableData()
 
 
         // 处理localStorage存储的数据，整理成map结构，用户名映射反馈的信息列表
         function initLocalData() {
-
             let feedbackList = localStorage.getItem('feedback')
                 ? JSON.parse(localStorage.getItem('feedback'))
                 : '';
-
             let userMap = new Map();
-
             for (let i = 0; i < feedbackList.length; i++) {
                 if (userMap.get(feedbackList[i].username)) {
                     userMap.get(feedbackList[i].username).push(feedbackList[i]);
@@ -407,8 +392,7 @@
                     userMap.get(feedbackList[i].username).push(feedbackList[i]);
                 }
             }
-
-            console.log(userMap);
+            // console.log(userMap);
             return userMap;
         }
 

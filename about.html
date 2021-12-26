@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <title>关于我</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 导航栏开始 -->
+        <header class="navbar tabsOn">
+            <span class="logo-box">
+                <img class="logo" src="images/nav_党群档案.svg" alt="">
+                <p class="logo-title">庆党百年主题网</p>
+            </span>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">党史</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">英雄人物</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">经典回忆</a>
+                    </li>
+                    <li class="found active">
+                        <a href="javascript:;">发现更多</a>
+                        <ol class="dropdown triangle">
+                            <li><a href="photo-album.html">主题相册</a></li>
+                            <li><a href="feedback.html">反馈</a></li>
+                            <li class="active"><a href="about.html">关于我</a></li>
+                        </ol>
+                    </li>
+                    <!-- 这个元素来定义滑动的线条 -->
+                    <!-- <li class="underline"></li> -->
+                </ul>
+            </nav>
+            <span class="user-box">
+                <li class="">
+                    <a href="javascript:;">欢迎，{{ username }}</a>
+                    <ol class="dropdown">
+                        <li class="active"><a href="feedback-management.html">留言管理</a></li>
+                        <li><a href="javascript:;" onclick="logout()">注销</a></li>
+                    </ol>
+                </li>
+            </span>
+
+            <!-- <span class="cta">
+
+            <a class="" href="register-login.html"><button>登录 / 注册</button></a>
+        </span> -->
+        </header>
+        <!-- 导航栏结束 -->
+
+        <main class="mymain">
+            <div class="glass">
+                <div class="card">
+                    <div class="imgBox">
+                        <img src="./images/about/dq.jpg" alt="">
+                    </div>
+                    <div class="details">
+                        <canvas id="canvas" width="320" height="320"></canvas>
+                        <div class="text">
+                            <h3>百年建党,青春献礼</h3>
+                            <p class="myp">流光溢彩天空，欢歌笑语七月大地，迎风飞舞党旗飘扬，幸福欢歌唱给党听，
+                                建党一百年，祈福祖国永远繁荣昌盛，人民生活永远和谐美满，祝党生日快乐。</p>
+                            <p>献礼人:杨梽铭</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚信息开始 -->
+        <footer id="footer" class="" style="padding-top: 40px;">
+            <div
+                style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
+                <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span>备案号：桂ICP备20xxxx1234号-1</span>
+            </div>
+
+        </footer>
+        <!-- 页脚信息结束 -->
+
+        <script src="./js/about-emblem.js"></script>
+        <script type="text/javascript">
+            const canvas = document.getElementById('canvas');
+            const w = canvas.width;
+            const x = canvas.width / 2;
+            const y = canvas.height / 2;
+            const emblem = new Emblem(x, y, w, 500);
+            const ctx = canvas.getContext('2d');
+            canvas.onclick = function () {
+                emblem.dynDraw(ctx);
+            }
+        </script>
+        <!-- 引入jQuery -->
+        <script src="./js/lib/jquery-3.6.0.min.js"></script>
+    </div>
+</body>
+
+</html>

@@ -232,3 +232,9 @@ nav {
 .cta>a>button:hover {
     background-color: #fc1944;
 }
+
+
+/* 网页主体 */
+main {
+    padding-top: 52px;
+}

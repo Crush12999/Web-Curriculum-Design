@@ -258,7 +258,7 @@
             width: 80px;
             height: 32px;
             background-color: #fb5431;
-            box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+            box-shadow: 0 0 3px rgba(0, 0, 0, .2);
             cursor: pointer;
             color: #fff;
             transition: all .2s ease-in;
@@ -266,6 +266,11 @@
 
         .submit-btn:hover {
             background-color: #fc1944;
+        }
+
+        .submit-btn[disabled] {
+            background: rgba(251, 84, 49, 0.5) !important;
+            cursor: not-allowed !important;
         }
     </style>
 
@@ -439,7 +444,7 @@
                     </span>
                 </div>
 
-                <button onclick="submitFeedback()" class="submit-btn">提 交</button>
+                <button type="button" disabled onclick="submitFeedback()" class="submit-btn">提 交</button>
 
             </div>
 
