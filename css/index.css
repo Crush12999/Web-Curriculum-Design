@@ -1,1 +1,105 @@
 /* 首页样式表 */
+
+
+/* 轮播图 */
+.shuffling-figure {
+    position: relative;
+    margin: 100px 10%;
+    /* border: 1px solid; */
+    width: 80%;
+}
+
+.slider-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 554px;
+}
+
+/* 较宽焦点图居中 */
+.slider-content li {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 1;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+}
+
+/* 翻页条样式设置 */
+#slider-nav {
+    display: block;
+    /* padding: 7px 8px; */
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    z-index: 2022;
+    list-style: none;
+    width: 100%;
+    height: 16px;
+    /* background: rgba(255, 255, 255, .2); */
+    text-align: center;
+    font-size: 0;
+    /* margin-left: -50%; */
+    transform: translateX(-50%);
+}
+
+/* 焦点图下方圆形翻页按钮设置 */
+#slider-nav li {
+    display: inline-block;
+    overflow: hidden;
+    list-style: none;
+    margin-left: 8px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    background: rgba(0, 0, 0, .25);
+    cursor: pointer;
+    vertical-align: top;
+    word-spacing: normal;
+    letter-spacing: normal;
+}
+
+
+
+#slider-nav li.on {
+    background: #f30;
+}
+
+
+/* 翻页两侧的按钮 */
+
+.btn-turn-page {
+    position: absolute;
+    top: 50%;
+    z-index: 2022;
+    transform: translateY(-50%);
+    border: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    transition: .3s;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: rgba(31, 45, 61, .30);
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-turn-page.pre {
+    left: 20px;
+}
+
+.btn-turn-page.next {
+    right: 20px;
+}
+
+.btn-turn-page:hover {
+    background-color: rgba(31, 45, 61, .40);
+    color: rgba(255, 255, 255, 0.8);
+}

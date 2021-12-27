@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./images/icon/iconfont.css">
     <title>首页</title>
     <style>
         /* Home page start */
         #tf-home {
-            /* height: 100%; */
-            /* background-image: url(./images/15的副本.png); */
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -36,8 +36,14 @@
             height: 100px;
             bottom: 0;
             left: 0;
-            background: linear-gradient(to top, #F6F8FB, transparent);
+            background: linear-gradient(to top, #f2f2f2, transparent);
             z-index: 7;
+        }
+
+        .slider-content img {
+            width: 100%;
+            height: 554px;
+            /* object-fit: cover; */
         }
     </style>
 </head>
@@ -95,48 +101,105 @@
     </div>
     <!--end Home page-->
 
-    <div style="height: 1100px; padding: 30px 15%; position: relative; z-index: 10; background-color: #F6F8FB;">
-        <div style="border-radius: 8px; box-shadow: 0 16px 48px #e7ebf6;background: #fff;" class="text" id="title">
-            <h2>《You Have Only One Life》</h2>
-            <p>There are moments in life when you miss someone so much that you just want to pick them from your dreams
-                and hug them for real! Dream what you want to dream;go where you want to go;be what you want to
-                be,because you have only one life and one
-                chance to do all the things you want to do.<br /><br /> May you have enough happiness to make you
-                sweet,enough trials to make you strong,enough sorrow to keep you human,enough hope to make you happy?
-                Always put yourself in others’shoes.If you
-                feel that it hurts you,it probably hurts the other person, too.<br /><br /> The happiest of people don’t
-                necessarily have the best of everything;they just make the most of everything that comes along their
-                way.Happiness lies for those who cry,those
-                who hurt, those who have searched,and those who have tried,for only they can appreciate the importance
-                of people.<br /><br />who have touched their lives.Love begins with a smile,grows with a kiss and ends
-                with a tear.The brightest future will
-                always be based on a forgotten past, you can’t go on well in lifeuntil you let go of your past failures
-                and heartaches.When you were born,you were crying and everyone around you was smiling.Live your life so
-                that when you die,you're the one
-                who is smiling and everyone around you is crying.<br /><br />Please send this message to those people
-                who mean something to you,to those who have touched your life in one way or another,to those who make
-                you smile when you really need it,to
-                those that make you see the brighter side of things when you are really down,to those who you want to
-                let them know that you appreciate their friendship.And if you don’t, don’t worry,nothing bad will happen
-                to you,you will just miss out on
-                the opportunity to brighten someone’s day with this message.<br><br>There are moments in life when you
-                miss someone so much that you just want to pick them from your dreams and hug them for real! Dream what
-                you want to dream;go where you want
-                to go;be what you want to be,because you have only one life and one chance to do all the things you want
-                to do.<br /><br /> May you have enough happiness to make you sweet,enough trials to make you
-                strong,enough sorrow to keep you human,enough
-                hope to make you happy? Always put yourself in others’shoes.If you feel that it hurts you,it probably
-                hurts the other person, too.<br /><br />May you have enough happiness to make you sweet,enough trials to
-                make you strong,enough sorrow to keep
-                you human,enough hope to make you happy? Always put yourself in others’shoes.If you feel that it hurts
-                you,it probably hurts the other person, too.<br /><br />
+    <main style="padding-top: 0; width: 100%; position: relative;">
+        <!-- 轮播图开始 -->
+        <div class="shuffling-figure">
+            <ul id="slider-content" class="slider-content">
+                <li style="display: block;"><img src="./images/index/slider-1.jpg" alt=""></li>
+                <li><img src="./images/index/slider-2.jpg" alt=""></li>
+                <li><img src="./images/index/slider-3.jpg" alt=""></li>
+                <li><img src="./images/index/slider-4.jpg" alt=""></li>
+                <li><img src="./images/index/slider-5.jpg" alt=""></li>
+            </ul>
+            <!-- 图形翻页按钮组开始 -->
+            <ul id="slider-nav" class="slider-nav">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <!-- 图形翻页按钮组结束 -->
 
-
-
-            </p>
+            <!-- 中间的两侧翻页开始 -->
+            <!-- <span class="btn-turn-page"> -->
+            <button class="btn-turn-page pre"><i class="iconfont icon-arrow-left"></i></button>
+            <button class="btn-turn-page next"><i class="iconfont icon-arrow-right"></i></button>
+            <!-- </span> -->
+            <!-- 中间的两侧翻页结束 -->
         </div>
-    </div>
+        <!-- 轮播图结束 -->
 
+        <div style="height: 1100px; padding: 30px 15%; position: relative; z-index: 10; background-color: #f2f2f2;">
+            <div style="border-radius: 8px; box-shadow: 0 16px 48px #e7ebf6;background: #fff;" class="text" id="title">
+                <h2>《You Have Only One Life》</h2>
+                <p>There are moments in life when you miss someone so much that you just want to pick them from your
+                    dreams
+                    and hug them for real! Dream what you want to dream;go where you want to go;be what you want to
+                    be,because you have only one life and one
+                    chance to do all the things you want to do.<br /><br /> May you have enough happiness to make you
+                    sweet,enough trials to make you strong,enough sorrow to keep you human,enough hope to make you
+                    happy?
+                    Always put yourself in others’shoes.If you
+                    feel that it hurts you,it probably hurts the other person, too.<br /><br /> The happiest of people
+                    don’t
+                    necessarily have the best of everything;they just make the most of everything that comes along their
+                    way.Happiness lies for those who cry,those
+                    who hurt, those who have searched,and those who have tried,for only they can appreciate the
+                    importance
+                    of people.<br /><br />who have touched their lives.Love begins with a smile,grows with a kiss and
+                    ends
+                    with a tear.The brightest future will
+                    always be based on a forgotten past, you can’t go on well in lifeuntil you let go of your past
+                    failures
+                    and heartaches.When you were born,you were crying and everyone around you was smiling.Live your life
+                    so
+                    that when you die,you're the one
+                    who is smiling and everyone around you is crying.<br /><br />Please send this message to those
+                    people
+                    who mean something to you,to those who have touched your life in one way or another,to those who
+                    make
+                    you smile when you really need it,to
+                    those that make you see the brighter side of things when you are really down,to those who you want
+                    to
+                    let them know that you appreciate their friendship.And if you don’t, don’t worry,nothing bad will
+                    happen
+                    to you,you will just miss out on
+                    the opportunity to brighten someone’s day with this message.<br><br>There are moments in life when
+                    you
+                    miss someone so much that you just want to pick them from your dreams and hug them for real! Dream
+                    what
+                    you want to dream;go where you want
+                    to go;be what you want to be,because you have only one life and one chance to do all the things you
+                    want
+                    to do.<br /><br /> May you have enough happiness to make you sweet,enough trials to make you
+                    strong,enough sorrow to keep you human,enough
+                    hope to make you happy? Always put yourself in others’shoes.If you feel that it hurts you,it
+                    probably
+                    hurts the other person, too.<br /><br />May you have enough happiness to make you sweet,enough
+                    trials to
+                    make you strong,enough sorrow to keep
+                    you human,enough hope to make you happy? Always put yourself in others’shoes.If you feel that it
+                    hurts
+                    you,it probably hurts the other person, too.<br /><br />
+
+
+
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚信息开始 -->
+    <footer id="footer" class="" style="padding-top: 15px;">
+        <div
+            style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
+            <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>备案号：桂ICP备20xxxx1234号-1</span>
+        </div>
+
+    </footer>
+    <!-- 页脚信息结束 -->
 
 
     <script>
@@ -169,6 +232,51 @@
             // font2.style.left = value * 0.3 + 'px'
         })
 
+    </script>
+    <script>
+        let sliderContent = document.getElementById('slider-content');
+        let sliderContentLi = sliderContent.getElementsByTagName("li");
+        let sliderNav = document.getElementById('slider-nav');
+        let sliderNavLi = sliderNav.getElementsByTagName('li');
+
+        window.onload = function () {
+            for (let i = 0; i < sliderNavLi.length; i++) {
+                sliderNavLi[i].index = i;
+                sliderNavLi[i].onmouseover = function () {
+                    for (let j = 0; j < sliderNavLi.length; j++) {
+                        sliderNavLi[j].className = '';
+                    }
+                    this.className = 'on';
+                    for (let j = 0; j < sliderContentLi.length; j++) {
+                        sliderContentLi[j].style.display = 'none';
+                    }
+                    sliderContentLi[this.index].style.display = 'block';
+                }
+            }
+        }
+
+        window.onload = function () {
+            window.setInterval(() => {
+                changeSlider();
+            }, 5000)
+        }
+        var x = 0
+        function changeSlider() {
+            if (x == sliderNavLi.length) {
+                x = 0;
+            }
+            sliderNavLi[x].index = x
+            for (var j = 0; j < sliderNavLi.length; j++) {
+                sliderNavLi[j].className = '';
+            }
+            sliderNavLi[x].className = 'on';
+
+            for (var k = 0; k < sliderContentLi.length; k++) {
+                sliderContentLi[k].style.display = 'none';
+            }
+            sliderContentLi[sliderNavLi[x].index].style.display = 'block';
+            x++;
+        }
     </script>
 </body>
 
