@@ -444,7 +444,7 @@
                     </span>
                 </div>
 
-                <button type="button" disabled onclick="submitFeedback()" class="submit-btn">提 交</button>
+                <button type="button" onclick="submitFeedback()" class="submit-btn">提 交</button>
 
             </div>
 
@@ -456,13 +456,12 @@
 
 
     <!-- 页脚信息开始 -->
-    <footer>
+    <footer id="footer" class="" style="padding-top: 15px;">
         <div
             style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
-            <span>Copyright © 2013-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span>备案号：桂ICP备20xxxx1234号-1</span>
         </div>
-
     </footer>
     <!-- 页脚信息结束 -->
 
@@ -536,6 +535,7 @@
                 // 定位到评论位置
                 document.querySelector('.feedback-submit-box').scrollIntoView()
                 childDoc.style.background = 'rgba(255, 255, 255, 1)';
+                footerInit()
                 setTimeout(() => {
                     childDoc.style.background = '';
                 }, 1000)
@@ -586,6 +586,21 @@
                 node.innerHTML = ''
             }, 3000);
         }
+
+        // 调整网页底部信息栏位置。
+        let submitBtnDom = document.querySelector('.submit-btn');
+        function footerInit() {
+            let viewPort = document.documentElement.clientHeight;
+            // 获取评论按钮位置，加上它自身的高度和网页底部高度
+            let submitBtnOffsetTop = submitBtnDom.offsetTop + 32 + 15 + 63;
+            // 如果评论按钮距离位置小于网页可视高度，则将网页脚部信息固定在网页底部
+            if (submitBtnOffsetTop < viewPort) {
+                footerDom.classList.add('footer-fixed');
+            } else {
+                footerDom.classList.remove('footer-fixed');
+            }
+        }
+        footerInit()
     </script>
 </body>
 

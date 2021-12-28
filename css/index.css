@@ -1,4 +1,42 @@
 /* 首页样式表 */
+main {
+    margin: 0 auto;
+    padding-top: 0;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    max-width: 1320px;
+}
+
+/* @media screen and (min-width: 1400px) {
+    .main {
+        max-width: 1320px;
+    }
+} */
+
+/* @media screen and (min-width: 1200px) and (max-width: 1399px) {
+    .main {
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .main {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .main {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .main {
+        max-width: 540px;
+    }
+} */
 
 
 /* 轮播图 */
@@ -91,7 +129,11 @@
     cursor: pointer;
 }
 
-.btn-turn-page.pre {
+.btn-turn-page[disabled] {
+    cursor: not-allowed !important;
+}
+
+.btn-turn-page.prev {
     left: 20px;
 }
 
@@ -102,4 +144,93 @@
 .btn-turn-page:hover {
     background-color: rgba(31, 45, 61, .40);
     color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* 党的历程卡片 */
+.history-cards {
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.history-cards .my-card {
+    flex: 1;
+    /* border: 1px solid; */
+    height: 420px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.my-card:nth-child(n + 2) {
+    margin-left: 16px;
+}
+
+.history-cards .my-card:hover {
+    transform: translateY(-1%);
+    box-shadow: 0 0 18px rgba(0, 0, 0, .25);
+}
+
+.my-card__content {
+    height: 100%;
+    position: relative;
+}
+
+.my-card__content__img {
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+.my-card__content__img.pic1 {
+    background: url('../images/index/history-1.jpg') no-repeat;
+    background-size: cover;
+}
+
+.my-card__content__img.pic2 {
+    background: url('../images/index/history-2.png') no-repeat;
+    background-size: cover;
+}
+
+.my-card__content__img.pic3 {
+    background: url('../images/index/history-3.jpg') no-repeat;
+    background-size: cover;
+}
+
+.my-card__content__img.pic4 {
+    background: url('../images/index/history-4.jpg') no-repeat;
+    background-size: cover;
+}
+
+.my-card__content__btn {
+    display: block;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: rgb(245, 13, 13);
+    padding: 0 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px rgba(245, 13, 13, .85);
+    white-space: nowrap
+}
+
+.my-card__content__text {
+    padding: 20px 6px 6px 6px;
+    /* padding: 18px 6px; */
+    font-size: 14px;
+    text-align: center;
+    color: #737373;
 }

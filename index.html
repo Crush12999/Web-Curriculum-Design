@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./images/icon/iconfont.css">
+    <link rel="stylesheet" href="./css/lib/element-ui.css">
     <title>首页</title>
     <style>
         /* Home page start */
@@ -49,158 +50,265 @@
 </head>
 
 <body>
-    <header class="navbar">
-        <span class="logo-box">
-            <img class="logo" src="images/nav_党群档案.svg" alt="">
-            <p class="logo-title">庆党百年主题网</p>
-        </span>
-        <nav class="nav">
-            <ul class="nav-links">
-                <li class="active">
-                    <a href="javascript:;">首页</a>
-                </li>
-                <li>
-                    <a href="javascript:;">党史</a>
-                </li>
-                <li>
-                    <a href="javascript:;">英雄人物</a>
-                </li>
-                <li>
-                    <a href="javascript:;">经典回忆</a>
-                </li>
-                <li class="found">
-                    <a href="javascript:;">发现更多</a>
-                    <ol class="dropdown">
-                        <li><a href="photo-album.html">主题相册</a></li>
-                        <li><a href="feedback.html">反馈</a></li>
-                    </ol>
-                </li>
-                <!-- 这个元素来定义滑动的线条 -->
-                <!-- <li class="underline"></li> -->
-            </ul>
-        </nav>
-        <span class="cta">
-            <a class="" href="register-login.html"><button>登录 / 注册</button></a>
-        </span>
-    </header>
+    <div id="app">
+        <header class="navbar">
+            <span class="logo-box">
+                <img class="logo" src="images/nav_党群档案.svg" alt="">
+                <p class="logo-title">庆党百年主题网</p>
+            </span>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li class="active">
+                        <a href="javascript:;">首页</a>
+                    </li>
+                    <li>
+                        <a href="history.html">党的历程</a>
+                    </li>
+                    <li>
+                        <a href="hero.html">英雄人物</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">中共大会</a>
+                    </li>
+                    <li class="found">
+                        <a href="javascript:;">发现更多</a>
+                        <ol class="dropdown triangle">
+                            <li><a href="photo-album.html">影视作品</a></li>
+                            <li><a href="javascript:;">优秀栏目</a></li>
+                            <li><a href="feedback.html">反馈</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </nav>
+            <span class="cta">
+                <a class="" href="register-login.html"><button>登录 / 注册</button></a>
+            </span>
+        </header>
 
-    <!--Home page start-->
-    <div id="tf-home" class="text-center">
-        <div class="overlay">
-            <div class="content">
-                <img class="banner-moon" src="./images/index/banner-moon.png" alt="" style="z-index: 2;">
-                <img class="banner-100" src="./images/index/banner-100.png" alt="" style="z-index: 2;">
-                <img class="banner-font2" src="./images/index/banner-font2.png" alt="" style="z-index: 4;">
-                <img class="banner-people" src="./images/index/banner-people.png" alt="" style="z-index: 5;">
-                <img class="banner-font1" src="./images/index/banner-font1.png" alt="" style="z-index: 2;">
-                <img class="banner-background" src="./images/index/banner-background.png" alt="" style="z-index: 0;">
-                <img class="banner-building" src="./images/index/banner-building.png" alt="" style="z-index: 3;">
-                <img class="banner-water" src="./images/index/banner-water.png" alt="" style="z-index: 1;">
+        <!--Home page start-->
+        <div id="tf-home" class="text-center">
+            <div class="overlay">
+                <div class="content">
+                    <img class="banner-moon" src="./images/index/banner-moon.png" alt="" style="z-index: 2;">
+                    <img class="banner-100" src="./images/index/banner-100.png" alt="" style="z-index: 2;">
+                    <img class="banner-font2" src="./images/index/banner-font2.png" alt="" style="z-index: 4;">
+                    <img class="banner-people" src="./images/index/banner-people.png" alt="" style="z-index: 5;">
+                    <img class="banner-font1" src="./images/index/banner-font1.png" alt="" style="z-index: 2;">
+                    <img class="banner-background" src="./images/index/banner-background.png" alt=""
+                        style="z-index: 0;">
+                    <img class="banner-building" src="./images/index/banner-building.png" alt="" style="z-index: 3;">
+                    <img class="banner-water" src="./images/index/banner-water.png" alt="" style="z-index: 1;">
+                </div>
             </div>
         </div>
+        <!--end Home page-->
+
+        <main class="main">
+            <!-- 轮播图开始 -->
+            <div class="shuffling-figure">
+                <ul id="slider-content" class="slider-content">
+                    <li style="display: block;"><img src="./images/index/slider-1.jpg" alt=""></li>
+                    <li><img src="./images/index/slider-2.jpg" alt=""></li>
+                    <li><img src="./images/index/slider-3.jpg" alt=""></li>
+                    <li><img src="./images/index/slider-4.jpg" alt=""></li>
+                    <li><img src="./images/index/slider-5.jpg" alt=""></li>
+                </ul>
+                <!-- 图形翻页按钮组开始 -->
+                <ul id="slider-nav" class="slider-nav">
+                    <li class="on"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <!-- 图形翻页按钮组结束 -->
+
+                <!-- 中间的两侧翻页开始 -->
+                <button id="sliderPrevBtn" class="btn-turn-page prev"><i class="iconfont icon-arrow-left"></i></button>
+                <button id="sliderNextBtn" class="btn-turn-page next"><i class="iconfont icon-arrow-right"></i></button>
+                <!-- 中间的两侧翻页结束 -->
+            </div>
+            <!-- 轮播图结束 -->
+
+            <!-- 党的历程开始 -->
+            <div class="history-box" style="width: 80%; margin: 0 auto;">
+                <div class="history-title" style="text-align: center; display: flex; flex-direction: row;">
+                    <div style="height: 32px; border-top: 3px solid #F6CF35; flex: 3;"></div>
+                    <span
+                        style="padding: 0 20px; font-size: 32px; line-height: 32px; font-weight: 500; transform: translateY(-50%); color: red;">党的历程</span>
+                    <div style="height: 32px; border-top: 3px solid #F6CF35; flex: 3;"></div>
+                </div>
+
+                <!-- 党的历程卡片 -->
+                <div class="history-cards">
+                    <div class="my-card">
+                        <div class="my-card__content">
+                            <div class="my-card__content__img pic1"></div>
+                            <span class="my-card__content__btn">
+                                新民主主义革命时期
+                            </span>
+                            <div class="my-card__content__text">
+                                <p>
+                                    新民主主义革命是指在帝国主义和无产阶级革命时代，
+                                    殖民地半殖民地国家中的无产阶级领导的资产阶级民主革命。
+                                    其所谓"新"，是相对于17-18世纪欧美国家发生的资产阶级领导的，
+                                    旨在推翻封建专制主义压迫，确立资产阶级政治统治的旧民主主义革命。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-card">
+                        <div class="my-card__content">
+                            <div class="my-card__content__img pic2"></div>
+                            <span class="my-card__content__btn">
+                                社会主义改造时期
+                            </span>
+                            <div class="my-card__content__text">
+                                <p>
+                                    1952年9月，毛泽东在一次中央会议上提出：“我们现在就要开始用10年到15年的时间，基本上完成到社会主义的过渡。”
+                                    第二年6月，中共中央公布了过渡时期总路线，包括两方面内容：一是逐步实现社会主义工业化，这是总路线的主体；
+                                    二是逐步实现对农业、手工业和资本主义工商业的社会主义改造，这是总路线的两翼。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-card">
+                        <div class="my-card__content">
+                            <div class="my-card__content__img pic3"></div>
+                            <span class="my-card__content__btn">
+                                社会主义建设时期
+                            </span>
+                            <div class="my-card__content__text">
+                                <p>
+                                    这十年的社会主义建设，虽然遭到过严重挫折，但仍然取得了很大的成就。
+                                    工业生产能力大幅度提高。
+                                    从1958年到1965年期间，建成了 531 个大中型工业项目；新建扩建了大批重要企业，
+                                    如武汉、包头等十大钢铁厂，一批重要有色金属冶炼厂，
+                                    几十个煤炭企业和发电厂，以及生产规模达一千万吨的大庆油田等。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-card">
+                        <div class="my-card__content">
+                            <div class="my-card__content__img pic4"></div>
+                            <span class="my-card__content__btn">
+                                中国特色社会主义时期
+                            </span>
+                            <div class="my-card__content__text">
+                                <p>
+                                    中国特色社会主义是中国共产党对现阶段纲领的概括，
+                                    要求把马克思主义的普遍真理同本国的具体实际结合起来，
+                                    走适合中国特点的道路，逐步实现工业、农业、国防和科学技术现代化，
+                                    把中国建设成为一个富强、民主、文明、和谐、美丽的社会主义现代化强国。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 党的历程结束 -->
+
+            <!-- 影视作品开始 -->
+            <div class="history-box" style="width: 80%; margin: 100px auto;">
+                <div class="history-title" style="text-align: center; display: flex; flex-direction: row;">
+                    <div style="height: 32px; border-top: 3px solid #F6CF35; flex: 3;"></div>
+                    <span
+                        style="padding: 0 20px; font-size: 32px; line-height: 32px; font-weight: 500; transform: translateY(-50%); color: red;">影视作品</span>
+                    <div style="height: 32px; border-top: 3px solid #F6CF35; flex: 3;"></div>
+                </div>
+
+                <!-- 党的历程卡片 -->
+                <div class="history-cards">
+                    <div class="my-card">
+                        <div class="my-card__content">
+                            <div class="my-card__content__img pic1"></div>
+                            <span class="my-card__content__btn">
+                                新民主主义革命时期
+                            </span>
+                            <div class="my-card__content__text">
+                                <p>
+                                    新民主主义革命是指在帝国主义和无产阶级革命时代，
+                                    殖民地半殖民地国家中的无产阶级领导的资产阶级民主革命。
+                                    其所谓"新"，是相对于17-18世纪欧美国家发生的资产阶级领导的，
+                                    旨在推翻封建专制主义压迫，确立资产阶级政治统治的旧民主主义革命。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-card">
+                        <div class="my-card__content">
+                            <div class="my-card__content__img pic2"></div>
+                            <span class="my-card__content__btn">
+                                社会主义改造时期
+                            </span>
+                            <div class="my-card__content__text">
+                                <p>
+                                    1952年9月，毛泽东在一次中央会议上提出：“我们现在就要开始用10年到15年的时间，基本上完成到社会主义的过渡。”
+                                    第二年6月，中共中央公布了过渡时期总路线，包括两方面内容：一是逐步实现社会主义工业化，这是总路线的主体；
+                                    二是逐步实现对农业、手工业和资本主义工商业的社会主义改造，这是总路线的两翼。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-card">
+                        <div class="my-card__content">
+                            <div class="my-card__content__img pic3"></div>
+                            <span class="my-card__content__btn">
+                                社会主义建设时期
+                            </span>
+                            <div class="my-card__content__text">
+                                <p>
+                                    这十年的社会主义建设，虽然遭到过严重挫折，但仍然取得了很大的成就。
+                                    工业生产能力大幅度提高。
+                                    从1958年到1965年期间，建成了 531 个大中型工业项目；新建扩建了大批重要企业，
+                                    如武汉、包头等十大钢铁厂，一批重要有色金属冶炼厂，
+                                    几十个煤炭企业和发电厂，以及生产规模达一千万吨的大庆油田等。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-card">
+                        <div class="my-card__content">
+                            <div class="my-card__content__img pic4"></div>
+                            <span class="my-card__content__btn">
+                                中国特色社会主义时期
+                            </span>
+                            <div class="my-card__content__text">
+                                <p>
+                                    中国特色社会主义是中国共产党对现阶段纲领的概括，
+                                    要求把马克思主义的普遍真理同本国的具体实际结合起来，
+                                    走适合中国特点的道路，逐步实现工业、农业、国防和科学技术现代化，
+                                    把中国建设成为一个富强、民主、文明、和谐、美丽的社会主义现代化强国。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 影视作品结束 -->
+        </main>
+
+        <!-- 页脚信息开始 -->
+        <footer id="footer" class="" style="padding-top: 15px;">
+            <div
+                style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
+                <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span>备案号：桂ICP备20xxxx1234号-1</span>
+            </div>
+
+        </footer>
+        <!-- 页脚信息结束 -->
     </div>
-    <!--end Home page-->
-
-    <main style="padding-top: 0; width: 100%; position: relative;">
-        <!-- 轮播图开始 -->
-        <div class="shuffling-figure">
-            <ul id="slider-content" class="slider-content">
-                <li style="display: block;"><img src="./images/index/slider-1.jpg" alt=""></li>
-                <li><img src="./images/index/slider-2.jpg" alt=""></li>
-                <li><img src="./images/index/slider-3.jpg" alt=""></li>
-                <li><img src="./images/index/slider-4.jpg" alt=""></li>
-                <li><img src="./images/index/slider-5.jpg" alt=""></li>
-            </ul>
-            <!-- 图形翻页按钮组开始 -->
-            <ul id="slider-nav" class="slider-nav">
-                <li class="on"></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <!-- 图形翻页按钮组结束 -->
-
-            <!-- 中间的两侧翻页开始 -->
-            <!-- <span class="btn-turn-page"> -->
-            <button class="btn-turn-page pre"><i class="iconfont icon-arrow-left"></i></button>
-            <button class="btn-turn-page next"><i class="iconfont icon-arrow-right"></i></button>
-            <!-- </span> -->
-            <!-- 中间的两侧翻页结束 -->
-        </div>
-        <!-- 轮播图结束 -->
-
-        <div style="height: 1100px; padding: 30px 15%; position: relative; z-index: 10; background-color: #f2f2f2;">
-            <div style="border-radius: 8px; box-shadow: 0 16px 48px #e7ebf6;background: #fff;" class="text" id="title">
-                <h2>《You Have Only One Life》</h2>
-                <p>There are moments in life when you miss someone so much that you just want to pick them from your
-                    dreams
-                    and hug them for real! Dream what you want to dream;go where you want to go;be what you want to
-                    be,because you have only one life and one
-                    chance to do all the things you want to do.<br /><br /> May you have enough happiness to make you
-                    sweet,enough trials to make you strong,enough sorrow to keep you human,enough hope to make you
-                    happy?
-                    Always put yourself in others’shoes.If you
-                    feel that it hurts you,it probably hurts the other person, too.<br /><br /> The happiest of people
-                    don’t
-                    necessarily have the best of everything;they just make the most of everything that comes along their
-                    way.Happiness lies for those who cry,those
-                    who hurt, those who have searched,and those who have tried,for only they can appreciate the
-                    importance
-                    of people.<br /><br />who have touched their lives.Love begins with a smile,grows with a kiss and
-                    ends
-                    with a tear.The brightest future will
-                    always be based on a forgotten past, you can’t go on well in lifeuntil you let go of your past
-                    failures
-                    and heartaches.When you were born,you were crying and everyone around you was smiling.Live your life
-                    so
-                    that when you die,you're the one
-                    who is smiling and everyone around you is crying.<br /><br />Please send this message to those
-                    people
-                    who mean something to you,to those who have touched your life in one way or another,to those who
-                    make
-                    you smile when you really need it,to
-                    those that make you see the brighter side of things when you are really down,to those who you want
-                    to
-                    let them know that you appreciate their friendship.And if you don’t, don’t worry,nothing bad will
-                    happen
-                    to you,you will just miss out on
-                    the opportunity to brighten someone’s day with this message.<br><br>There are moments in life when
-                    you
-                    miss someone so much that you just want to pick them from your dreams and hug them for real! Dream
-                    what
-                    you want to dream;go where you want
-                    to go;be what you want to be,because you have only one life and one chance to do all the things you
-                    want
-                    to do.<br /><br /> May you have enough happiness to make you sweet,enough trials to make you
-                    strong,enough sorrow to keep you human,enough
-                    hope to make you happy? Always put yourself in others’shoes.If you feel that it hurts you,it
-                    probably
-                    hurts the other person, too.<br /><br />May you have enough happiness to make you sweet,enough
-                    trials to
-                    make you strong,enough sorrow to keep
-                    you human,enough hope to make you happy? Always put yourself in others’shoes.If you feel that it
-                    hurts
-                    you,it probably hurts the other person, too.<br /><br />
 
 
-
-                </p>
-            </div>
-        </div>
-    </main>
-
-    <!-- 页脚信息开始 -->
-    <footer id="footer" class="" style="padding-top: 15px;">
-        <div
-            style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
-            <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span>备案号：桂ICP备20xxxx1234号-1</span>
-        </div>
-
-    </footer>
-    <!-- 页脚信息结束 -->
-
+    <script src="./js/lib/vue2.js"></script>
+    <script src="./js/lib/element-ui.js"></script>
+    <script>
+        new Vue({
+            el: '#app'
+        })
+    </script>
 
     <script>
 
@@ -218,8 +326,16 @@
             // console.log(scrollTop);
             // 给导航栏换样式
             if (scrollTop > navHeight) {
+                moon.style.zIndex = -1
+                font1.style.zIndex = -1
+                font2.style.zIndex = -1
+                b100.style.zIndex = -1
                 document.querySelector('.navbar').classList.add('tabsOn')
             } else {
+                moon.style.zIndex = 2
+                font1.style.zIndex = 2
+                font2.style.zIndex = 4
+                b100.style.zIndex = 2
                 document.querySelector('.navbar').classList.remove('tabsOn')
             }
             let value = window.scrollY;
@@ -238,8 +354,15 @@
         let sliderContentLi = sliderContent.getElementsByTagName("li");
         let sliderNav = document.getElementById('slider-nav');
         let sliderNavLi = sliderNav.getElementsByTagName('li');
+        let sliderPrevBtn = document.getElementById('sliderPrevBtn')
+        let sliderNextBtn = document.getElementById('sliderNextBtn')
+        var current = 0
+        var flag = false
 
         window.onload = function () {
+            var timer = window.setInterval(() => {
+                changeSlider();
+            }, 5000)
             for (let i = 0; i < sliderNavLi.length; i++) {
                 sliderNavLi[i].index = i;
                 sliderNavLi[i].onmouseover = function () {
@@ -251,31 +374,68 @@
                         sliderContentLi[j].style.display = 'none';
                     }
                     sliderContentLi[this.index].style.display = 'block';
+                    current = this.index;
                 }
             }
+
         }
 
-        window.onload = function () {
-            window.setInterval(() => {
-                changeSlider();
-            }, 5000)
-        }
-        var x = 0
-        function changeSlider() {
-            if (x == sliderNavLi.length) {
-                x = 0;
+        sliderPrevBtn.onclick = function () {
+            if (flag) {
+                flag = false;
+                current--;
             }
-            sliderNavLi[x].index = x
+            if (current == 0) {
+                current = sliderNavLi.length - 1;
+            } else {
+                current--;
+            }
+            for (let j = 0; j < sliderNavLi.length; j++) {
+                sliderNavLi[j].className = '';
+            }
+            sliderNavLi[current].className = 'on';
+            for (let j = 0; j < sliderContentLi.length; j++) {
+                sliderContentLi[j].style.display = 'none';
+            }
+            sliderContentLi[current].style.display = 'block';
+        }
+
+        sliderNextBtn.onclick = function () {
+            if (flag) {
+                flag = false;
+                current--;
+            }
+            if (current === sliderNavLi.length - 1) {
+                current = 0;
+            } else {
+                current++;
+            }
+            for (let j = 0; j < sliderNavLi.length; j++) {
+                sliderNavLi[j].className = '';
+            }
+            sliderNavLi[current].className = 'on';
+            for (let j = 0; j < sliderContentLi.length; j++) {
+                sliderContentLi[j].style.display = 'none';
+            }
+            sliderContentLi[current].style.display = 'block';
+        }
+
+        function changeSlider() {
+            flag = true
+            if (current == sliderNavLi.length) {
+                current = 0;
+            }
+            sliderNavLi[current].index = current
             for (var j = 0; j < sliderNavLi.length; j++) {
                 sliderNavLi[j].className = '';
             }
-            sliderNavLi[x].className = 'on';
+            sliderNavLi[current].className = 'on';
 
             for (var k = 0; k < sliderContentLi.length; k++) {
                 sliderContentLi[k].style.display = 'none';
             }
-            sliderContentLi[sliderNavLi[x].index].style.display = 'block';
-            x++;
+            sliderContentLi[sliderNavLi[current].index].style.display = 'block';
+            current++;
         }
     </script>
 </body>

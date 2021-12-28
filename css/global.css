@@ -2,9 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* color: #fff; */
-    /* background-color: #24252A; */
-    /* background-color: pink; */
 }
 
 html,
@@ -237,4 +234,12 @@ nav {
 /* 网页主体 */
 main {
     padding-top: 52px;
+}
+
+
+.footer-fixed {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 2021;
 }

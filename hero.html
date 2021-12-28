@@ -5,11 +5,172 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/lib/element-ui.css">
+    <link rel="stylesheet" href="./css/history.css">
+    <title>英雄人物</title>
+    <style>
+
+    </style>
 </head>
 
 <body>
+    <div id="app">
+        <!-- 导航栏开始 -->
+        <header class="navbar tabsOn">
+            <span class="logo-box">
+                <img class="logo" src="images/nav_党群档案.svg" alt="">
+                <p class="logo-title">庆党百年主题网</p>
+            </span>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="history.html">党的历程</a>
+                    </li>
+                    <li class="active">
+                        <a href="hero.html">英雄人物</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">中共大会</a>
+                    </li>
+                    <li class="found">
+                        <a href="javascript:;">发现更多</a>
+                        <ol class="dropdown triangle">
+                            <li><a href="photo-album.html">影视作品</a></li>
+                            <li><a href="javascript:;">优秀栏目</a></li>
+                            <li><a href="feedback.html">反馈</a></li>
+                        </ol>
+                    </li>
+                    <!-- 这个元素来定义滑动的线条 -->
+                    <!-- <li class="underline"></li> -->
+                </ul>
+            </nav>
+            <span class="cta">
+                <a class="" href="register-login.html"><button>登录 / 注册</button></a>
+            </span>
+        </header>
+        <!-- 导航栏结束 -->
+        <div class="background-img"></div>
 
+        <!-- 网页主体部分开始 -->
+        <main>
+            <div style="width: 80%; margin: 30px 10%; height: 800px; border: 1px solid;">
+                <el-row :gutter="20" style="width: 80%; margin: auto;">
+                    <el-col :span="6">
+                        <el-card class="box-card">
+                            <div v-for="o in 4" :key="o" class="text item">
+                                {{'列表内容 ' + o }}
+                            </div>
+                        </el-card>
+                    </el-col>
+                    <el-col :span="6">
+                        <el-card class="box-card">
+                            <div v-for="o in 4" :key="o" class="text item">
+                                {{'列表内容 ' + o }}
+                            </div>
+                        </el-card>
+                    </el-col>
+                    <el-col :span="6">
+                        <el-card class="box-card">
+                            <div v-for="o in 4" :key="o" class="text item">
+                                {{'列表内容 ' + o }}
+                            </div>
+                        </el-card>
+                    </el-col>
+                    <el-col :span="6">
+                        <el-card class="box-card">
+                            <div v-for="o in 4" :key="o" class="text item">
+                                {{'列表内容 ' + o }}
+                            </div>
+                        </el-card>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="20" style="margin-top: 20px;">
+                    <el-col :span="6">
+                        <el-card class="box-card">
+                            <div v-for="o in 4" :key="o" class="text item">
+                                {{'列表内容 ' + o }}
+                            </div>
+                        </el-card>
+                    </el-col>
+                    <el-col :span="6">
+                        <el-card class="box-card">
+                            <div v-for="o in 4" :key="o" class="text item">
+                                {{'列表内容 ' + o }}
+                            </div>
+                        </el-card>
+                    </el-col>
+                    <el-col :span="6">
+                        <el-card class="box-card">
+                            <div v-for="o in 4" :key="o" class="text item">
+                                {{'列表内容 ' + o }}
+                            </div>
+                        </el-card>
+                    </el-col>
+                    <el-col :span="6">
+                        <el-card class="box-card">
+                            <div v-for="o in 4" :key="o" class="text item">
+                                {{'列表内容 ' + o }}
+                            </div>
+                        </el-card>
+                    </el-col>
+                </el-row>
+
+            </div>
+        </main>
+        <!-- 网页主体部分结束 -->
+
+        <!-- 页脚信息开始 -->
+        <footer id="footer" class="" style="padding-top: 15px;">
+            <div
+                style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
+                <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span>备案号：桂ICP备20xxxx1234号-1</span>
+            </div>
+        </footer>
+        <!-- 页脚信息结束 -->
+    </div>
+
+    <script src="./js/lib/vue2.js"></script>
+    <script src="./js/lib/element-ui.js"></script>
+
+    <script>
+        // 调整网页底部信息栏位置。
+        let footerDom = document.querySelector('#footer');
+        function footerInit() {
+            let viewPort = document.documentElement.clientHeight;
+            let footerOffsetTop = footerDom.offsetTop;
+            // 如果元素距离顶部高度加上它自身的高度小于网页可视高度，则将其固定在网页底部
+            if (footerOffsetTop + footerDom.style.height < viewPort) {
+                footerDom.classList.add('footer-fixed');
+            } else {
+                footerDom.classList.remove('footer-fixed');
+            }
+        }
+        footerInit()
+    </script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                reverse: true,
+                activities: [{
+                    content: '活动按期开始',
+                    timestamp: '2018-04-15'
+                }, {
+                    content: '通过审核',
+                    timestamp: '2018-04-13'
+                }, {
+                    content: '创建成功',
+                    timestamp: '2018-04-11'
+                }]
+            }
+        })
+    </script>
 </body>
 
 </html>
