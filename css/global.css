@@ -142,6 +142,10 @@ nav {
     color: rgb(85, 86, 102);
 }
 
+.dropdown.history {
+    width: 140px;
+}
+
 .dropdown>li {
     width: 100%;
     height: 40px;
