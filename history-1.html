@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/lib/element-ui.css">
+    <link rel="stylesheet" href="./css/history.css">
+    <title>新民主主义革命</title>
+    <style>
+        .history-detail-box__img.one {
+            background: url('../images/history-1/card-1.png') no-repeat;
+            background-position: -120px;
+            background-size: cover;
+        }
+
+        .history-detail-box__img.two {
+            background: url('../images/history-1/card-2.jpg') no-repeat;
+            background-position: -120px;
+            background-size: cover;
+        }
+
+        .history-detail-box__img.three {
+            background: url('../images/history-1/card-3.jpg') no-repeat;
+            background-position: -120px;
+            background-size: cover;
+        }
+
+        .history-detail-box__img.four {
+            background: url('../images/history-1/card-4.jpg') no-repeat;
+            background-position: -120px;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 导航栏开始 -->
+        <header class="navbar tabsOn">
+            <span class="logo-box">
+                <img class="logo" src="images/nav_党群档案.svg" alt="">
+                <p class="logo-title">庆党百年主题网</p>
+            </span>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li class="found active">
+                        <a href="javascript:;">党的光辉历程</a>
+                        <ol class="dropdown history">
+                            <li class="active"><a href="history-1.html">新民主主义革命</a></li>
+                            <li><a href="history-2.html">社会主义改造时期</a></li>
+                            <li><a href="history-3.html">社会主义建设时期</a></li>
+                            <li><a href="history-4.html">中国特色社会主义</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="hero.html">英雄人物</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">中共大会</a>
+                    </li>
+                    <li class="found">
+                        <a href="javascript:;">发现更多</a>
+                        <ol class="dropdown triangle">
+                            <li><a href="photo-album.html">影视作品</a></li>
+                            <li><a href="javascript:;">优秀栏目</a></li>
+                            <li><a href="feedback.html">反馈</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </nav>
+            <span class="cta">
+                <a class="" href="register-login.html"><button>登录 / 注册</button></a>
+            </span>
+        </header>
+        <!-- 导航栏结束 -->
+        <div class="background-img one">
+            <el-row :gutter="20" style="margin: auto; width: 80%; max-width: 1140px;">
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img one"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                五四运动</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">01</span>
+                                <span style="color: rgb(152, 152, 152);">爱国精神</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img two"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                中共一大</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">02</span>
+                                <span style="color: rgb(152, 152, 152);">中国共产党的建立</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img three"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                抗日战争</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">03</span>
+                                <span style="color: rgb(152, 152, 152);">民族精神</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img four"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                开国大典</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">04</span>
+                                <span style="color: rgb(152, 152, 152);">新中国的成立</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
+
+        <!-- 网页主体部分开始 -->
+        <main>
+            <div class="main-container">
+                <el-row :gutter="35" style="position: relative; width: 80%; max-width: 1140px; margin: auto;">
+                    <!-- 左边区域的流动盒子 -->
+                    <el-col :span="16" style="position: relative; top: 50px;">
+                        <div class="history-left-box" v-for="(item, index) in leftCard">
+                            <div class="history-left-box__img">
+                                <img style="width: 100%;" :src="item.src" alt="">
+                                <button class="history-left-box__btn">{{ item.time }}</button>
+                            </div>
+                            <div class="history-left-box__text">
+                                <span>{{ item.title }}</span>
+                                <p style="text-indent: 2em;">
+                                    {{ item.text }}
+                                </p>
+                            </div>
+                            <el-divider></el-divider>
+                        </div>
+                    </el-col>
+
+                    <!-- 右边区域 -->
+                    <el-col :span="8" style="position: relative; top: 100px">
+                        <div class="right-box-custom_1">
+                            <h4>中国共产党</h4>
+                            <img src="./images/history-1/jiandang.png" alt="">
+                            <p>
+                                中国共产党（英文名：the Communist Party of China，简写CPC），
+                                简称中共，创建于1921年7月23日 ，历经多年国共内战，率领中国人民解放军打败中华民国国军，
+                                并在1949年于北京建立中华人民共和国。 1949年10月至今为代表工人阶级领导工农联盟和统一战线，
+                                在中国大陆实行人民民主专政的中华人民共和国唯一执政党。
+                            </p>
+                            <el-divider></el-divider>
+                            <div class="custom_1-small-box">
+                                <span>
+                                    <a href="http://cpc.people.com.cn/">党员</a>
+                                    <p>9191.4万名</p>
+                                </span>
+                                <span>
+                                    <a href="http://www.gov.cn/">中华人民</a>
+                                    <p>14多亿人</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="right-box-custom_2">
+                            <h4>党史概述</h4>
+                            <div class="right-box-custom_2-box">
+                                <span>01</span>
+                                <a href="history.html" class="active">新民主主义革命</a>
+                            </div>
+                            <el-divider></el-divider>
+                            <div class="right-box-custom_2-box">
+                                <span>02</span>
+                                <a href="history-2.html">社会主义改造时期</a>
+                            </div>
+                            <el-divider></el-divider>
+                            <div class="right-box-custom_2-box">
+                                <span>03</span>
+                                <a href="">社会主义建设时期</a>
+                            </div>
+                            <el-divider></el-divider>
+                            <div class="right-box-custom_2-box">
+                                <span>04</span>
+                                <a href="">中国特色社会主义</a>
+                            </div>
+                            <img src="./images/history-1/card-4.jpg" alt="">
+                        </div>
+                        <div class="right-box-custom_3">
+                            <h4>主要事件</h4>
+                            <div class="right-box-custom_3-event">
+                                <div class="custom_3-event-box">
+                                    <span>新文化运动</span>
+                                    <span>(1)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>五四运动</span>
+                                    <span>(2)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>中共“一大”</span>
+                                    <span>(3)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>红军长征</span>
+                                    <span>(4)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>全面抗日战争</span>
+                                    <span>(5)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>新中国成立</span>
+                                    <span>(6)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </el-col>
+                </el-row>
+                <div style="height: 30px;"></div>
+
+            </div>
+        </main>
+
+        <!-- 网页主体部分结束 -->
+
+        <!-- 页脚信息开始 -->
+        <footer id="footer" class="" style="padding-top: 15px;">
+            <div
+                style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
+                <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span>备案号：桂ICP备20xxxx1234号-1</span>
+            </div>
+        </footer>
+        <!-- 页脚信息结束 -->
+    </div>
+
+    <script src="./js/lib/vue2.js"></script>
+    <script src="./js/lib/element-ui.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                leftCard: [
+                    {
+                        time: '1919年5月4日',
+                        title: '五四运动',
+                        src: './images/history-1/card-1.png',
+                        text: `五四运动，是1919年5月4日发生在北京的一场以青年学生为主，
+                                    广大群众、市民、工商人士等阶层共同参与的，
+                                    通过示威游行、请愿、罢工、暴力对抗政府等多种形式进行的爱国运动，
+                                    是中国人民彻底的反对帝国主义、封建主义的爱国运动，又称“五四风雷”。
+                                    起因，第一次世界大战期间，欧洲列强无暇东顾，日本乘机加强对中国的侵略，严重损害了中国的主权。
+                                    中国人民的反日情绪日渐增长。1919年巴黎和会上中国外交的失败，引发了伟大的五四运动。
+                                    从1918年11月的“公理战胜强权”庆典，到次年1月的巴黎会议，短短两个月时间，
+                                    当时的中国充分诠释了“自古弱国无外交”的定律，所谓的“公理战胜强权”不过是一个美丽的童话。
+                                    面对这样屈辱的局面，从5月4日开始，北京的学生纷纷罢课，
+                                    组织演讲、宣传，随后天津、上海、广州、南京、杭州、武汉、济南的学生、工人也给予支持。
+                                    五四运动直接影响了中国共产党的诞生和发展，
+                                    中国共产党党史一般将其定义为“反帝反封建的爱国运动”（注意这里的“封建”一词是泛化的封建观），
+                                    并以此运动作为旧民主主义革命和新民主主义革命的分水岭。`
+                    },
+                    {
+                        time: '1921年7月23日',
+                        title: '中共一大',
+                        src: './images/history-1/card-2.jpg',
+                        text: `中国共产党第一次全国代表大会于1921年7月23日至8月初在上海法租界望志路106号（现兴业路76号）
+                                和浙江嘉兴召开。上海的李达、李汉俊，北京的张国焘、刘仁静，武汉的董必武、陈潭秋，长沙的毛泽东、何叔衡，
+                                广州的陈公博，济南的王尽美、邓恩铭，旅日的周佛海，
+                                以及由陈独秀指定的代表包惠僧出席会议，代表全国50多名党员。
+                                共产国际代表马林和尼克尔斯基也出席了大会。一大召开标志着中国共产党的正式成立，
+                                犹如一轮红日在东方冉冉升起，照亮了中国革命的前程。
+                                这是近代中国社会进步和革命发展的客观要求，是开天辟地的大事变。
+                                毛泽东说：“中国产生了共产党，这是开天辟地的大事件”。
+                                自从有了中国共产党，中国革命的面目就焕然一新了。`
+                    },
+                    {
+                        time: '1931年9月18日',
+                        title: '抗日战争',
+                        src: './images/history-1/card-3.jpg',
+                        text: `抗日战争（War of Resistance against Japan），简称抗战，指20世纪中期第二次世界大战中，
+                                中国抵抗日本侵略的一场民族性的全面战争。国际上称作第二次中日战争（Second Sino-Japanese War）、
+                                日本侵华战争（Japanese War of Aggression against China）。抗战时间从1931年9月18日九一八事变开始算起，
+                                至1945年9月2日结束 ，共14年抗战。 1931年9月18日，日军进攻沈阳，九一八事变爆发，由于当局的不抵抗 [3-6] ，
+                                致使日本侵略军迅速占领中国东北，并成立伪满洲国。1932年1月28日，日军进攻上海，淞沪抗战爆发，
+                                中日军队第一次全面对抗和较量 [9-11] 。1937年7月7日，日军在北平附近挑起卢沟桥事变，中日战争全面爆发。
+                                1941年12月7日，日本发动太平洋战争后，12月9日，重庆国民政府正式对日宣战。 1945年8月15日，日本向同盟国无条件投降。`
+                    },
+                    {
+                        time: '1934年10月',
+                        title: '红军长征',
+                        src: './images/history-1/card-5.jpg',
+                        text: `1934年10月，第五次反“围剿”失败后，中央主力红军为摆脱国民党军队的包围追击，
+                                被迫实行战略性转移，退出中央根据地，进行长征。 长征是人类历史上的伟大奇迹，
+                                中央红军共进行了380余次战斗，攻占700多座县城，红军牺牲了营以上干部多达430余人，平均年龄不到30岁，
+                                共击溃国民党军数百个团，期间共经过14个省，翻越18座大山，跨过24条大河，走过荒草地，翻过雪山，
+                                行程约二万五千里，红一方面军于1935年10月到达陕北，与陕北红军胜利会师。1936年10月，
+                                红二、四方面军到达甘肃会宁地区，同红一方面军会师。
+                                红军三大主力会师，标志着万里长征的胜利结束。`
+                    }
+
+                ]
+            }
+        })
+    </script>
+
+
+
+</body>
+
+</html>

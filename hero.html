@@ -7,11 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/lib/element-ui.css">
-    <link rel="stylesheet" href="./css/history.css">
+    <link rel="stylesheet" href="./css/hero.css">
     <title>英雄人物</title>
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -27,8 +24,14 @@
                     <li>
                         <a href="index.html">首页</a>
                     </li>
-                    <li>
-                        <a href="history.html">党的历程</a>
+                    <li class="found">
+                        <a href="javascript:;">党的光辉历程</a>
+                        <ol class="dropdown history">
+                            <li><a href="history-1.html">新民主主义革命</a></li>
+                            <li><a href="history-2.html">社会主义改造时期</a></li>
+                            <li><a href="history-3.html">社会主义建设时期</a></li>
+                            <li><a href="history-4.html">中国特色社会主义</a></li>
+                        </ol>
                     </li>
                     <li class="active">
                         <a href="hero.html">英雄人物</a>
@@ -44,8 +47,6 @@
                             <li><a href="feedback.html">反馈</a></li>
                         </ol>
                     </li>
-                    <!-- 这个元素来定义滑动的线条 -->
-                    <!-- <li class="underline"></li> -->
                 </ul>
             </nav>
             <span class="cta">
@@ -53,72 +54,24 @@
             </span>
         </header>
         <!-- 导航栏结束 -->
-        <div class="background-img"></div>
 
         <!-- 网页主体部分开始 -->
         <main>
-            <div style="width: 80%; margin: 30px 10%; height: 800px; border: 1px solid;">
-                <el-row :gutter="20" style="width: 80%; margin: auto;">
-                    <el-col :span="6">
-                        <el-card class="box-card">
-                            <div v-for="o in 4" :key="o" class="text item">
-                                {{'列表内容 ' + o }}
-                            </div>
-                        </el-card>
-                    </el-col>
-                    <el-col :span="6">
-                        <el-card class="box-card">
-                            <div v-for="o in 4" :key="o" class="text item">
-                                {{'列表内容 ' + o }}
-                            </div>
-                        </el-card>
-                    </el-col>
-                    <el-col :span="6">
-                        <el-card class="box-card">
-                            <div v-for="o in 4" :key="o" class="text item">
-                                {{'列表内容 ' + o }}
-                            </div>
-                        </el-card>
-                    </el-col>
-                    <el-col :span="6">
-                        <el-card class="box-card">
-                            <div v-for="o in 4" :key="o" class="text item">
-                                {{'列表内容 ' + o }}
-                            </div>
-                        </el-card>
-                    </el-col>
-                </el-row>
-                <el-row :gutter="20" style="margin-top: 20px;">
-                    <el-col :span="6">
-                        <el-card class="box-card">
-                            <div v-for="o in 4" :key="o" class="text item">
-                                {{'列表内容 ' + o }}
-                            </div>
-                        </el-card>
-                    </el-col>
-                    <el-col :span="6">
-                        <el-card class="box-card">
-                            <div v-for="o in 4" :key="o" class="text item">
-                                {{'列表内容 ' + o }}
-                            </div>
-                        </el-card>
-                    </el-col>
-                    <el-col :span="6">
-                        <el-card class="box-card">
-                            <div v-for="o in 4" :key="o" class="text item">
-                                {{'列表内容 ' + o }}
-                            </div>
-                        </el-card>
-                    </el-col>
-                    <el-col :span="6">
-                        <el-card class="box-card">
-                            <div v-for="o in 4" :key="o" class="text item">
-                                {{'列表内容 ' + o }}
-                            </div>
-                        </el-card>
-                    </el-col>
-                </el-row>
-
+            <div class="container">
+                <div class="hero-box" v-for="(item, index) in cards" :index="index">
+                    <div class="hero-image">
+                        <img :src="item.img" alt="">
+                    </div>
+                    <div class="hero-content">
+                        <div class="title">{{ item.name }}</div>
+                        <div class="sub-title"></div>
+                        <div class="hero-bottom">
+                            <p>{{ item.content }}</p>
+                            <button>查看更多</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
             </div>
         </main>
         <!-- 网页主体部分结束 -->
@@ -134,8 +87,32 @@
         <!-- 页脚信息结束 -->
     </div>
 
+    <script src="./js/lib/jquery.js"></script>
     <script src="./js/lib/vue2.js"></script>
     <script src="./js/lib/element-ui.js"></script>
+
+    <script>
+        // 卡片动效
+        $(document).ready(function () {
+            $(".hero-box").hover(function () {
+                const i = $(this).attr('index')
+                if ($(this).hasClass("mouse-active")) {
+                    $('.hero-box .hero-bottom').slideUp(function () {
+                        $('.hero-box').removeClass("mouse-active");
+                    })
+                } else {
+                    $('.hero-box:eq(' + i + ')').addClass("mouse-active");
+                    $('.hero-box:eq(' + i + ')' + ' .hero-bottom').stop().slideDown();
+                }
+            });
+            $(".hero-box").mouseleave(function () {
+                $('.hero-box .hero-bottom').slideUp(function () {
+                    $('.hero-box').removeClass("mouse-active");
+                })
+            })
+        })
+
+    </script>
 
     <script>
         // 调整网页底部信息栏位置。
@@ -151,23 +128,86 @@
             }
         }
         footerInit()
+
     </script>
 
     <script>
-        new Vue({
+        const vm = new Vue({
             el: '#app',
             data: {
-                reverse: true,
-                activities: [{
-                    content: '活动按期开始',
-                    timestamp: '2018-04-15'
-                }, {
-                    content: '通过审核',
-                    timestamp: '2018-04-13'
-                }, {
-                    content: '创建成功',
-                    timestamp: '2018-04-11'
-                }]
+                cards: [
+                    {
+                        name: '毛泽东',
+                        img: './images/hero/maozedong.jpg',
+                        content: `毛泽东，字润之（原作咏芝，后改润芝）。湖南湘潭人。中国人民的领袖，伟大的马克思主义者，无产阶级革命家、战略家和理论家，
+                        中国共产党、中国人民解放军和中华人民共和国的主要缔造者和领导人，政治家 ，军事家 ，诗人，书法家。
+                        因毛泽东担任过的主要职务几乎全部称为主席，所以也被人们尊称为“毛主席”。
+                        毛泽东被视为现代世界历史中最重要的人物之一。`
+                    },
+                    {
+                        name: '朱德',
+                        img: './images/hero/zhude.jpg',
+                        content: `朱德，字玉阶，原名朱代珍，曾用名朱建德，四川仪陇县人。伟大的马克思主义者，无产阶级革命家、政治家和军事家，中国共产党、中国人民解放军和中华人民共和国的主要缔造者和领导人之一。中华人民共和国十大元帅之首。`
+                    },
+                    {
+                        name: '叶剑英',
+                        img: './images/hero/yejianying.jpg',
+                        content: `叶剑英（1897年04月28日-1986年10月22日），原名叶宜伟，字沧白，广东省梅县人，
+                        久经考验的共产主义忠诚战士，坚定的马克思主义者，
+                        伟大的无产阶级革命家、政治家、军事家，中国人民解放军的缔造者之一，
+                        中华人民共和国的开国元勋，长期担任党、国家和军队重要领导职务的卓越领导人，
+                        中华人民共和国十大元帅之一，是以邓小平同志为核心的党的第二代中央领导集体的重要成员。`
+                    },
+                    {
+                        name: '贺龙',
+                        img: './images/hero/helong.jpg',
+                        content: `贺龙（1896年3月22日-1969年6月9日），原名贺文常， 字云卿。 湖南桑植人。
+                        伟大的无产阶级革命家、军事家，中国人民解放军的创始人和主要领导者之一。 他在半个多世纪的革命斗争生涯中，
+                        为中国的旧民主主义革命、新民主主义革命、社会主义革命和建设，作出了重要贡献，建立了不朽功勋`
+                    },
+                    {
+                        name: '刘伯承',
+                        img: './images/hero/liubocheng.jpg',
+                        content: `刘伯承（1892年12月4日～1986年10月7日），原名刘明昭，曾用名刘伯坚，四川省开县人（现重庆市开州区）。
+                        中国共产党的优秀党员，中华人民共和国元帅，中国人民解放军缔造者之一，伟大的无产阶级革命家、军事家、马克思主义军事理论家，军事教育家。`
+                    },
+                    {
+                        name: '彭德怀',
+                        img: './images/hero/pengdehuai.jpg',
+                        content: `彭德怀（1898年10月24日-1974年11月29日），男，原名得华，号石穿，出生于湖南省湘潭县彭家围子。
+                        中华人民共和国开国元帅，无产阶级革命家，军事家，政治家，中国人民解放军创建人和领导人之一。“文化大革命”期间，遭到林彪、江青反革命集团的诬陷和残酷迫害，多次被游斗。1974年11月29日逝世。1978年中共十一届三中全会为他平反昭雪，恢复了名誉。`
+                    },
+                    {
+                        name: '刘少奇',
+                        img: './images/hero/liushaoqi.jpg',
+                        content: `刘少奇（1898年11月24日-1969年11月12日），生于湖南省宁乡县，
+                        伟大的无产阶级革命家、政治家、理论家，党和国家主要领导人之一，中华人民共和国开国元勋，
+                        是以毛泽东同志为核心的党的第一代中央领导集体的重要成员。刘少奇同志为中国革命和建设事业殚精竭虑、呕心沥血，
+                        在经济、政治、军事、文化、教育、外交和党的建设等领域都建立了卓著功勋，受到全党全军全国各族人民衷心爱戴。`
+                    },
+                    {
+                        name: '周恩来',
+                        img: './images/hero/zhouenlai.jpg',
+                        content: `周恩来（1898年3月5日-1976年1月8日），字翔宇，原籍浙江绍兴，1898年3月5日生于江苏淮安。
+                        1921年加入中国共产党，是伟大的马克思主义者，伟大的无产阶级革命家、政治家、军事家、外交家，
+                        党和国家主要领导人之一，中国人民解放军主要创建人之一，中华人民共和国的开国元勋，是以毛泽东同志为核心的党的第一代中央领导集体的重要成员`
+                    },
+                    {
+                        name: '陈云',
+                        img: './images/hero/chenyun.jpg',
+                        content: `陈云（1905年6月13日-1995年4月10日），江苏青浦（今属上海）人。伟大的无产阶级革命家、政治家，
+                        杰出的马克思主义者，中国社会主义经济建设的开创者和奠基人之一，党和国家久经考验的卓越领导人
+                        ，是以毛泽东同志为核心的党的第一代中央领导集体和以邓小平同志为核心的党的第二代中央领导集体的重要成员`
+                    },
+                    {
+                        name: '邓小平',
+                        img: './images/hero/dengxiaoping.jpg',
+                        content: `邓小平是全党全军全国各族人民公认的享有崇高威望的卓越领导人，伟大的马克思主义者，
+                        伟大的无产阶级革命家、政治家、军事家、外交家，久经考验的共产主义战士，
+                        中国社会主义改革开放和现代化建设的总设计师，中国特色社会主义道路的开创者，邓小平理论的主要创立者。
+                        他所倡导的“改革开放”及“一国两制”政策理念，改变了20世纪后期的中国，也影响了世界。`
+                    },
+                ]
             }
         })
     </script>

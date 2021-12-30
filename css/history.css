@@ -9,7 +9,26 @@ main {
     /* position: absolute; */
     width: 100%;
     height: 100%;
+}
+
+.background-img.one {
     background: url('../images/history-1/background-1.jpg') no-repeat;
+    background-size: cover;
+}
+
+.background-img.two {
+    background: url('../images/history-2/background.jpg') no-repeat;
+    background-size: cover;
+}
+
+.background-img.three {
+    background: url('../images/history-3/background.jpg') no-repeat;
+    background-size: cover;
+}
+
+.background-img.four {
+    background: url('../images/history-4/background.jpg') no-repeat;
+    background-position-y: -40px;
     background-size: cover;
 }
 
@@ -27,28 +46,8 @@ main {
     border-top-right-radius: 10px;
     height: 300px;
     width: 100%;
-    background-size: cover;
 }
 
-.history-detail-box__img.one {
-    background: url('../images/history-1/card-1.png') no-repeat;
-    background-position: -120px;
-}
-
-.history-detail-box__img .tow {
-    background: url('../images/history-1/card-2.png') no-repeat;
-    background-position: -120px;
-}
-
-.history-detail-box__img .three {
-    background: url('../images/history-1/card-3.png') no-repeat;
-    background-position: -120px;
-}
-
-.history-detail-box__img .four {
-    background: url('../images/history-1/card-4.png') no-repeat;
-    background-position: -120px;
-}
 
 /* 网页主体信息 */
 .main-container {

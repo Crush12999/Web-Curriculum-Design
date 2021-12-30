@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/lib/element-ui.css">
+    <link rel="stylesheet" href="./css/history.css">
+    <title>社会主义改造时期</title>
+    <style>
+        .history-detail-box__img.one {
+            background: url('../images/history-2/card-1.jpg') no-repeat;
+            background-size: cover;
+        }
+
+        .history-detail-box__img.two {
+            background: url('../images/history-2/card-2.jpg') no-repeat;
+            background-position: -110px;
+            background-size: cover;
+        }
+
+        .history-detail-box__img.three {
+            background: url('../images/history-2/card-3.jpg') no-repeat;
+            background-position: -120px;
+            background-size: cover;
+        }
+
+        .history-detail-box__img.four {
+            background: url('../images/history-2/card-4.jpg') no-repeat;
+            background-position: -120px;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 导航栏开始 -->
+        <header class="navbar tabsOn">
+            <span class="logo-box">
+                <img class="logo" src="images/nav_党群档案.svg" alt="">
+                <p class="logo-title">庆党百年主题网</p>
+            </span>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li class="found active">
+                        <a href="javascript:;">党的光辉历程</a>
+                        <ol class="dropdown history">
+                            <li><a href="history-1.html">新民主主义革命</a></li>
+                            <li class="active"><a href="history-2.html">社会主义改造时期</a></li>
+                            <li><a href="history-3.html">社会主义建设时期</a></li>
+                            <li><a href="history-4.html">中国特色社会主义</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="hero.html">英雄人物</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">中共大会</a>
+                    </li>
+                    <li class="found">
+                        <a href="javascript:;">发现更多</a>
+                        <ol class="dropdown triangle">
+                            <li><a href="photo-album.html">影视作品</a></li>
+                            <li><a href="javascript:;">优秀栏目</a></li>
+                            <li><a href="feedback.html">反馈</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </nav>
+            <span class="cta">
+                <a class="" href="register-login.html"><button>登录 / 注册</button></a>
+            </span>
+        </header>
+        <!-- 导航栏结束 -->
+        <div class="background-img two">
+            <el-row :gutter="20" style="margin: auto; width: 80%; max-width: 1140px;">
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img one"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                西藏解放</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">01</span>
+                                <span style="color: rgb(152, 152, 152);">和平解放西藏</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img two"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                抗美援朝</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">02</span>
+                                <span style="color: rgb(152, 152, 152);">抗美援朝保家卫国</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img three"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                第一届全国人大</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">03</span>
+                                <span style="color: rgb(152, 152, 152);">制定新中国宪法</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img four"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                社会主义三大改造</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">04</span>
+                                <span style="color: rgb(152, 152, 152);">进入社会主义初级阶段</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
+
+        <!-- 网页主体部分开始 -->
+        <main style="background-color: #fff;padding: 0;">
+            <div class="main-container">
+                <el-row :gutter="35" style="position: relative; width: 80%; max-width: 1140px; margin: auto;">
+                    <!-- 左边区域的流动盒子 -->
+                    <el-col :span="16" style="position: relative; top: 50px;">
+                        <div class="history-left-box" v-for="(item, index) in leftCard">
+                            <div class="history-left-box__img">
+                                <img style="width: 100%;" :src="item.src" alt="">
+                                <button class="history-left-box__btn">{{ item.time }}</button>
+                            </div>
+                            <div class="history-left-box__text">
+                                <span>{{ item.title }}</span>
+                                <p style="text-indent: 2em;">
+                                    {{ item.text }}
+                                </p>
+                            </div>
+                            <el-divider></el-divider>
+                        </div>
+                    </el-col>
+
+                    <!-- 右边区域 -->
+                    <el-col :span="8" style="position: relative; top: 100px">
+                        <div class="right-box-custom_1">
+                            <h4>中国共产党</h4>
+                            <img src="./images/history-1/jiandang.png" alt="">
+                            <p>
+                                中国共产党（英文名：the Communist Party of China，简写CPC），
+                                简称中共，创建于1921年7月23日 ，历经多年国共内战，率领中国人民解放军打败中华民国国军，
+                                并在1949年于北京建立中华人民共和国。 1949年10月至今为代表工人阶级领导工农联盟和统一战线，
+                                在中国大陆实行人民民主专政的中华人民共和国唯一执政党。
+                            </p>
+                            <el-divider></el-divider>
+                            <div class="custom_1-small-box">
+                                <span>
+                                    <a href="http://cpc.people.com.cn/">党员</a>
+                                    <p>9191.4万名</p>
+                                </span>
+                                <span>
+                                    <a href="http://www.gov.cn/">中华人民</a>
+                                    <p>14多亿人</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="right-box-custom_2">
+                            <h4>党史概述</h4>
+                            <div class="right-box-custom_2-box">
+                                <span>01</span>
+                                <a href="history-1.html">新民主主义革命</a>
+                            </div>
+                            <el-divider></el-divider>
+                            <div class="right-box-custom_2-box">
+                                <span>02</span>
+                                <a href="history-2.html" class="active">社会主义改造时期</a>
+                            </div>
+                            <el-divider></el-divider>
+                            <div class="right-box-custom_2-box">
+                                <span>03</span>
+                                <a href="history-3.html">社会主义建设时期</a>
+                            </div>
+                            <el-divider></el-divider>
+                            <div class="right-box-custom_2-box">
+                                <span>04</span>
+                                <a href="history-4.html">中国特色社会主义</a>
+                            </div>
+                            <img src="./images/history-2/right-1.png" alt="">
+                        </div>
+                        <div class="right-box-custom_3">
+                            <h4>主要事件</h4>
+                            <div class="right-box-custom_3-event">
+                                <div class="custom_3-event-box">
+                                    <span>西藏和平解放</span>
+                                    <span>(1)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>抗美援朝</span>
+                                    <span>(2)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>第一届全国人大</span>
+                                    <span>(3)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>社会主义三大改造</span>
+                                    <span>(4)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>“一五”计划</span>
+                                    <span>(5)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </el-col>
+                </el-row>
+            </div>
+            <div style="height: 100px;"></div>
+        </main>
+
+        <!-- 网页主体部分结束 -->
+
+        <!-- 页脚信息开始 -->
+        <footer id="footer">
+            <div
+                style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
+                <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span>备案号：桂ICP备20xxxx1234号-1</span>
+            </div>
+        </footer>
+        <!-- 页脚信息结束 -->
+    </div>
+
+    <script src="./js/lib/vue2.js"></script>
+    <script src="./js/lib/element-ui.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                leftCard: [
+                    {
+                        time: '1951年5月23日',
+                        title: '西藏和平解放',
+                        src: './images/history-2/box-img-1.jpg',
+                        text: `经过许多斗争和工作，挫败了美英等阻挠谈判的阴谋。 以阿沛·阿旺晋美为首的西藏地方政府代表团，
+                                终于在1951年4月下旬抵京谈判，并于1951年的5月23日，中华人民共和国中央人民政府的全权代表和西藏地方政府的
+                                全权代表在北京签订《中央人民政府和西藏地方政府关于和平解放西藏办法的协议》（简称《十七条协议》），
+                                宣告了西藏的和平解放。 西藏和平解放是中国现代史和中国革命史上的一个重大历史事件，也是西藏地方历史上一个划时代
+                                的转折点。西藏民族从此摆脱了帝国主义的侵略和羁绊，
+                                西藏人民从此更加深切地体验到了中华民族大家庭的温暖，西藏地方的历史画卷从此掀开了崭新的一页。`
+                    },
+                    {
+                        time: '1950年到1953年',
+                        title: '抗美援朝',
+                        src: './images/history-2/box-img-2.jpg',
+                        text: `抗美援朝，又称抗美援朝运动或抗美援朝战争，是20世纪50年代初爆发的朝鲜战争的一部分，
+                                仅指中国人民志愿军参战的阶段，也包括中国人民支援朝鲜人民抗击美国侵略的群众性运动。 1950年7月10日，
+                                “中国人民反对美国侵略台湾朝鲜运动委员会”成立，抗美援朝运动自此开始。 10月，中国人民志愿军赴朝作战，
+                                拉开了抗美援朝战争的序幕。 在抗美援朝战争中，志愿军得到了解放军全军和中国全国人民的全力支持，
+                                得到了以苏联为首的社会主义阵营的配合。 1953年7月，
+                                双方签订《朝鲜停战协定》，从此抗美援朝胜利结束。 1958年，志愿军全部撤回中国。10月25日为抗美援朝纪念日。`
+                    },
+                    {
+                        time: '1954年9月15日',
+                        title: '第一届全国人大',
+                        src: './images/history-2/card-3.jpg',
+                        text: `第一届全国人民代表大会第一次会议于1954年9月15日至9月28日在北京召开。
+                                代表总人数1226人（其中女代表147人，少数民族代表178人）。中央人民政府主席毛泽东致开幕词。
+                                会议听取了中华人民共和国宪法起草委员会委员刘少奇《关于中华人民共和国宪法草案的报告》。
+                                中央人民政府政务院总理周恩来《政府工作报告》。 政府工作报告》提出“我国伟大的人民革命的根本目的，
+                                是在于从帝国主义、封建主义和官僚资本主义的压迫下面，最后也从资本主义的束缚和小生产的限制下面，
+                                解放我国的生产力，使我国国民经济能够沿着社会主义的道路而得到有计划的迅速的发展，
+                                以便提高人民的物质生活和文化生活的水平，
+                                并且巩固我们国家的独立和安全。” 会议制定和颁布了中国历史上第一部人民的宪法——《中华人民共和国宪法》。`
+                    },
+                    {
+                        time: '1953年至1956年',
+                        title: '社会主义三大改造',
+                        src: './images/history-2/box-img-4.jpg',
+                        text: `中国的社会主义改造，即社会主义三大改造，是指中华人民共和国建立初期，
+                                中国共产党在全国范围内组织的对于农业、手工业和资本主义工商业进行的社会主义改造。
+                                中国的社会主义改造实现了把生产资料私有制转变为社会主义公有制的任务，丰富和发展了马克思列宁主义的科学社会主义理论。`
+                    }
+
+                ]
+            }
+        })
+    </script>
+
+
+
+</body>
+
+</html>

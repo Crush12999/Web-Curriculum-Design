@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/lib/element-ui.css">
+    <link rel="stylesheet" href="./css/history.css">
+    <title>社会主义建设时期</title>
+    <style>
+        .history-detail-box__img.one {
+            background: url('../images/history-3/card-1.jpg') no-repeat;
+            background-position: -60px;
+            background-size: cover;
+        }
+
+        .history-detail-box__img.two {
+            background: url('../images/history-3/card-2.jpg') no-repeat;
+            background-size: cover;
+        }
+
+        .history-detail-box__img.three {
+            background: url('../images/history-3/card-3.jpg') no-repeat;
+            background-position: -120px;
+            background-size: cover;
+        }
+
+        .history-detail-box__img.four {
+            background: url('../images/history-3/card-4.jpg') no-repeat;
+            background-position: -60px;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 导航栏开始 -->
+        <header class="navbar tabsOn">
+            <span class="logo-box">
+                <img class="logo" src="images/nav_党群档案.svg" alt="">
+                <p class="logo-title">庆党百年主题网</p>
+            </span>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li class="found active">
+                        <a href="javascript:;">党的光辉历程</a>
+                        <ol class="dropdown history">
+                            <li><a href="history-1.html">新民主主义革命</a></li>
+                            <li><a href="history-2.html">社会主义改造时期</a></li>
+                            <li class="active"><a href="history-3.html">社会主义建设时期</a></li>
+                            <li><a href="history-4.html">中国特色社会主义</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="hero.html">英雄人物</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">中共大会</a>
+                    </li>
+                    <li class="found">
+                        <a href="javascript:;">发现更多</a>
+                        <ol class="dropdown triangle">
+                            <li><a href="photo-album.html">影视作品</a></li>
+                            <li><a href="javascript:;">优秀栏目</a></li>
+                            <li><a href="feedback.html">反馈</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </nav>
+            <span class="cta">
+                <a class="" href="register-login.html"><button>登录 / 注册</button></a>
+            </span>
+        </header>
+        <!-- 导航栏结束 -->
+        <div class="background-img three">
+            <el-row :gutter="20" style="margin: auto; width: 80%; max-width: 1140px;">
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img one"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                论十大关系</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">01</span>
+                                <span style="color: rgb(152, 152, 152);">探索的开端</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img two"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                中国第一颗原子弹</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">02</span>
+                                <span style="color: rgb(152, 152, 152);">打破了核垄断</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img three"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                中国第一颗氢弹</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">03</span>
+                                <span style="color: rgb(152, 152, 152);">完成两弹弯道超车</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="history-detail-box">
+                        <div class="history-detail-box__img four"></div>
+                        <div class="history-detail-text" style="margin: 0 26px;height: 100px;">
+                            <p
+                                style="margin-top: 24px; margin-bottom: 12px; line-height: 26px ;font-size: 22px; color: rgb(51, 122, 183); font-weight: 600;">
+                                东方红一号</p>
+                            <span style="font-size: 18px; font-weight: 500;">
+                                <span style="color: #DC0048;">04</span>
+                                <span style="color: rgb(152, 152, 152);">中国第一颗人造卫星</span>
+                            </span>
+                        </div>
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
+
+        <!-- 网页主体部分开始 -->
+        <main style="background-color: #fff;padding: 0;">
+            <div class="main-container">
+                <el-row :gutter="35" style="position: relative; width: 80%; max-width: 1140px; margin: auto;">
+                    <!-- 左边区域的流动盒子 -->
+                    <el-col :span="16" style="position: relative; top: 50px;">
+                        <div class="history-left-box" v-for="(item, index) in leftCard">
+                            <div class="history-left-box__img">
+                                <img style="width: 100%;" :src="item.src" alt="">
+                                <button class="history-left-box__btn">{{ item.time }}</button>
+                            </div>
+                            <div class="history-left-box__text">
+                                <span>{{ item.title }}</span>
+                                <p style="text-indent: 2em;">
+                                    {{ item.text }}
+                                </p>
+                            </div>
+                            <el-divider></el-divider>
+                        </div>
+                    </el-col>
+
+                    <!-- 右边区域 -->
+                    <el-col :span="8" style="position: relative; top: 100px">
+                        <div class="right-box-custom_1">
+                            <h4>中国共产党</h4>
+                            <img src="./images/history-1/jiandang.png" alt="">
+                            <p>
+                                中国共产党（英文名：the Communist Party of China，简写CPC），
+                                简称中共，创建于1921年7月23日 ，历经多年国共内战，率领中国人民解放军打败中华民国国军，
+                                并在1949年于北京建立中华人民共和国。 1949年10月至今为代表工人阶级领导工农联盟和统一战线，
+                                在中国大陆实行人民民主专政的中华人民共和国唯一执政党。
+                            </p>
+                            <el-divider></el-divider>
+                            <div class="custom_1-small-box">
+                                <span>
+                                    <a href="http://cpc.people.com.cn/">党员</a>
+                                    <p>9191.4万名</p>
+                                </span>
+                                <span>
+                                    <a href="http://www.gov.cn/">中华人民</a>
+                                    <p>14多亿人</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="right-box-custom_2">
+                            <h4>党史概述</h4>
+                            <div class="right-box-custom_2-box">
+                                <span>01</span>
+                                <a href="history-1.html">新民主主义革命</a>
+                            </div>
+                            <el-divider></el-divider>
+                            <div class="right-box-custom_2-box">
+                                <span>02</span>
+                                <a href="history-2.html">社会主义改造时期</a>
+                            </div>
+                            <el-divider></el-divider>
+                            <div class="right-box-custom_2-box">
+                                <span>03</span>
+                                <a href="history-3.html" class="active">社会主义建设时期</a>
+                            </div>
+                            <el-divider></el-divider>
+                            <div class="right-box-custom_2-box">
+                                <span>04</span>
+                                <a href="history-4.html">中国特色社会主义</a>
+                            </div>
+                            <img src="./images/history-3/card-3.jpg" alt="">
+                        </div>
+                        <div class="right-box-custom_3">
+                            <h4>主要事件</h4>
+                            <div class="right-box-custom_3-event">
+                                <div class="custom_3-event-box">
+                                    <span>中共八大</span>
+                                    <span>(1)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>八字方针</span>
+                                    <span>(2)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>中国第一颗原子弹爆炸成功</span>
+                                    <span>(3)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>中国第一颗氢弹爆炸成功</span>
+                                    <span>(4)</span>
+                                </div>
+                                <div class="custom_3-event-box">
+                                    <span>东方红一号</span>
+                                    <span>(5)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </el-col>
+                </el-row>
+            </div>
+            <div style="height: 100px;"></div>
+        </main>
+
+        <!-- 网页主体部分结束 -->
+
+        <!-- 页脚信息开始 -->
+        <footer id="footer">
+            <div
+                style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
+                <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span>备案号：桂ICP备20xxxx1234号-1</span>
+            </div>
+        </footer>
+        <!-- 页脚信息结束 -->
+    </div>
+
+    <script src="./js/lib/vue2.js"></script>
+    <script src="./js/lib/element-ui.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                leftCard: [
+                    {
+                        time: '1956年9月',
+                        title: '中共八大',
+                        src: './images/history-3/box-img-1.jpg',
+                        text: `大会正式召开之前，党曾在多方面为大会的顺利召开做了准备。1956年4月25日，
+                                毛泽东在中央政治局扩大会议上作了《论十大关系》的讲话，为探索适合中国国情的社会主义建设道路
+                                提出了许多重要的思想原则，从思想上、理论上为八大的召开作了重要的准备。同年8月30日至9月12日，
+                                在北京举行了八大预备会议。毛泽东在会上作了《增强党的团结，继承党的传统》的讲话，指出八大召开的目的和
+                                宗旨是：总结七大以来的经验，团结全党，团结国内外一切可以团结的力量，
+                                为建设社会主义中国而奋斗。号召全党要继承优良传统，反对主观主义、宗派主义和官僚主义。`
+                    },
+                    {
+                        time: '1960年6月',
+                        title: '国民经济调整',
+                        src: './images/history-3/box-img-2.jpg',
+                        text: `在中国共产党开始全面建设社会主义时期提出的恢复与发展国民经济的“调整、巩固、充实、
+                                提高”的“八字方针”的具体指导下，到1962年，经济逐步得到恢复和发展；1965年，国民经济调整任务基本完成；
+                                1966年，全国基本完成了预定的国民经济调整任务，使中国的国民经济得到了恢复和发展。`
+                    },
+                    {
+                        time: '1964年10月16日',
+                        title: '中国第一颗原子弹',
+                        src: './images/history-3/box-img-3.jpg',
+                        text: `在中共中央统一领导下，经过一大批科技人员、干部和职工的共同努力，
+                                中国自行制造的第一颗原子弹于1964年10月16日在新疆罗布泊爆炸成功。
+                                1955年，中央指定陈云、聂荣臻、薄一波负责筹建核工业。 1959年苏联撤走专家后，
+                                中国决心依靠自己的力量完成这一任务。 1962年，成立了以周恩来为首的专门领导机构。原子弹的爆炸成功，
+                                代表了中国科学技术的新水平，有力地打破了超级大国的核垄断和核讹诈，提高了中国的国际地位。`
+                    },
+                    {
+                        time: '1970年4月24日',
+                        title: '东方红一号',
+                        src: './images/history-3/card-4.jpg',
+                        text: `东方红一号卫星于1958年提出设想计划，1965年开始研制工作，
+                                于1970年4月24日在酒泉卫星发射中心成功发射。 东方红一号卫星重173千克，
+                                由长征一号运载火箭送入近地点441千米、远地点2368千米、倾角68.44度的椭圆轨道。
+                                卫星进行了轨道测控和《东方红》乐曲的播送 。 东方红一号卫星工作28天（设计寿命20天）。
+                                卫星于5月14日停止发射信号。东方红一号卫星仍在空间轨道上运行 [2] 。 东方红一号发射成功，
+                                开创了中国航天史的新纪元，
+                                使中国成为继苏、美、法、日之后世界上第五个独立研制并发射人造地球卫星的国家 。`
+                    }
+
+                ]
+            }
+        })
+    </script>
+
+
+
+</body>
+
+</html>
