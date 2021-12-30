@@ -14,7 +14,7 @@
 <body>
     <div id="app">
         <!-- 导航栏开始 -->
-        <header class="navbar tabsOn">
+        <header class="navbar">
             <span class="logo-box">
                 <img class="logo" src="images/nav_党群档案.svg" alt="">
                 <p class="logo-title">庆党百年主题网</p>
@@ -37,13 +37,12 @@
                         <a href="hero.html">英雄人物</a>
                     </li>
                     <li>
-                        <a href="javascript:;">中共大会</a>
+                        <a href="conference.html">中共大会</a>
                     </li>
                     <li class="found">
                         <a href="javascript:;">发现更多</a>
                         <ol class="dropdown triangle">
-                            <li><a href="photo-album.html">影视作品</a></li>
-                            <li><a href="javascript:;">优秀栏目</a></li>
+                            <li><a href="videos.html">影视作品</a></li>
                             <li><a href="feedback.html">反馈</a></li>
                         </ol>
                     </li>
@@ -114,22 +113,6 @@
 
     </script>
 
-    <script>
-        // 调整网页底部信息栏位置。
-        let footerDom = document.querySelector('#footer');
-        function footerInit() {
-            let viewPort = document.documentElement.clientHeight;
-            let footerOffsetTop = footerDom.offsetTop;
-            // 如果元素距离顶部高度加上它自身的高度小于网页可视高度，则将其固定在网页底部
-            if (footerOffsetTop + footerDom.style.height < viewPort) {
-                footerDom.classList.add('footer-fixed');
-            } else {
-                footerDom.classList.remove('footer-fixed');
-            }
-        }
-        footerInit()
-
-    </script>
 
     <script>
         const vm = new Vue({

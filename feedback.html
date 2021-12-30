@@ -277,193 +277,201 @@
 </head>
 
 <body>
-    <div id="myMessageBox"></div>
-    <!-- 导航栏开始 -->
-    <header class="navbar tabsOn">
-        <span class="logo-box">
-            <img class="logo" src="images/nav_党群档案.svg" alt="">
-            <p class="logo-title">庆党百年主题网</p>
-        </span>
-        <nav class="nav">
-            <ul class="nav-links">
-                <li>
-                    <a href="index.html">首页</a>
-                </li>
-                <li>
-                    <a href="javascript:;">党史</a>
-                </li>
-                <li>
-                    <a href="javascript:;">英雄人物</a>
-                </li>
-                <li>
-                    <a href="javascript:;">经典回忆</a>
-                </li>
-                <li class="found active">
-                    <a href="javascript:;">发现更多</a>
-                    <ol class="dropdown">
-                        <li><a href="photo-album.html">主题相册</a></li>
-                        <li class="active"><a href="feedback.html">反馈</a></li>
-                    </ol>
-                </li>
-                <!-- 这个元素来定义滑动的线条 -->
-                <!-- <li class="underline"></li> -->
-            </ul>
-        </nav>
-        <span class="cta">
-            <a class="" href="register-login.html"><button>登录 / 注册</button></a>
-        </span>
-    </header>
+    <div id="app">
+        <div id="myMessageBox"></div>
+        <!-- 导航栏开始 -->
+        <header class="navbar tabsOn">
+            <span class="logo-box">
+                <img class="logo" src="images/nav_党群档案.svg" alt="">
+                <p class="logo-title">庆党百年主题网</p>
+            </span>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li class="found">
+                        <a href="javascript:;">党的光辉历程</a>
+                        <ol class="dropdown history">
+                            <li><a href="history-1.html">新民主主义革命</a></li>
+                            <li><a href="history-2.html">社会主义改造时期</a></li>
+                            <li><a href="history-3.html">社会主义建设时期</a></li>
+                            <li><a href="history-4.html">中国特色社会主义</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="hero.html">英雄人物</a>
+                    </li>
+                    <li>
+                        <a href="conference.html">中共大会</a>
+                    </li>
+                    <li class="found active">
+                        <a href="javascript:;">发现更多</a>
+                        <ol class="dropdown triangle">
+                            <li><a href="videos.html">影视作品</a></li>
+                            <li class="active"><a href="feedback.html">反馈</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </nav>
+            <span class="cta">
+                <a class="" href="register-login.html"><button>登录 / 注册</button></a>
+            </span>
+        </header>
 
-    <!-- 导航栏结束 -->
+        <!-- 导航栏结束 -->
 
-    <!-- 网页主体部分开始 -->
-    <main>
-        <div class="container">
-            <!-- 评论列表 -->
-            <div id="feedbackList" class="feedback-list">
-                <!-- 评论信息盒子 -->
-                <div class="feedback-inner">
-                    <!-- 头像部分 -->
-                    <div class="feedback-avatar">
-                        <span>
-                            <img src="./images/avatar-boy.svg" alt="">
-                        </span>
-                    </div>
-                    <!-- 评论信息 -->
-                    <div class="feedback-content">
-                        <!-- 作者信息 -->
-                        <div class="feedback-content-author">
-                            <span class="feedback-content-author-name">Aqua99</span>
-                            <span class="feedback-content-author-time">2021-07-08 12:30</span>
+        <!-- 网页主体部分开始 -->
+        <main>
+            <div class="container">
+                <!-- 评论列表 -->
+                <div id="feedbackList" class="feedback-list">
+                    <!-- 评论信息盒子 -->
+                    <div class="feedback-inner">
+                        <!-- 头像部分 -->
+                        <div class="feedback-avatar">
+                            <span>
+                                <img src="./images/avatar-boy.svg" alt="">
+                            </span>
                         </div>
-                        <!-- 评论内容 -->
-                        <div class="feedback-content-detail">
-                            <p>啊啊啊啊啊啊啊啊啊啊啊啊啊额</p>
+                        <!-- 评论信息 -->
+                        <div class="feedback-content">
+                            <!-- 作者信息 -->
+                            <div class="feedback-content-author">
+                                <span class="feedback-content-author-name">Aqua99</span>
+                                <span class="feedback-content-author-time">2021-07-08 12:30</span>
+                            </div>
+                            <!-- 评论内容 -->
+                            <div class="feedback-content-detail">
+                                <p>啊啊啊啊啊啊啊啊啊啊啊啊啊额</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-inner">
+                        <!-- 头像部分 -->
+                        <div class="feedback-avatar">
+                            <span>
+                                <img src="./images/avatar-girl.svg" alt="">
+                            </span>
+                        </div>
+                        <!-- 评论信息 -->
+                        <div class="feedback-content">
+                            <!-- 作者信息 -->
+                            <div class="feedback-content-author">
+                                <span class="feedback-content-author-name">Jenny</span>
+                                <span class="feedback-content-author-time">2021-07-08 12:30</span>
+                            </div>
+                            <!-- 评论内容 -->
+                            <div class="feedback-content-detail">
+                                <p>加油.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-inner">
+                        <!-- 头像部分 -->
+                        <div class="feedback-avatar">
+                            <span>
+                                <img src="./images/avatar-girl.svg" alt="">
+                            </span>
+                        </div>
+                        <!-- 评论信息 -->
+                        <div class="feedback-content">
+                            <!-- 作者信息 -->
+                            <div class="feedback-content-author">
+                                <span class="feedback-content-author-name">Aqua99</span>
+                                <span class="feedback-content-author-time">2021-07-08 12:30</span>
+                            </div>
+                            <!-- 评论内容 -->
+                            <div class="feedback-content-detail">
+                                <p>Come on</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-inner">
+                        <!-- 头像部分 -->
+                        <div class="feedback-avatar">
+                            <span>
+                                <img src="./images/avatar-boy.svg" alt="">
+                            </span>
+                        </div>
+                        <!-- 评论信息 -->
+                        <div class="feedback-content">
+                            <!-- 作者信息 -->
+                            <div class="feedback-content-author">
+                                <span class="feedback-content-author-name">Aqua99</span>
+                                <span class="feedback-content-author-time">2021-07-08 12:30</span>
+                            </div>
+                            <!-- 评论内容 -->
+                            <div class="feedback-content-detail">
+                                <p>写好了吗</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-inner">
+                        <!-- 头像部分 -->
+                        <div class="feedback-avatar">
+                            <span>
+                                <img src="./images/avatar-boy.svg" alt="">
+                            </span>
+                        </div>
+                        <!-- 评论信息 -->
+                        <div class="feedback-content">
+                            <!-- 作者信息 -->
+                            <div class="feedback-content-author">
+                                <span class="feedback-content-author-name">Aqua99</span>
+                                <span class="feedback-content-author-time">2021-07-08 12:30</span>
+                            </div>
+                            <!-- 评论内容 -->
+                            <div class="feedback-content-detail">
+                                <p>有什么问题呢</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="feedback-inner">
-                    <!-- 头像部分 -->
-                    <div class="feedback-avatar">
-                        <span>
-                            <img src="./images/avatar-girl.svg" alt="">
+
+
+                <!-- 评论提交表单 -->
+                <div class="feedback-submit-box" style="width: 100%; padding: 15px 0;">
+                    <hr style="border:1px solid red;" />
+                    <p style="font-weight: bold; font-size: 26px;margin-top: 15px;">留言板</p>
+                    <input id="feedbackName" class="my-input" style="width: 200px;margin-top: 15px;" type="text"
+                        placeholder="请输入您的名字" />
+                    <select id="feedbackSex" class="author-sex">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                    <div class="textarea-limit" style="position: relative; width: 100%;margin-top: 15px;">
+                        <textarea maxlength="200" oninput="limitWords()" id="feedbackContent" class="my-input" rows="5"
+                            cols="3" placeholder="不要默默地看啦，快点反馈一下吧~"></textarea>
+                        <span id="fontLimit"
+                            style="position: absolute; bottom: 2px; right: 4px; font-size: 12px;color: #6D6E6A;">
+                            0/200
                         </span>
                     </div>
-                    <!-- 评论信息 -->
-                    <div class="feedback-content">
-                        <!-- 作者信息 -->
-                        <div class="feedback-content-author">
-                            <span class="feedback-content-author-name">Jenny</span>
-                            <span class="feedback-content-author-time">2021-07-08 12:30</span>
-                        </div>
-                        <!-- 评论内容 -->
-                        <div class="feedback-content-detail">
-                            <p>加油.</p>
-                        </div>
-                    </div>
+
+                    <button type="button" onclick="submitFeedback()" class="submit-btn">提 交</button>
+
                 </div>
-                <div class="feedback-inner">
-                    <!-- 头像部分 -->
-                    <div class="feedback-avatar">
-                        <span>
-                            <img src="./images/avatar-girl.svg" alt="">
-                        </span>
-                    </div>
-                    <!-- 评论信息 -->
-                    <div class="feedback-content">
-                        <!-- 作者信息 -->
-                        <div class="feedback-content-author">
-                            <span class="feedback-content-author-name">Aqua99</span>
-                            <span class="feedback-content-author-time">2021-07-08 12:30</span>
-                        </div>
-                        <!-- 评论内容 -->
-                        <div class="feedback-content-detail">
-                            <p>Come on</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="feedback-inner">
-                    <!-- 头像部分 -->
-                    <div class="feedback-avatar">
-                        <span>
-                            <img src="./images/avatar-boy.svg" alt="">
-                        </span>
-                    </div>
-                    <!-- 评论信息 -->
-                    <div class="feedback-content">
-                        <!-- 作者信息 -->
-                        <div class="feedback-content-author">
-                            <span class="feedback-content-author-name">Aqua99</span>
-                            <span class="feedback-content-author-time">2021-07-08 12:30</span>
-                        </div>
-                        <!-- 评论内容 -->
-                        <div class="feedback-content-detail">
-                            <p>写好了吗</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="feedback-inner">
-                    <!-- 头像部分 -->
-                    <div class="feedback-avatar">
-                        <span>
-                            <img src="./images/avatar-boy.svg" alt="">
-                        </span>
-                    </div>
-                    <!-- 评论信息 -->
-                    <div class="feedback-content">
-                        <!-- 作者信息 -->
-                        <div class="feedback-content-author">
-                            <span class="feedback-content-author-name">Aqua99</span>
-                            <span class="feedback-content-author-time">2021-07-08 12:30</span>
-                        </div>
-                        <!-- 评论内容 -->
-                        <div class="feedback-content-detail">
-                            <p>有什么问题呢</p>
-                        </div>
-                    </div>
-                </div>
+
+
+
             </div>
+        </main>
+        <!-- 网页主体部分结束 -->
 
 
-            <!-- 评论提交表单 -->
-            <div class="feedback-submit-box" style="width: 100%; padding: 15px 0;">
-                <hr style="border:1px solid red;" />
-                <p style="font-weight: bold; font-size: 26px;margin-top: 15px;">留言板</p>
-                <input id="feedbackName" class="my-input" style="width: 200px;margin-top: 15px;" type="text"
-                    placeholder="请输入您的名字" />
-                <select id="feedbackSex" class="author-sex">
-                    <option value="男">男</option>
-                    <option value="女">女</option>
-                </select>
-                <div class="textarea-limit" style="position: relative; width: 100%;margin-top: 15px;">
-                    <textarea maxlength="200" oninput="limitWords()" id="feedbackContent" class="my-input" rows="5"
-                        cols="3" placeholder="不要默默地看啦，快点反馈一下吧~"></textarea>
-                    <span id="fontLimit"
-                        style="position: absolute; bottom: 2px; right: 4px; font-size: 12px;color: #6D6E6A;">
-                        0/200
-                    </span>
-                </div>
-
-                <button type="button" onclick="submitFeedback()" class="submit-btn">提 交</button>
-
+        <!-- 页脚信息开始 -->
+        <footer id="footer" class="" style="padding-top: 15px;">
+            <div
+                style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
+                <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span>备案号：桂ICP备20xxxx1234号-1</span>
             </div>
+        </footer>
+        <!-- 页脚信息结束 -->
+    </div>
 
 
-
-        </div>
-    </main>
-    <!-- 网页主体部分结束 -->
-
-
-    <!-- 页脚信息开始 -->
-    <footer id="footer" class="" style="padding-top: 15px;">
-        <div
-            style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
-            <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span>备案号：桂ICP备20xxxx1234号-1</span>
-        </div>
-    </footer>
-    <!-- 页脚信息结束 -->
 
     <script>
         // 日期格式化，挂载到Date原型链

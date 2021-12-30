@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/lib/element-ui.css">
+    <title>影视作品</title>
+    <style>
+        .container {
+            padding-top: 32px;
+            margin: auto;
+            width: 80%;
+            max-width: 1140px;
+            text-align: center;
+            color: red;
+        }
+
+        .el-card {
+            margin-top: 32px;
+            text-align: left;
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: red;
+        }
+
+        .card-box {
+            /* height: 200px; */
+        }
+
+        .card-box img {
+            width: 100%;
+        }
+
+        .card-label span {
+            display: block;
+        }
+
+        .right-card-label>span {
+            display: block;
+        }
+
+        .el-rate {
+            display: inline-block;
+            vertical-align: top;
+            /* line-height: 26px; */
+        }
+
+        .el-rate__icon.el-icon-star-on {
+            margin: 0 !important;
+        }
+
+        /* .card-star-rate {
+            display: flex !important;
+            flex-direction: row;
+            justify-content: space-between;
+        } */
+
+        .card-star-rate__score {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 28px;
+            line-height: 2;
+        }
+
+        .video-box video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 导航栏开始 -->
+        <header class="navbar tabsOn">
+            <span class="logo-box">
+                <img class="logo" src="images/nav_党群档案.svg" alt="">
+                <p class="logo-title">庆党百年主题网</p>
+            </span>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li class="found">
+                        <a href="javascript:;">党的光辉历程</a>
+                        <ol class="dropdown history">
+                            <li><a href="history-1.html">新民主主义革命</a></li>
+                            <li><a href="history-2.html">社会主义改造时期</a></li>
+                            <li><a href="history-3.html">社会主义建设时期</a></li>
+                            <li><a href="history-4.html">中国特色社会主义</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="hero.html">英雄人物</a>
+                    </li>
+                    <li>
+                        <a href="conference.html">中共大会</a>
+                    </li>
+                    <li class="found active">
+                        <a href="javascript:;">发现更多</a>
+                        <ol class="dropdown triangle">
+                            <li class="active"><a href="videos.html">影视作品</a></li>
+                            <li><a href="feedback.html">反馈</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </nav>
+            <span class="cta">
+                <a class="" href="register-login.html"><button>登录 / 注册</button></a>
+            </span>
+        </header>
+        <!-- 导航栏结束 -->
+
+        <!-- 网页主体部分开始 -->
+        <main>
+            <div class="container">
+                <h1>观赏红色作品 传承红色基因</h1>
+                <el-card>
+                    <div slot="header" class="clearfix">
+                        <span class="header-title">正在热播</span>
+                    </div>
+                    <el-row :gutter="20">
+                        <el-col :span="4" class="card-box">
+                            <img src="./images/videos/juexingshidai.webp" alt="">
+                        </el-col>
+                        <el-col :span="14" class="card-label">
+                            <span style="color: #4A4A4A; font-size: 26px; font-weight: 500;">觉醒时代</span>
+                            <span style="color: #4A4A4A; font-weight: 500;">导演: 张永新</span>
+                            <span style="color: #4A4A4A; font-weight: 500;">类型: 剧情 / 历史</span>
+                            <span style="color: #4A4A4A; font-weight: 500;">制片国家/地区: 中国大陆</span>
+                            <span style="color: #4A4A4A; font-weight: 500;">首播: 2021-02-01(中国大陆)</span>
+                            <span>简介：电视剧《觉醒年代》以1915年《青年杂志》问世到1921年《新青年》成为中国共产党机关刊物为贯穿，展现了从新文化运动、五四运动到中国共产党建立这段波澜壮阔的历史画卷，讲述了觉醒年代社会风情和百态人生。该剧以李大钊、陈独秀、胡适从相识、相知到分手，走上不同人生道路的传奇故事为基本叙事线，以毛泽东、周恩来、陈延年、陈乔年、邓中夏、赵世炎等革命青年追求真理的坎坷经历为辅助线，艺术地再现了一百年前中国的先进分子和一群热血青年演绎出的一段追求真理、燃烧理想的澎湃岁月，深刻地揭示了马克思主义与中国工人运动相结合和中国共产党建立的历史必然性。</span>
+                        </el-col>
+                        <el-col :span="6" class="right-card-label" style="border-left: 2px solid #F4F3EC;">
+                            <span style="color: #4A4A4A; font-size: 18px; font-weight: 500;">豆瓣评分</span>
+                            <span class="card-star-rate" style="color: #4A4A4A; font-weight: 500;">
+                                <span class="card-star-rate__score">9.3</span>
+                                <span style="position: relative; margin-left: 10px;">
+                                    <el-rate v-model="value" :max="5" disabled text-color="#ff9900">
+                                    </el-rate>
+                                    <span
+                                        style="font-size: 12px; color: #4077A6;position: absolute; left: 0;bottom: 0;">390433人评价</span>
+                                </span>
+                            </span>
+                        </el-col>
+                    </el-row>
+                    <div class="evaluation">
+                        <h2 style="font-size: 24px; color: red;">优秀评论</h2>
+                        <p style="text-indent: 2em;">
+                            电视剧《觉醒年代》让很多人热血沸腾，深刻感受到思想的光芒、理想的魅力和青春的力量，深刻感受到那个壮怀激烈年代在中华民族觉醒和复兴之路上的分量！这是革命历史题材电视剧创作的重大突破。
+                        </p>
+                        <p style="text-indent: 2em;">
+                            很多年轻观众留言：“课本里的人物活了，课本里的事件活了，课本里的历史活了！”历史活了，那段中国人应该珍惜、铭记、感谢的历史才更加可信；中国先进的知识分子、热血青年为了中国的进步和现代化而做出的惊天动地的伟业才更加可敬。
+                        </p>
+                        <p style="text-indent: 2em;">
+                            自带感染力的历史需要富有感染力的表达。从新文化运动到中国共产党建立的这段历史，波澜壮阔、扣人心弦。有大量的文献记载和当事人回忆，但材料越多，驾驭越难。特别是，观众大多从教科书里获得了结论，电视剧如何给观众提供一部视觉的真实生动的信史？这是一个挑战。该剧的主要叙事依据学术研究、考证材料和最新研究成果，具有实现历史真实的基础。整个剧组以崇高情怀、极大诚意和专业水平，将历史研究和学术研究的成果，按照文学戏剧的要求“变”成好听的“故事”和好看“冲突”，抵达艺术真实。
+                        </p>
+                    </div>
+                </el-card>
+                <el-card>
+                    <div slot="header" class="clearfix">
+                        <span class="header-title">优秀国漫</span>
+                    </div>
+                    <el-row :gutter="20">
+                        <el-col :span="9" class="video-box">
+                            <video src="./videos/natu.mp4" controls="controls"></video>
+                        </el-col>
+                        <el-col :span="15" class="card-label">
+                            <span style="color: #4A4A4A; font-size: 26px; font-weight: 500;">那年那兔那些事</span>
+                            <span style="color: #4A4A4A; font-weight: 500;">导演: 十一</span>
+                            <span style="color: #4A4A4A; font-weight: 500;">类型: 动画 / 历史 / 战争</span>
+                            <span style="color: #4A4A4A; font-weight: 500;">制片国家/地区: 中国大陆</span>
+                        </el-col>
+                    </el-row>
+                    <div class="evaluation">
+                        <h2 style="font-size: 24px; color: red;">优秀评论</h2>
+                        <p style="text-indent: 2em;">
+                            最近在补局座的节目《张召忠说》，突然想起来这部番，其实听说了很久，但是还没有看过，所以过来把《兔事》给补了一下。但是没想到，这第一季一看，就让我连续哭了十集，而且是哭了又笑，笑着笑着又哭，像一个疯子一般。可以说这部番具有着特别的魔力，而这股魔力的源泉便是我们的家园——种花家。（让我没能连着哭十二集是因为第十一集讲的是阿三，这么看来阿三也是挺厉害的，充满喜剧色彩的种族，我挺佩服的）
+                        </p>
+                        <p style="text-indent: 2em;">
+                            不吝啬地说，《兔事》是一部非常棒的宣传爱国精神的番，它扎根于历史，用形象化的手法为我们复现了近代中国艰难的起家到发家的经过，生动且真实。我斗胆自大地向各个中学推荐，如果需要对学生们进行爱国主义教育，这部番便是最好的材料，也是最能嵌入人心和扣人心弦的。
+                        </p>
+                        <p style="text-indent: 2em;">
+                            中国的近代史讲述的不只是中国遭受的痛苦的经历，更有讲述我们兔子先辈如何把屈膝下跪的双脚伸直阔步，如何把曾经弯曲的脊梁挺直的奋斗过程。所以我们应当把它作为我们种花家的奋斗史，不断得对我们的后代讲述，一直传颂和传承下去。
+                        </p>
+                    </div>
+                </el-card>
+                <el-card>
+                    <div slot="header" class="clearfix">
+                        <span class="header-title">红色经典</span>
+                    </div>
+                    <el-row :gutter="20">
+                        <el-col :span="9" class="video-box">
+                            <video src="./videos/yxen.mp4" controls="controls"></video>
+                        </el-col>
+                        <el-col :span="15" class="card-label">
+                            <p style="color: #4A4A4A; font-weight: 500; font-size: 22px;">为什么战旗美如画？</p>
+                            <p style="color: #4A4A4A; font-weight: 500; font-size: 22px;">英雄的鲜血染红了它。</p>
+                            <p style="color: #4A4A4A; font-weight: 500; font-size: 22px;">为什么大地的春常在？</p>
+                            <p style="color: #4A4A4A; font-weight: 500; font-size: 22px;">英雄的生命开鲜花</p>
+                        </el-col>
+                    </el-row>
+                    <div class="evaluation">
+                        <h2 style="font-size: 24px; color: red;">优秀评论</h2>
+                        <p style="text-indent: 2em; margin-top: 10px;">
+                            我们为什么要抗美援朝?强权是公理吗??有力量就可以为所欲为吗??别以为中国还停留在丰臣秀吉时代的明朝或是甲午那会的清朝中国人民表现的很温顺就当我们是兔子,兔子急了还咬畜牲呢,抗美援朝就是要告诉所有人,中国人不可侮!希望那些除了用枪炮语言外不懂得平等的和穷国弱小交流的高贵文明人再挨了中国人民的耳光后能接受这个教训(不过看来狗改不了吃屎,所以我们有必要积蓄力量以便彻底砸烂它的狗头)
+                        </p>
+                        <p style="text-indent: 2em; margin-top: 10px;">
+                            比如电影通过王芳宣传哥哥的事迹表明了一个宣传的道理更是艺术创作的真谛:王芳写了初稿自己认为很满意,但是小警卫员看了就说:"看了后面,光觉得挺难过鼓不起劲来,软不拉塔的",王芳辩解道这是她流着泪写就的,王文清就说:"光靠眼泪能写出你哥哥来么?是为了让大家跟你一起流眼泪么?"
+                        </p>
+                        <p style="text-indent: 2em; margin-top: 10px;">
+                            仗义每多屠狗辈，负心皆是读书人,谁是最可爱的人,谁是真英雄不是一清二楚嘛,我奉劝那些如今耀武扬威的读书人别好了伤疤忘了疼,把自己抛到和买办狗腿子哈巴狗只有30米的距离去犯贱
+                        </p>
+                    </div>
+                </el-card>
+            </div>
+        </main>
+        <!-- 网页主体部分结束 -->
+
+        <!-- 页脚信息开始 -->
+        <footer id="footer" class="" style="padding-top: 15px;">
+            <div
+                style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
+                <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span>备案号：桂ICP备20xxxx1234号-1</span>
+            </div>
+        </footer>
+        <!-- 页脚信息结束 -->
+    </div>
+
+    <script src="./js/lib/jquery.js"></script>
+    <script src="./js/lib/vue2.js"></script>
+    <script src="./js/lib/element-ui.js"></script>
+
+
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                value: 4.5
+            }
+        })
+    </script>
+</body>
+
+</html>

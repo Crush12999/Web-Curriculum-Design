@@ -224,13 +224,6 @@ function goToHome () {
 }
 
 
-// function register () {
-//     user.username = registerForm.username.value;
-//     user.password = registerForm.password.value;
-//     user.email = registerForm.email.value;
-//     sessionStorage.setItem("user", JSON.stringify(user))
-//     console.log(user);
-// }
 
 function login () {
     let username = loginForm.username.value;
