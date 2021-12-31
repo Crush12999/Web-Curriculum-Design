@@ -1,0 +1,199 @@
+main {
+    padding-top: 52px;
+    width: 100%;
+    background-color: #F2F2F2;
+}
+
+.container {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+/* @charset "utf-8"; */
+
+/* CSS Document */
+.tabtop15 {
+    margin-top: 15px;
+}
+
+.tabtop15 td {
+    background-color: #ffffff;
+    height: 25px;
+    line-height: 150%;
+}
+
+.font-center {
+    text-align: center
+}
+
+.btbg {
+    background: #e9faff !important;
+}
+
+.btbg1 {
+    background: #f2fbfe !important;
+}
+
+.btbg2 {
+    background: #f3f3f3 !important;
+}
+
+.biaoti {
+    font-family: 微软雅黑;
+    font-size: 26px;
+    font-weight: bold;
+    border-bottom: 1px dashed #CCCCCC;
+    color: #255e95;
+}
+
+.titfont {
+    font-family: 微软雅黑;
+    font-size: 16px;
+    font-weight: bold;
+    color: #255e95;
+    background-color: #e9faff;
+}
+
+.tabtxt2 {
+    font-family: 微软雅黑;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+    color: #327cd1;
+}
+
+/* 文字链接 */
+.my-link {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.my-link.my-link--danger {
+    color: #f56c6c;
+}
+
+.my-link.my-link--danger:hover {
+    color: rgba(252, 115, 109, 0.8);
+}
+
+.footer-fixed {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 2021;
+}
+
+.calendar-close,
+.calendar-btn {
+    border: none;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    background-color: #409EFF;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(82, 164, 252, 0.4);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.calendar-btn:hover {
+    box-shadow: 0 0 15px rgba(82, 164, 252, 1);
+}
+
+#calendar-close {
+    display: none;
+}
+
+/* 日历 */
+.calendar-box {
+    display: none;
+    background-color: rgba(127, 127, 127, 0.4);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9998;
+}
+
+.cldBody {
+    background: #f7f7f7;
+    width: 420px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+
+.cldBody .top {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    position: relative;
+}
+
+#topDate {
+    font-size: 24px;
+}
+
+#week td {
+    font-size: 15px;
+}
+
+.cldBody td {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#tbody td:hover {
+    background: #ededed;
+    cursor: pointer;
+}
+
+.curDate {
+    color: red;
+    font-weight: bold;
+}
+
+#left,
+#right {
+    border: none;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    cursor: pointer;
+}
+
+#left {
+    left: 0;
+}
+
+#right {
+    right: 0;
+}
+
+#left:hover,
+#right:hover {
+    background-color: rgba(30, 30, 30, 0.2);
+}
