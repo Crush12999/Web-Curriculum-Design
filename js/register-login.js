@@ -1,6 +1,6 @@
 
 const container = document.querySelector(".container");
-const user = {
+let user = {
     username: '',
     password: '',
     email: ''
@@ -173,10 +173,29 @@ function register () {
         user.username = registerForm.username.value;
         user.password = registerForm.password.value;
         user.email = registerForm.email.value;
+        let userArrs = JSON.parse(localStorage.getItem('userArrs'))
+        if (userArrs) {
+            for (let i = 0; i < userArrs.length; i++) {
+                if (user.username === userArrs[i].username) {
+                    errorMsgLogin('注册失败，用户名已存在');
+                    return;
+                }
+                if (user.email === userArrs[i].email) {
+                    errorMsgLogin('注册失败，邮箱已存在');
+                    return;
+                }
+            }
+            userArrs.push(user);
+        } else {
+            userArrs = new Array();
+            userArrs.push(user);
+        }
+        localStorage.setItem('userArrs', JSON.stringify(userArrs));
+        localStorage.setItem('onlineUser', JSON.stringify(user))
         successMessageBox();
         setTimeout(() => {
             goToHome();
-        }, 2000);
+        }, 3000);
     }
 }
 
@@ -218,8 +237,6 @@ function successMessageBox () {
 
 // 前往首页
 function goToHome () {
-    user.password = null;
-    localStorage.setItem('user', JSON.stringify(user))
     window.location.href = 'index.html';
 }
 
@@ -227,14 +244,49 @@ function goToHome () {
 
 function login () {
     let username = loginForm.username.value;
-    let password = loginForm.username.value;
-
-    // user = JSON.parse(sessionStorage.getItem("user"))
-
-    if (username !== user.username) {
-        alert("用户未注册！");
-    } else if (password !== user.password) {
-        alert("密码错误！");
+    let password = loginForm.password.value;
+    if (username == '' || password == '') {
+        errorMsgLogin('登录失败，请输入表单信息');
+        return;
     }
 
+    const userArrs = JSON.parse(localStorage.getItem("userArrs"))
+    if (userArrs) {
+        for (let i = 0; i < userArrs.length; i++) {
+            if (username == userArrs[i].username) {
+                if (password == userArrs[i].password) {
+                    user = userArrs[i];
+                    localStorage.setItem('onlineUser', JSON.stringify(user))
+                    successMessageBox();
+                    setTimeout(() => {
+                        goToHome();
+                    }, 2500);
+                    return;
+                } else {
+                    errorMsgLogin('登录失败，密码错误！');
+                    return;
+                }
+            }
+        }
+        errorMsgLogin('登录失败，用户未注册！');
+    } else {
+        errorMsgLogin('登录失败，用户未注册！');
+    }
+
+}
+
+
+function errorMsgLogin (msg) {
+    let str = `<div class="my-message my-message--error">
+                    <i class="iconfont icon-fail my-icon-error my-message__icon"></i>
+                    <p class="my-message__content">` + msg + `</p>
+                </div>`;
+
+    let node = document.getElementById('myMessageBox');
+    // node.insertAdjacentHTML('beforeend', str);
+    node.innerHTML = str;
+
+    setTimeout(() => {
+        node.innerHTML = ''
+    }, 3000);
 }

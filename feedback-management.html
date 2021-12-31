@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./images/icon/iconfont.css">
-    <title>Document</title>
+    <title>反馈信息管理</title>
     <style>
         main {
             padding-top: 52px;
@@ -106,11 +106,142 @@
             bottom: 0;
             z-index: 2021;
         }
+
+        .calendar-close,
+        .calendar-btn {
+            border: none;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            background-color: #409EFF;
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+            font-weight: 500;
+            box-shadow: 0 0 10px rgba(82, 164, 252, 0.4);
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .calendar-btn:hover {
+            box-shadow: 0 0 15px rgba(82, 164, 252, 1);
+        }
+
+        #calendar-close {
+            display: none;
+        }
+
+        /* 日历 */
+        .calendar-box {
+            display: none;
+            background-color: rgba(127, 127, 127, 0.4);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 9998;
+        }
+
+        .cldBody {
+            background: #f7f7f7;
+            width: 420px;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+        }
+
+        .cldBody .top {
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        #topDate {
+            font-size: 24px;
+        }
+
+        #week td {
+            font-size: 15px;
+        }
+
+        .cldBody td {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #tbody td:hover {
+            background: #ededed;
+            cursor: pointer;
+        }
+
+        .curDate {
+            color: red;
+            font-weight: bold;
+        }
+
+        #left,
+        #right {
+            border: none;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        #left {
+            left: 0;
+        }
+
+        #right {
+            right: 0;
+        }
+
+        #left:hover,
+        #right:hover {
+            background-color: rgba(30, 30, 30, 0.2);
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
+        <!-- 日历 -->
+        <div id="calendar-box" class="calendar-box">
+            <div class="cldBody">
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="7">
+                                <div class="top">
+                                    <button onclick="prevMonth()" id="left" style="color: #409EFF;">上月</button>
+                                    <span id="topDate"></span>
+                                    <button onclick="nextMonth()" id="right" style="color: #409EFF;">下月</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="week">
+                            <td>日</td>
+                            <td>一</td>
+                            <td>二</td>
+                            <td>三</td>
+                            <td>四</td>
+                            <td>五</td>
+                            <td>六</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
         <!-- 导航栏开始 -->
         <header class="navbar tabsOn">
             <span class="logo-box">
@@ -122,41 +253,42 @@
                     <li>
                         <a href="index.html">首页</a>
                     </li>
-                    <li>
-                        <a href="javascript:;">党史</a>
+                    <li class="found">
+                        <a href="javascript:;">党的光辉历程</a>
+                        <ol class="dropdown history">
+                            <li><a href="history-1.html">新民主主义革命</a></li>
+                            <li><a href="history-2.html">社会主义改造时期</a></li>
+                            <li><a href="history-3.html">社会主义建设时期</a></li>
+                            <li><a href="history-4.html">中国特色社会主义</a></li>
+                        </ol>
                     </li>
                     <li>
-                        <a href="javascript:;">英雄人物</a>
+                        <a href="hero.html">英雄人物</a>
                     </li>
                     <li>
-                        <a href="javascript:;">经典回忆</a>
+                        <a href="conference.html">中共大会</a>
                     </li>
                     <li class="found">
                         <a href="javascript:;">发现更多</a>
                         <ol class="dropdown triangle">
-                            <li><a href="photo-album.html">主题相册</a></li>
+                            <li><a href="videos.html">影视作品</a></li>
                             <li><a href="feedback.html">反馈</a></li>
-                            <li><a href="about.html">关于我</a></li>
                         </ol>
                     </li>
-                    <!-- 这个元素来定义滑动的线条 -->
-                    <!-- <li class="underline"></li> -->
                 </ul>
             </nav>
-            <span class="user-box">
-                <li class="">
-                    <a href="javascript:;">欢迎，{{ username }}</a>
+            <span id="user-box" class="user-box" style="display: none;">
+                <li>
+                    <a href="javascript:;">欢迎，{{ user.username }}</a>
                     <ol class="dropdown">
-                        <li class="active"><a href="feedback-management.html">留言管理</a></li>
-                        <li><a href="javascript:;" onclick="logout()">注销</a></li>
+                        <li><a href="feedback-management.html">留言管理</a></li>
+                        <li onclick="logout()"><a href="javascript:;">注销</a></li>
                     </ol>
                 </li>
             </span>
-
-            <!-- <span class="cta">
-
-                <a class="" href="register-login.html"><button>登录 / 注册</button></a>
-            </span> -->
+            <span id="cta" class="cta">
+                <a href="register-login.html"><button>登录 / 注册</button></a>
+            </span>
         </header>
         <!-- 导航栏结束 -->
 
@@ -231,6 +363,8 @@
                 <div id="calendar" style="position: fixed;bottom: 200px; right: 30px;"></div>
             </div>
         </main>
+        <button onclick="calendarShow()" class="calendar-btn" id="calendarBtn">日历</button>
+        <button onclick="calendarClose()" class="calendar-close" id="calendar-close">关闭</button>
 
         <!-- 网页主体结束 -->
 
@@ -277,11 +411,6 @@
 
         setInterval("nowTime()", 1000)
 
-        const logout = () => {
-            localStorage.clear();
-            window.location.href = "index.html"
-        }
-
         // 调整网页底部信息栏位置。
         let footerDom = document.querySelector('#footer');
         function footerInit() {
@@ -313,45 +442,6 @@
             // 初始化表格数据
             initTableData()
         }
-
-        function test() {
-            let feedbackObj = [
-                {
-                    'id': 1,
-                    'username': 'Aqua99',
-                    'time': '2022-10-11 23:11:01',
-                    'msg': '哈哈'
-                },
-                {
-                    'id': 2,
-                    'username': 'Aqua99',
-                    'time': '2022-10-11 23:11:01',
-                    'msg': '嗯嗯'
-                },
-                {
-                    'id': 3,
-                    'username': 'admin',
-                    'time': '2022-10-11 23:11:01',
-                    'msg': '嗯嗯'
-                },
-                {
-                    'id': 4,
-                    'username': 'yzm',
-                    'time': '2022-10-11 23:11:01',
-                    'msg': '你懂啥'
-                },
-                {
-                    'id': 5,
-                    'username': 'yzm',
-                    'time': '2022-10-11 23:11:01',
-                    'msg': '再看看你懂啥'
-                }
-            ]
-
-            localStorage.setItem('feedback', JSON.stringify(feedbackObj))
-        }
-
-        test();
 
         // 初始化表格数据方法
         function initTableData() {
@@ -392,10 +482,98 @@
                     userMap.get(feedbackList[i].username).push(feedbackList[i]);
                 }
             }
-            // console.log(userMap);
             return userMap;
         }
 
+        function logout() {
+            localStorage.setItem('onlineUser', null);
+            location.href = "index.html"
+        }
+
+
+        // 日历
+        var date = new Date();
+        var year = date.getFullYear();
+        var nowyear = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var nowmonth = date.getMonth() + 1;
+        var dateday = date.getDate();
+        var todateHtml = year + '年' + month + '月';
+        document.getElementById('topDate').innerHTML = todateHtml
+        function showcld() {
+            var monthDay = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  // 创建数组存放每个月有多少天 ,默认2月为28天
+            // 判断闰年
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                monthDay[1] = 29;
+            }
+            // 计算每个月的天数
+            var days = monthDay[month - 1];
+            // 判断每月第一天为周几
+            date.setYear(year);        //某年
+            date.setMonth(month - 1);   //某年的某月
+            date.setDate(1);   // 某月的某天
+            var weekday = date.getDay();  // 判断某天是周几
+            // 补齐一号前的空格
+            var tbodyHtml = '<tr>';
+            for (var i = 0; i < weekday; i++) {
+                tbodyHtml += "<td></td>";
+            }
+            // 补齐每月的日期
+            var changLine = weekday;
+            var tagClass = '';
+            for (i = 1; i <= days; i++) {//每一个日期的填充
+                if (year == nowyear && month == nowmonth && i == dateday) {
+                    tagClass = "curDate";//当前日期对应格子
+                } else {
+                    tagClass = "isDate";
+                }
+                tbodyHtml += "<td class=" + tagClass + ">" + i + "</td>";
+                changLine = (changLine + 1) % 7;
+                if (changLine == 0 && i != days) {//是否换行填充的判断
+                    tbodyHtml += "</tr><tr>";
+                }
+            }
+            document.getElementById('tbody').innerHTML = '';
+            document.getElementById('tbody').innerHTML += tbodyHtml
+        }
+
+        // 设置按钮点击事件
+        function prevMonth() {
+            month = month - 1;
+            if (month < 1) {
+                month = 12;
+                year--;
+            }
+            var todateHtml = year + '年' + month + '月';
+            document.getElementById('topDate').innerHTML = todateHtml
+            showcld();
+        }
+
+        function nextMonth() {
+            month = month + 1;
+            if (month > 12) {
+                month = 1;
+                year++;
+            }
+            var todateHtml = year + '年' + month + '月';
+            document.getElementById('topDate').innerHTML = todateHtml
+            showcld();
+        }
+
+
+        function calendarShow() {
+            document.getElementById('calendarBtn').style.display = 'none';
+            document.getElementById('calendar-box').style.display = 'block';
+            document.getElementById('calendar-close').style.display = 'block';
+            document.getElementById('calendar-close').style.zIndex = 9999;
+            showcld();
+        }
+
+        function calendarClose() {
+            document.getElementById('calendarBtn').style.display = 'block';
+            document.getElementById('calendar-box').style.display = 'none';
+            document.getElementById('calendar-close').style.display = 'none';
+        }
     </script>
 
     <script>
@@ -403,7 +581,16 @@
             el: '#app',
             data: {
                 activeIndex: '1',
-                username: 'Aqua99'
+                user: ''
+            },
+            created: function () {
+                this.$nextTick(function () {
+                    this.user = JSON.parse(localStorage.getItem('onlineUser'))
+                    if (this.user && this.user != null) {
+                        document.getElementById('cta').style.display = 'none';
+                        document.getElementById('user-box').style.display = 'block';
+                    }
+                })
             }
         })
     </script>

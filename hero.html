@@ -14,7 +14,7 @@
 <body>
     <div id="app">
         <!-- 导航栏开始 -->
-        <header class="navbar">
+        <header class="navbar tabsOn">
             <span class="logo-box">
                 <img class="logo" src="images/nav_党群档案.svg" alt="">
                 <p class="logo-title">庆党百年主题网</p>
@@ -48,8 +48,17 @@
                     </li>
                 </ul>
             </nav>
-            <span class="cta">
-                <a class="" href="register-login.html"><button>登录 / 注册</button></a>
+            <span id="user-box" class="user-box" style="display: none;">
+                <li>
+                    <a href="javascript:;">欢迎，{{ user.username }}</a>
+                    <ol class="dropdown">
+                        <li><a href="feedback-management.html">留言管理</a></li>
+                        <li onclick="logout()"><a href="javascript:;">注销</a></li>
+                    </ol>
+                </li>
+            </span>
+            <span id="cta" class="cta">
+                <a href="register-login.html"><button>登录 / 注册</button></a>
             </span>
         </header>
         <!-- 导航栏结束 -->
@@ -63,7 +72,6 @@
                     </div>
                     <div class="hero-content">
                         <div class="title">{{ item.name }}</div>
-                        <div class="sub-title"></div>
                         <div class="hero-bottom">
                             <p>{{ item.content }}</p>
                             <button>查看更多</button>
@@ -118,6 +126,7 @@
         const vm = new Vue({
             el: '#app',
             data: {
+                user: '',
                 cards: [
                     {
                         name: '毛泽东',
@@ -191,8 +200,23 @@
                         他所倡导的“改革开放”及“一国两制”政策理念，改变了20世纪后期的中国，也影响了世界。`
                     },
                 ]
+            },
+            created: function () {
+                this.$nextTick(function () {
+                    this.user = JSON.parse(localStorage.getItem('onlineUser'))
+                    if (this.user && this.user != null) {
+                        document.getElementById('cta').style.display = 'none';
+                        document.getElementById('user-box').style.display = 'block';
+                    }
+                })
             }
         })
+    </script>
+    <script>
+        function logout() {
+            localStorage.setItem('onlineUser', null);
+            location.reload()
+        }
     </script>
 </body>
 

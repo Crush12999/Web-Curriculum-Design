@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>反馈信息</title>
     <link rel="stylesheet" href="./images/icon/iconfont.css">
     <link rel="stylesheet" href="css/global.css">
     <style>
@@ -112,13 +112,10 @@
 
         /* 评论信息主体部分 */
         .feedback-list {
-            /* height: 100%; */
-            /* border: red 1px solid; */
             border-radius: 5px;
             margin-top: 15px;
             display: flex;
             flex-direction: column;
-            /* overflow-y: scroll; */
         }
 
         /* 评论信息盒子 */
@@ -272,6 +269,11 @@
             background: rgba(251, 84, 49, 0.5) !important;
             cursor: not-allowed !important;
         }
+
+        #feedbackName[disabled] {
+            background-color: #DDDDDD;
+            cursor: not-allowed !important;
+        }
     </style>
 
 </head>
@@ -314,8 +316,17 @@
                     </li>
                 </ul>
             </nav>
-            <span class="cta">
-                <a class="" href="register-login.html"><button>登录 / 注册</button></a>
+            <span id="user-box" class="user-box" style="display: none;">
+                <li>
+                    <a href="javascript:;">欢迎，{{ user.username }}</a>
+                    <ol class="dropdown">
+                        <li><a href="feedback-management.html">留言管理</a></li>
+                        <li onclick="logout()"><a href="javascript:;">注销</a></li>
+                    </ol>
+                </li>
+            </span>
+            <span id="cta" class="cta">
+                <a href="register-login.html"><button>登录 / 注册</button></a>
             </span>
         </header>
 
@@ -327,26 +338,6 @@
                 <!-- 评论列表 -->
                 <div id="feedbackList" class="feedback-list">
                     <!-- 评论信息盒子 -->
-                    <div class="feedback-inner">
-                        <!-- 头像部分 -->
-                        <div class="feedback-avatar">
-                            <span>
-                                <img src="./images/avatar-boy.svg" alt="">
-                            </span>
-                        </div>
-                        <!-- 评论信息 -->
-                        <div class="feedback-content">
-                            <!-- 作者信息 -->
-                            <div class="feedback-content-author">
-                                <span class="feedback-content-author-name">Aqua99</span>
-                                <span class="feedback-content-author-time">2021-07-08 12:30</span>
-                            </div>
-                            <!-- 评论内容 -->
-                            <div class="feedback-content-detail">
-                                <p>啊啊啊啊啊啊啊啊啊啊啊啊啊额</p>
-                            </div>
-                        </div>
-                    </div>
                     <div class="feedback-inner">
                         <!-- 头像部分 -->
                         <div class="feedback-avatar">
@@ -407,26 +398,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="feedback-inner">
-                        <!-- 头像部分 -->
-                        <div class="feedback-avatar">
-                            <span>
-                                <img src="./images/avatar-boy.svg" alt="">
-                            </span>
-                        </div>
-                        <!-- 评论信息 -->
-                        <div class="feedback-content">
-                            <!-- 作者信息 -->
-                            <div class="feedback-content-author">
-                                <span class="feedback-content-author-name">Aqua99</span>
-                                <span class="feedback-content-author-time">2021-07-08 12:30</span>
-                            </div>
-                            <!-- 评论内容 -->
-                            <div class="feedback-content-detail">
-                                <p>有什么问题呢</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
 
@@ -435,7 +406,7 @@
                     <hr style="border:1px solid red;" />
                     <p style="font-weight: bold; font-size: 26px;margin-top: 15px;">留言板</p>
                     <input id="feedbackName" class="my-input" style="width: 200px;margin-top: 15px;" type="text"
-                        placeholder="请输入您的名字" />
+                        :placeholder="user.username" disabled :value="user.username" />
                     <select id="feedbackSex" class="author-sex">
                         <option value="男">男</option>
                         <option value="女">女</option>
@@ -449,19 +420,16 @@
                         </span>
                     </div>
 
-                    <button type="button" onclick="submitFeedback()" class="submit-btn">提 交</button>
+                    <button id="submit-btn" type="button" onclick="submitFeedback()" class="submit-btn">提 交</button>
 
                 </div>
-
-
-
             </div>
         </main>
         <!-- 网页主体部分结束 -->
 
 
         <!-- 页脚信息开始 -->
-        <footer id="footer" class="" style="padding-top: 15px;">
+        <footer id="footer" style="padding-top: 15px;">
             <div
                 style="background-color: #fff; border-top: 1px solid #e5e6e7;color:#747474; font-size: 14px; height: 48px; text-align: center; line-height: 48px;">
                 <span>Copyright © 2020-2021 &nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -472,6 +440,36 @@
     </div>
 
 
+    <script src="./js/lib/vue2.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                user: {
+                    username: '请先登录再留言'
+                }
+            },
+            created: function () {
+                this.$nextTick(function () {
+                    let flagObj = JSON.parse(localStorage.getItem('onlineUser'))
+                    if (flagObj) {
+                        this.user = JSON.parse(localStorage.getItem('onlineUser'))
+                        document.getElementById('cta').style.display = 'none';
+                        document.getElementById('user-box').style.display = 'block';
+                    } else {
+                        // 登录才允许提交
+                        document.getElementById('submit-btn').disabled = true;
+                    }
+                })
+            }
+        })
+    </script>
+    <script>
+        function logout() {
+            localStorage.setItem('onlineUser', null);
+            location.reload()
+        }
+    </script>
 
     <script>
         // 日期格式化，挂载到Date原型链
@@ -497,11 +495,12 @@
         }
 
         // 评论信息
-        const feedbackUser = {
-            name: '',
+        let feedbackUser = {
+            id: '',
+            username: '',
             sex: '',
-            dataTime: null,
-            content: ''
+            time: '',
+            msg: ''
         }
 
         // 反馈信息字数统计
@@ -511,13 +510,13 @@
             fontLimit.innerHTML = myFeedback.value.length + '/200';
         }
 
-        //
+        // 提交反馈信息
         function submitFeedback() {
-            if (checkFeedbackName() && checkFeedbackContent()) {
-                feedbackUser.name = document.getElementById('feedbackName').value;
+            if (checkFeedbackContent()) {
+                feedbackUser.username = document.getElementById('feedbackName').value;
                 feedbackUser.sex = document.getElementById('feedbackSex').value;
-                feedbackUser.content = document.getElementById('feedbackContent').value;
-                feedbackUser.dataTime = new Date().format("yyyy-MM-dd hh:mm:ss");
+                feedbackUser.msg = document.getElementById('feedbackContent').value;
+                feedbackUser.time = new Date().format("yyyy-MM-dd hh:mm:ss");
                 let sexImg = (feedbackUser.sex === '男') ? './images/avatar-boy.svg' : './images/avatar-girl.svg';
                 let node = document.getElementById('feedbackList');
                 str = `<div class="feedback-inner">
@@ -526,11 +525,11 @@
                         </div>
                         <div class="feedback-content">
                             <div class="feedback-content-author">
-                                <span class="feedback-content-author-name">` + feedbackUser.name + `</span>
-                                <span class="feedback-content-author-time">` + feedbackUser.dataTime + `</span>
+                                <span class="feedback-content-author-name">` + feedbackUser.username + `</span>
+                                <span class="feedback-content-author-time">` + feedbackUser.time + `</span>
                             </div>
                             <div class="feedback-content-detail">
-                                <p>` + feedbackUser.content + `</p>
+                                <p>` + feedbackUser.msg + `</p>
                             </div>
                         </div>
                     </div>`;
@@ -543,27 +542,57 @@
                 // 定位到评论位置
                 document.querySelector('.feedback-submit-box').scrollIntoView()
                 childDoc.style.background = 'rgba(255, 255, 255, 1)';
-                footerInit()
+                submitDB();
+                footerInit();
                 setTimeout(() => {
                     childDoc.style.background = '';
                 }, 1000)
             } else {
-                errorMessageBox('名字和信息不能为空噢~');
+                errorMessageBox('信息不能为空噢~');
             }
         }
 
-        document.getElementById('feedbackName').addEventListener('blur', checkFeedbackName);
-        // 校验留言板用户名
-        function checkFeedbackName() {
-            let name = document.getElementById('feedbackName').value.replace("/(^\s*)|(\s*$)/g", "");
-            if (name.length == 0) {
-                document.getElementById('feedbackName').classList.add('my-input-error');
-                return false;
+        function submitDB() {
+            let feedArr = JSON.parse(localStorage.getItem('feedback'));
+            if (feedArr) {
+                feedbackUser.id = feedArr[feedArr.length - 1].id + 1;
+                feedArr.push(feedbackUser);
+                localStorage.setItem('feedback', JSON.stringify(feedArr));
             } else {
-                document.getElementById('feedbackName').classList.remove('my-input-error');
+                feedArr = new Array();
+                feedbackUser.id = 1;
+                feedArr.push(feedbackUser);
+                localStorage.setItem('feedback', JSON.stringify(feedArr));
             }
-            return true;
         }
+
+        function initFeedbackList() {
+            feedback = JSON.parse(localStorage.getItem('feedback'));
+            if (feedback) {
+                for (let i = 0; i < feedback.length; i++) {
+                    let sexImg = (feedback[i].sex === '男') ? './images/avatar-boy.svg' : './images/avatar-girl.svg';
+                    let node = document.getElementById('feedbackList');
+                    str = `<div class="feedback-inner">
+                        <div class="feedback-avatar">
+                            <span><img src="` + sexImg + `" alt=""></span>
+                        </div>
+                        <div class="feedback-content">
+                            <div class="feedback-content-author">
+                                <span class="feedback-content-author-name">` + feedback[i].username + `</span>
+                                <span class="feedback-content-author-time">` + feedback[i].time + `</span>
+                            </div>
+                            <div class="feedback-content-detail">
+                                <p>` + feedback[i].msg + `</p>
+                            </div>
+                        </div>
+                    </div>`;
+                    // 插入到最后一个节点
+                    node.insertAdjacentHTML('beforeend', str);
+                    footerInit()
+                }
+            }
+        }
+
 
         // 校验留言板反馈信息
         document.getElementById('feedbackContent').addEventListener('blur', checkFeedbackContent)
@@ -597,6 +626,7 @@
 
         // 调整网页底部信息栏位置。
         let submitBtnDom = document.querySelector('.submit-btn');
+        let footerDom = document.getElementById('footer')
         function footerInit() {
             let viewPort = document.documentElement.clientHeight;
             // 获取评论按钮位置，加上它自身的高度和网页底部高度
@@ -608,7 +638,14 @@
                 footerDom.classList.remove('footer-fixed');
             }
         }
-        footerInit()
+        window.onload = function () {
+            footerInit();
+            initFeedbackList();
+        }
+        window.onresize = function () {
+            footerInit();
+        }
+
     </script>
 </body>
 
